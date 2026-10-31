@@ -328,18 +328,51 @@ R.about=()=>{setTitle('About');main.innerHTML=`<div class="ph prose"><p class="k
 
 
 let NZM;const nzmap=()=>NZM??=fetch('/data/nzmap.json').then(r=>r.json());
-async function mapSection(el){const g=await nzmap(),[x0,x1,y0,y1]=g.b,X=lo=>(lo-x0)/(x1-x0)*g.W,Y=la=>(y1-la)/(y1-y0)*g.H;
+async function mapSection(el){const g=await nzmap(),[x0,x1,y0,y1]=g.b,W=g.W,H=g.H,X=lo=>(lo-x0)/(x1-x0)*W,Y=la=>(y1-la)/(y1-y0)*H;
   const st=D.stores.filter(s=>s.la!=null),miss=D.stores.length-st.length;
-  el.innerHTML=`<p class="kicker">Map</p><h2>Every store we capture</h2><p class="say">${num(st.length)} stores plotted. Tap or hover a dot for the store and its price index.</p>
-  <div class="nzmap"><svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="Map of New Zealand supermarkets"><path class="land" d="${g.d}"/>${st.map(s=>`<circle class="dot" tabindex="0" data-s="${s.id}" cx="${X(s.lo).toFixed(1)}" cy="${Y(s.la).toFixed(1)}" r="3.2"/>`).join('')}</svg><div class="mtip" hidden></div></div>
-  <p class="fine">${miss?`${miss} of ${D.stores.length} stores have no coordinates yet and are not shown. `:''}Locations are approximate. Coastline: Natural Earth.</p>`;
-  const box=$('.nzmap',el),tip=$('.mtip',el);let on=null;
+  const col=ix=>{if(ix==null)return '#8d857a';const t=Math.max(-1,Math.min(1,(ix-100)/12));return t<0?`color-mix(in srgb,var(--green) ${Math.round(-t*100)}%,#c9c1b3)`:`color-mix(in srgb,var(--red) ${Math.round(t*100)}%,#c9c1b3)`};
+  const regs=[...new Set(st.map(s=>s.r).filter(Boolean))].sort();
+  el.innerHTML=`<p class="kicker">Map</p><h2>Every store we capture</h2><p class="say">${num(st.length)} stores, coloured by price index. Drag to move, pinch or scroll to zoom, tap a dot for the store.</p>
+  <div class="chips" id="mch">${CH.map(c=>`<button class="chip" aria-pressed="true" data-c="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+  <div class="chips" id="mrg"><button class="chip" data-r="">All of New Zealand</button>${regs.map(r=>`<button class="chip" data-r="${esc(r)}">${esc(r)}</button>`).join('')}</div>
+  <div class="nzmap"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of New Zealand supermarkets"><g id="mg"><path class="land" d="${g.d}"/>${st.map((s,i)=>`<circle class="dot" tabindex="0" data-s="${s.id}" cx="${X(s.lo).toFixed(1)}" cy="${Y(s.la).toFixed(1)}" r="3" style="fill:${col(s.ix)};animation-delay:${(i%120)*8+Math.round(Math.random()*200)}ms"/>`).join('')}</g></svg>
+  <div class="mctl"><button aria-label="Zoom in" data-z="1.6">+</button><button aria-label="Zoom out" data-z="0.625">−</button><button aria-label="Reset map" data-z="0">Reset</button></div>
+  <div class="mleg"><span>Cheaper</span><i></i><span>Dearer</span></div><div class="mtip" hidden></div></div>
+  <p class="fine">${miss?`${miss} of ${D.stores.length} stores have no coordinates yet and are not shown. `:''}Colour runs from 12 points below to 12 points above the national median of 100. Locations are approximate. Coastline: Natural Earth.</p>`;
+  const box=$('.nzmap',el),svg=$('svg',box),G=$('#mg',box),tip=$('.mtip',el),dots=$$('.dot',el);let on=null;
+  let k=1,tx=0,ty=0,vx=0,vy=0,raf=0,anim=0;
+  const unit=()=>{const r=svg.getBoundingClientRect();return Math.max(W/r.width,H/r.height)};
+  const clamp=()=>{k=Math.max(1,Math.min(40,k));const m=.15;tx=Math.min(W*m,Math.max(W*(1-k)-W*m,tx));ty=Math.min(H*m,Math.max(H*(1-k)-H*m,ty))};
+  const apply=()=>{clamp();G.setAttribute('transform',`translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})`);box.style.setProperty('--dr',(3/Math.sqrt(k)).toFixed(3));if(on)place(on)};
+  const toSvg=(cx,cy)=>{const r=svg.getBoundingClientRect(),u=unit();return [(cx-r.left-(r.width-W/u)/2)*u,(cy-r.top-(r.height-H/u)/2)*u]};
+  const zoomAt=(f,px,py)=>{const nk=Math.max(1,Math.min(40,k*f));f=nk/k;tx=px-(px-tx)*f;ty=py-(py-ty)*f;k=nk;apply()};
+  const fly=(nk,ntx,nty)=>{cancelAnimationFrame(anim);cancelAnimationFrame(raf);const a={k,tx,ty},t0=performance.now();const s=t=>{const p=Math.min(1,(t-t0)/700),e=1-Math.pow(1-p,3);k=a.k+(nk-a.k)*e;tx=a.tx+(ntx-a.tx)*e;ty=a.ty+(nty-a.ty)*e;apply();if(p<1)anim=requestAnimationFrame(s)};anim=requestAnimationFrame(s)};
+  const flyBox=(xs,ys)=>{const q=(a,f)=>{a=[...a].sort((x,y)=>x-y);return a[Math.min(a.length-1,Math.max(0,Math.round((a.length-1)*f)))]},lo=xs.length>6?.1:0,hi=1-lo;const bx0=q(xs,lo),bx1=q(xs,hi),by0=q(ys,lo),by1=q(ys,hi),pad=20;const nk=Math.max(1,Math.min(14,Math.min(W/(bx1-bx0+pad*2),H/(by1-by0+pad*2))));fly(nk,W/2-nk*(bx0+bx1)/2,H/2-nk*(by0+by1)/2)};
+  const place=c=>{const b=box.getBoundingClientRect(),r=c.getBoundingClientRect();const l=r.left-b.left+r.width/2,t=r.top-b.top;
+    tip.style.left=Math.max(8,Math.min(b.width-tip.offsetWidth-8,l-tip.offsetWidth/2))+'px';tip.style.top=(t-tip.offsetHeight-12<0?t+r.height+12:t-tip.offsetHeight-12)+'px'};
   const show=c=>{const s=store(+c.dataset.s);on?.classList.remove('on');on=c;c.classList.add('on');
-    tip.innerHTML=`<span class="mbadge" style="background:${CHCOL[s.ch]||'#888'}">${esc((s.ch.match(/[A-Z]/g)||['?']).join('').slice(0,2))}</span><span><strong>${esc(s.nm)}</strong><br><small>${esc(s.ch)} · index <b class="${cls(s.ix)}">${s.ix?s.ix.toFixed(1):'n/a'}</b>${s.thin?' · thin data':''}</small><br><a href="#/store/${s.id}">See store</a></span>`;
-    tip.hidden=false;const b=box.getBoundingClientRect(),r=c.getBoundingClientRect();let l=r.left-b.left+r.width/2,t=r.top-b.top;
-    tip.style.left=Math.max(8,Math.min(b.width-tip.offsetWidth-8,l-tip.offsetWidth/2))+'px';tip.style.top=(t-tip.offsetHeight-10<0?t+18:t-tip.offsetHeight-10)+'px'};
-  $$('.dot',el).forEach(c=>{c.addEventListener('mouseenter',()=>show(c));c.addEventListener('click',e=>{e.stopPropagation();show(c)});c.addEventListener('focus',()=>show(c))});
-  box.addEventListener('click',e=>{if(!e.target.closest('.mtip')){tip.hidden=true;on?.classList.remove('on')}})}
+    tip.innerHTML=`<span class="mbadge" style="background:${CHCOL[s.ch]||'#888'}">${esc((s.ch.match(/[A-Z]/g)||['?']).join('').slice(0,2))}</span><span><strong>${esc(s.nm)}</strong><br><small>${esc(s.ch)} · index <b class="${cls(s.ix)}">${s.ix?s.ix.toFixed(1):'n/a'}</b>${s.thin?' · thin data':''}</small><br><a href="#/store/${s.id}">See store</a></span>`;tip.hidden=false;place(c)};
+  const hide=()=>{tip.hidden=true;on?.classList.remove('on');on=null};
+  // pointers: drag, pinch, inertia, tap
+  const pts=new Map();let last=null,moved=0,pinch=null,lastTap=0;
+  svg.addEventListener('pointerdown',e=>{svg.setPointerCapture(e.pointerId);pts.set(e.pointerId,[e.clientX,e.clientY]);cancelAnimationFrame(raf);cancelAnimationFrame(anim);vx=vy=0;moved=0;last={x:e.clientX,y:e.clientY,t:performance.now()};
+    if(pts.size===2){const[a,b]=[...pts.values()];pinch={d:Math.hypot(a[0]-b[0],a[1]-b[1])}}});
+  svg.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,[e.clientX,e.clientY]);const u=unit();
+    if(pts.size===2&&pinch){const[a,b]=[...pts.values()],d=Math.hypot(a[0]-b[0],a[1]-b[1]),[px,py]=toSvg((a[0]+b[0])/2,(a[1]+b[1])/2);zoomAt(d/pinch.d,px,py);pinch.d=d;moved=9;return}
+    const dx=(e.clientX-last.x)*u,dy=(e.clientY-last.y)*u,now=performance.now(),dt=Math.max(1,now-last.t);moved+=Math.abs(dx)+Math.abs(dy);tx+=dx;ty+=dy;vx=dx/dt*16;vy=dy/dt*16;last={x:e.clientX,y:e.clientY,t:now};apply()});
+  const up=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch=null;if(pts.size)return;
+    if(moved<4*unit()){const c=document.elementFromPoint(e.clientX,e.clientY)?.closest?.('.dot');const now=performance.now();
+      if(now-lastTap<300&&!c){const[px,py]=toSvg(e.clientX,e.clientY);fly(Math.min(40,k*2),px-(px-tx)*Math.min(40,k*2)/k,py-(py-ty)*Math.min(40,k*2)/k)}
+      lastTap=now;c?show(c):hide();return}
+    const step=()=>{vx*=.92;vy*=.92;tx+=vx;ty+=vy;apply();if(Math.abs(vx)+Math.abs(vy)>.05)raf=requestAnimationFrame(step)};raf=requestAnimationFrame(step)};
+  svg.addEventListener('pointerup',up);svg.addEventListener('pointercancel',up);
+  svg.addEventListener('wheel',e=>{e.preventDefault();const[px,py]=toSvg(e.clientX,e.clientY);zoomAt(Math.exp(-e.deltaY*.0018),px,py)},{passive:false});
+  svg.addEventListener('dblclick',e=>e.preventDefault());
+  dots.forEach(c=>{c.addEventListener('mouseenter',()=>{if(!pts.size)show(c)});c.addEventListener('focus',()=>show(c))});
+  $$('.mctl button',el).forEach(b=>b.onclick=()=>{const z=+b.dataset.z;if(!z)return fly(1,0,0);const nk=Math.max(1,Math.min(40,k*z));fly(nk,W/2-(W/2-tx)*nk/k,H/2-(H/2-ty)*nk/k)});
+  $$('#mch .chip',el).forEach(b=>b.onclick=()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');const offc=new Set($$('#mch .chip',el).filter(x=>x.getAttribute('aria-pressed')==='false').map(x=>x.dataset.c));dots.forEach(d=>d.classList.toggle('off',offc.has(store(+d.dataset.s).ch)));if(on&&on.classList.contains('off'))hide()});
+  $$('#mrg .chip',el).forEach(b=>b.onclick=()=>{const r=b.dataset.r;hide();if(!r)return fly(1,0,0);const s=st.filter(x=>x.r===r);flyBox(s.map(x=>X(x.lo)),s.map(x=>Y(x.la)))});
+  apply()}
 
 // insights
 let INTEL;const intel=()=>INTEL??=fetch('/data/intel.json').then(r=>r.json());
