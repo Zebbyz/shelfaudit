@@ -1,0 +1,16 @@
+<!doctype html><html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Shelf Audit admin</title>
+<style>body{font:15px/1.5 system-ui;background:#0b0b0c;color:#f4efe6;margin:0;padding:16px;max-width:1100px}input,button,select{font:inherit;padding:8px;border-radius:8px;border:1px solid #444;background:#141311;color:inherit}.c{border:1px solid #2a2823;border-radius:10px;padding:12px;margin:10px 0}.m{color:#8d857a;font-size:13px}a{color:#ffe14a}</style></head><body>
+<h1>Shelf Audit moderation</h1><form id="l"><input id="t" type="password" placeholder="Admin token" size="40"> <button>Open</button></form><div id="o"></div>
+<script>
+const $=s=>document.querySelector(s),e=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));let T=sessionStorage.getItem('sat')||'';
+const H=()=>({'x-admin-token':T});
+async function load(){const r=await fetch('/api/admin/list',{headers:H()});if(!r.ok){$('#o').textContent='Token not accepted';return}const j=await r.json();sessionStorage.setItem('sat',T);$('#l').hidden=true;
+const sel=(k,id,s)=>`<select onchange="setS('${k}',${id},this.value)">${['pending','verified','rejected'].map(x=>`<option ${x==s?'selected':''}>${x}</option>`).join('')}</select>`;
+const fl=(k,id,has)=>has?` <a href="#" onclick="view('${k}',${id});return false">view file</a>`:'';
+$('#o').innerHTML=`<p class="m">${j.members} members</p><h2>Tips (${j.tips.length})</h2>${j.tips.map(t=>`<div class="c"><b>${e(t.store_name)}</b> ${t.staff?'[staff]':''} ${sel('tip',t.id,t.status)}<div>${e(t.product)} ${t.price!=null?'$'+t.price:''}</div><div>${e(t.issue)}</div><div class="m">#${t.id} ${e(t.created)} UTC · contact: ${e(t.contact)||'none'}${fl('tip',t.id,t.psz)}</div></div>`).join('')}
+<h2>Receipts (${j.receipts.length})</h2>${j.receipts.map(t=>`<div class="c"><b>${e(t.nick)}</b> (${e(t.email)}) ${sel('receipt',t.id,t.status)}<div>${e(t.store_name)} · ${e(t.rdate)} · ${t.total!=null?'$'+t.total:''}</div><div class="m">#${t.id} ${e(t.created)} UTC${fl('receipt',t.id,t.isz)}</div></div>`).join('')}
+<h2>API enquiries (${j.enquiries.length})</h2>${j.enquiries.map(t=>`<div class="c"><b>${e(t.name)}</b> ${e(t.org)} · <a href="mailto:${e(t.email)}">${e(t.email)}</a> · ${e(t.kind)}<div>${e(t.msg)}</div><div class="m">${e(t.created)} UTC</div></div>`).join('')}`}
+async function setS(kind,id,status){await fetch('/api/admin/set',{method:'POST',headers:{...H(),'content-type':'application/json'},body:JSON.stringify({kind,id,status})})}
+async function view(kind,id){const r=await fetch(`/api/admin/file?kind=${kind}&id=${id}`,{headers:H()});open(URL.createObjectURL(await r.blob()))}
+$('#l').onsubmit=ev=>{ev.preventDefault();T=$('#t').value.trim();load()};if(T)load();
+</script></body></html>

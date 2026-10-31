@@ -61,6 +61,17 @@ for a in chs:
             if a in m and b in m:
                 d=m[a]-m[b]; w[0 if d<-0.005 else 2 if d>0.005 else 1]+=1
         h2h[f'{a}|{b}']=w
-json.dump({'same':same,'differ':{c:v for c,v in differ.items()},'chaincat':chaincat,'out':out,'regions':regions,'gaps':gaps,'h2h':h2h,
+json.dump({'cap':M.get('last'),'same':same,'differ':{c:v for c,v in differ.items()},'chaincat':chaincat,'out':out,'regions':regions,'gaps':gaps,'h2h':h2h,
   'specials':{c:[v[0],v[1]] for c,v in sp.items()},'chix':chix},open(f'{D}/intel.json','w'),separators=(',',':'))
 json.dump(pchain,open(f'{D}/pchain.json','w'),separators=(',',':'))
+# public API v1 static JSON
+import os
+A=f'{D}/../api/v1';os.makedirs(f'{A}/products',exist_ok=True)
+cap=M.get('last');SID={s['id']:s for s in S}
+def sref(i):s=SID.get(i) or S[i];return {'id':s['id'],'chain':s['ch'],'name':s['nm'],'town':s.get('t'),'region':s.get('r')}
+W=lambda n,o:json.dump(o,open(f'{A}/{n}','w'),separators=(',',':'))
+W('stores.json',{'captured':cap,'count':len(S),'stores':[{'id':s['id'],'chain':s['ch'],'name':s['nm'],'town':s.get('t'),'region':s.get('r'),'lat':s.get('la'),'lon':s.get('lo'),'index':s.get('ix'),'thin_data':bool(s.get('thin'))} for s in S]})
+W('index.json',{'captured':cap,'note':'Index 100 = Woolworths national basket. Lower is cheaper.','chains':M.get('chains'),'chain_by_aisle':chaincat,'regions':regions})
+W('gaps.json',{'captured':cap,'rule':'Regular shelf prices, specials removed, products in 40+ stores','gaps':[{'product_id':g[0],'product':P[g[0]][0],'cheapest':{'price':g[1],'store':sref(g[2])},'dearest':{'price':g[3],'store':sref(g[4])},'gap':round(g[3]-g[1],2),'gap_pct':round((g[3]/g[1]-1)*100,1),'stores':g[5]} for g in gaps]})
+for i,p in enumerate(P):
+    W(f'products/{i}.json',{'captured':cap,'id':i,'name':p[0],'brand':p[1],'category':p[2],'median':p[3],'min':p[4],'max':p[5],'stores':p[6],'chain_median':p[7],'chain_regular_range':{c:{'lo':v[0],'hi':v[1],'stores':v[2]} for c,v in pchain.get(str(i),pchain.get(i,{})).items()} if pchain else {},'cheapest':[{'price':x[1],'store':sref(x[0])} for x in p[8]]})

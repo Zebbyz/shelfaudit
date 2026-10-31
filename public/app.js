@@ -14,6 +14,10 @@ const cls=ix=>ix==null?'nu':ix>100.4?'up':ix<99.6?'dn':'nu';
 const ixWord=ix=>ix==null?'not enough data':ix>100.4?`${(ix-100).toFixed(1)}% above the national median`:ix<99.6?`${(100-ix).toFixed(1)}% below the national median`:'about the national median';
 const km=(a,b,c,d)=>{const R=6371,t=Math.PI/180,x=Math.sin((c-a)*t/2)**2+Math.cos(a*t)*Math.cos(c*t)*Math.sin((d-b)*t/2)**2;return 2*R*Math.asin(Math.sqrt(x))};
 const store=id=>D.stores[id];
+const LOGO={'Woolworths':'woolworths',"Pak'nSave":'paknsave','New World':'newworld','FreshChoice':'freshchoice','Four Square':'foursquare'};
+const ini=c=>esc((c.match(/[A-Z]/g)||['?']).join('').slice(0,2));
+const chLogo=c=>LOGO[c]&&c!=='Four Square'?`<img class="clogo" src="/logos/${LOGO[c]}.png" alt="${esc(c)}" width="22" height="22" loading="lazy" onerror="this.outerHTML='<span class=&quot;clogo ini&quot; style=&quot;background:${CHCOL[c]||'#888'}&quot;>${ini(c)}</span>'">`:`<span class="clogo ini" style="background:${CHCOL[c]||'#888'}">${ini(c)}</span>`;
+
 const ls={get:(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set:(k,v)=>localStorage.setItem(k,JSON.stringify(v))};
 let basket=ls.get('sa-basket',{});
 let here=ls.get('sa-here',null);
@@ -23,12 +27,12 @@ function toast(t){const e=document.createElement('div');e.className='toast';e.te
 function setTitle(t){document.title=t?`${t} | Shelf Audit`:'Shelf Audit: who charges you more for the same groceries'}
 
 // ---------- charts ----------
-function ixBar(label,ix,href,sub=''){
+function ixBar(label,ix,href,sub='',ch=''){
   const span=15, d=Math.max(-span,Math.min(span,(ix??100)-100)), w=Math.abs(d)/span*50;
   const left=d>=0?50:50-w, c=cls(ix);
   const tag=href?'a':'div';
   return `<${tag} class="bar" ${href?`href="${href}"`:''} aria-label="${esc(label)}, index ${ix??'n/a'}, ${ixWord(ix)}">
-    <span class="lbl">${esc(label)}${sub?` <small>${esc(sub)}</small>`:''}</span>
+    <span class="lbl">${ch?chLogo(ch):''}${esc(label)}${sub?` <small>${esc(sub)}</small>`:''}</span>
     <span class="trk"><span class="fill ${c}" style="left:${left}%;width:${Math.max(w,.6)}%"></span><span class="mid"></span></span>
     <span class="v ${c}">${ix==null?'n/a':ix.toFixed(1)}</span></${tag}>`;
 }
@@ -136,6 +140,9 @@ R['']=()=>{
     <div class="stat"><b data-to="${m.matched}">${num(m.matched)}</b><span>products matched across stores</span></div>
     <div class="stat"><b style="font-size:clamp(26px,4vw,40px)">${nzDate(m.last)}</b><span>latest capture</span></div>
   </div>
+  <section class="blk pull"><p class="kicker">What if</p><blockquote><p>If just a quarter of supermarkets nudged prices up 3%, shoppers would pay about <span class="o">$211 million</span> a year more.</p></blockquote>
+  <p class="fine">Hypothetical, not a claim about any store. Supermarket and grocery store sales were $28.13 billion in the year to March 2026 (GST exclusive), per the <a href="https://www.stats.govt.nz/information-releases/retail-trade-survey-march-2026-quarter/" rel="noopener">Stats NZ Retail Trade Survey</a>. $28.13 billion × 25% × 3% = $211 million. Assumes sales are shared evenly across stores.</p></section>
+  <section class="blk" id="htop"></section>
   <section class="blk" id="hnear" ${here?'':'hidden'}></section>
   ${ex?`<section class="blk"><p class="kicker">Widest gap on a common item</p><h2>One product.<br>Two prices.</h2>${gapSlider(ex)}</section>`:''}
   <section class="blk">
@@ -158,6 +165,7 @@ R['']=()=>{
   </section>`;
   wireLoc('hloc',()=>{location.hash='#/near'});
   if(here)renderNear($('#hnear'),6);
+  topGaps($('#htop'));
   tagField($('#tf'));wireSlider();
 };
 function renderNear(el,n=12){
@@ -165,7 +173,7 @@ function renderNear(el,n=12){
   if(!s.length){el.innerHTML='<div class="empty">No captured stores within 40 km yet. Try a bigger town nearby.</div>';return}
   const sorted=[...s].sort((a,b)=>(a.thin-b.thin)||((a.ix??999)-(b.ix??999)));
   el.innerHTML=`<p class="kicker">Near ${esc(here.n)}</p><h2>Cheapest stores near you</h2><p class="say">Ranked by price index on identical products. ${sorted[0].ix?`${esc(sorted[0].nm)} is the cheapest nearby, ${ixWord(sorted[0].ix)}.`:''}</p>
-  <ol class="slist">${sorted.map((x,i)=>`<li><a href="#/store/${x.id}"><span class="rk">${i+1}</span><span class="nm">${esc(x.nm)}${x.thin?'<span class="badge">thin data</span>':''}<span class="sub">${esc(x.ch)}, ${x.d.toFixed(1)} km away</span></span><span class="pill ${cls(x.ix)}">${x.ix?x.ix.toFixed(1):'n/a'}</span></a></li>`).join('')}</ol>
+  <ol class="slist">${sorted.map((x,i)=>`<li><a href="#/store/${x.id}"><span class="rk">${i+1}</span>${chLogo(x.ch)}<span class="nm">${esc(x.nm)}${x.thin?'<span class="badge">thin data</span>':''}<span class="sub">${esc(x.ch)}, ${x.d.toFixed(1)} km away</span></span><span class="pill ${cls(x.ix)}">${x.ix?x.ix.toFixed(1):'n/a'}</span></a></li>`).join('')}</ol>
   <p style="margin-top:16px"><a class="btn" href="#/basket">Compare my basket at these stores</a></p>`;
 }
 R.near=()=>{setTitle('Stores near me');main.innerHTML=`<div class="ph"><p class="kicker">Store finder</p><h1 style="font-size:clamp(36px,7vw,64px)">Stores near me</h1>${locBox('nloc')}</div><section id="nres"></section>`;
@@ -191,11 +199,11 @@ R.p=async id=>{const p=D.products[+id];if(!p)return R.notfound();setTitle(p[0]);
   <p class="say">Stocked in ${p[6]} captured stores. Cheapest ${money(p[4])}, dearest ${money(p[5])}, typical ${money(p[3])}.</p>
   <button class="btn" data-add="${id}">${basket[id]?'In your basket':'Add to my basket'}</button></div>
   <section class="blk grid2"><div><h3>Typical price by chain</h3><div class="bars">${chm.sort((a,b)=>a[1]-b[1]).map(([c,v])=>`<div class="bar"><span class="lbl">${esc(c)}</span><span class="trk"><span class="fill" style="left:0;width:${v/mx*100}%;background:${CHCOL[c]}"></span></span><span class="v">${money(v)}</span></div>`).join('')}</div><p class="fine">Median shelf price across that chain's captured stores.</p></div>
-  <div><h3>Cheapest stores</h3><ol class="slist">${p[8].map(([s,v],i)=>`<li><a href="#/store/${s}"><span class="rk">${i+1}</span><span class="nm">${esc(store(s).nm)}<span class="sub">${esc(store(s).t)}</span></span><span class="pill dn">${money(v)}</span></a></li>`).join('')}</ol></div></section>
+  <div><h3>Cheapest stores</h3><ol class="slist">${p[8].map(([s,v],i)=>`<li><a href="#/store/${s}"><span class="rk">${i+1}</span>${chLogo(store(s).ch)}<span class="nm">${esc(store(s).nm)}<span class="sub">${esc(store(s).t)}</span></span><span class="pill dn">${money(v)}</span></a></li>`).join('')}</ol></div></section>
   <section class="blk" id="pchain"></section><section class="blk" id="pnear"></section>`;
   wireAdd();prodChain(id);
   const s=nearby(10);if(s.length){const pr=await Promise.all(s.map(x=>storePrices(x.id)));const rows=s.map((x,i)=>{const v=pr[i][id];return v==null?null:[x,Array.isArray(v)?v[0]:v,Array.isArray(v)]}).filter(Boolean).sort((a,b)=>a[1]-b[1]);
-    $('#pnear').innerHTML=`<h3>Near ${esc(here.n)}</h3>${rows.length?`<ol class="slist">${rows.map(([x,v,sp],i)=>`<li><a href="#/store/${x.id}"><span class="rk">${i+1}</span><span class="nm">${esc(x.nm)}${sp?'<span class="badge">special</span>':''}<span class="sub">${x.d.toFixed(1)} km</span></span><span class="pill ${i===0?'dn':v>rows[0][1]?'up':'nu'}">${money(v)}</span></a></li>`).join('')}</ol>`:'<p class="note">Not captured at stores near you yet.</p>'}`}
+    $('#pnear').innerHTML=`<h3>Near ${esc(here.n)}</h3>${rows.length?`<ol class="slist">${rows.map(([x,v,sp],i)=>`<li><a href="#/store/${x.id}"><span class="rk">${i+1}</span>${chLogo(x.ch)}<span class="nm">${esc(x.nm)}${sp?'<span class="badge">special</span>':''}<span class="sub">${x.d.toFixed(1)} km</span></span><span class="pill ${i===0?'dn':v>rows[0][1]?'up':'nu'}">${money(v)}</span></a></li>`).join('')}</ol>`:'<p class="note">Not captured at stores near you yet.</p>'}`}
   else $('#pnear').innerHTML=`<p class="note"><a href="#/near">Set your location</a> to see this product at stores near you.</p>`;
 };
 
@@ -242,7 +250,7 @@ R.league=(q='')=>{setTitle('League table');const params=new URLSearchParams(deco
   const run=()=>{const c=$('#lc').value,r=$('#lr').value,t=$('#lt').value,th=$('#lthin').checked;
     const s=D.stores.filter(x=>x.ix&&(th||!x.thin)&&(!c||x.ch===c)&&(!r||x.r===r)&&(!t||x.t===t)).sort((a,b)=>b.ix-a.ix);
     $('#lsay').textContent=s.length?`${s.length} stores. Dearest: ${s[0].nm} (${s[0].ix.toFixed(1)}). Cheapest: ${s[s.length-1].nm} (${s[s.length-1].ix.toFixed(1)}).`:'No stores match. FreshChoice stores are all thin data so far; tick include thin data.';
-    $('#lb').innerHTML=s.map(x=>ixBar(x.nm,x.ix,`#/store/${x.id}`,x.t!==x.nm.replace(/^\S+\s/,'')?x.t:'')).join('')};
+    $('#lb').innerHTML=s.map(x=>ixBar(x.nm,x.ix,`#/store/${x.id}`,x.t!==x.nm.replace(/^\S+\s/,'')?x.t:'',x.ch)).join('')};
   $$('select,#lthin').forEach(e=>e.onchange=run);run();
 };
 
@@ -259,7 +267,7 @@ R.store=id=>{const s=store(+id);if(!s)return R.notfound();setTitle(s.nm);
   <div class="stats" style="border-top:2px solid var(--ink)"><div class="stat"><b class="${cls(s.ix)}">${s.ix?s.ix.toFixed(1):'n/a'}</b><span>price index</span></div><div class="stat"><b>${s.above??'n/a'}%</b><span>of items above national median</span></div><div class="stat"><b>${num(s.m)}</b><span>matched products</span></div><div class="stat"><b>${rank>=0?`${rank+1} of ${D.meta.full}`:'n/a'}</b><span>cheapest nationally</span></div></div>
   <p class="say" style="margin-top:20px">${s.ix?`On identical products, this store is ${ixWord(s.ix)}.`:'Not enough matched products to rank this store.'} ${s.thin?'Thin data: fewer than 1,000 matched products, so treat the index as a rough guide.':''}</p><p class="fine">Captured ${nzTime(s.at)}.</p></div>
   ${cats.length?`<section class="blk"><h3>By aisle</h3><p class="note">Index for each category against the national median.</p>${legend()}<div class="bars">${cats.map(([c,v])=>ixBar(c,v)).join('')}</div></section>`:''}
-  ${peers.length?`<section class="blk"><h3>Compared with stores nearby</h3>${legend()}<div class="bars">${[{...s,d:0},...peers].sort((a,b)=>b.ix-a.ix).map(x=>ixBar(x.id===s.id?x.nm+' (this store)':x.nm,x.ix,`#/store/${x.id}`,x.id===s.id?'':x.d.toFixed(1)+' km')).join('')}</div></section>`:''}
+  ${peers.length?`<section class="blk"><h3>Compared with stores nearby</h3>${legend()}<div class="bars">${[{...s,d:0},...peers].sort((a,b)=>b.ix-a.ix).map(x=>ixBar(x.id===s.id?x.nm+' (this store)':x.nm,x.ix,`#/store/${x.id}`,x.id===s.id?'':x.d.toFixed(1)+' km',x.ch)).join('')}</div></section>`:''}
   <section class="blk"><a class="btn" href="#/basket">Price my basket here and nearby</a></section>`;
   if(s.la!=null&&!here){/* allow quick set */}
 };
@@ -351,7 +359,7 @@ async function mapSection(el){const g=await nzmap(),[x0,x1,y0,y1]=g.b,W=g.W,H=g.
   const place=c=>{const b=box.getBoundingClientRect(),r=c.getBoundingClientRect();const l=r.left-b.left+r.width/2,t=r.top-b.top;
     tip.style.left=Math.max(8,Math.min(b.width-tip.offsetWidth-8,l-tip.offsetWidth/2))+'px';tip.style.top=(t-tip.offsetHeight-12<0?t+r.height+12:t-tip.offsetHeight-12)+'px'};
   const show=c=>{const s=store(+c.dataset.s);on?.classList.remove('on');on=c;c.classList.add('on');
-    tip.innerHTML=`<span class="mbadge" style="background:${CHCOL[s.ch]||'#888'}">${esc((s.ch.match(/[A-Z]/g)||['?']).join('').slice(0,2))}</span><span><strong>${esc(s.nm)}</strong><br><small>${esc(s.ch)} · index <b class="${cls(s.ix)}">${s.ix?s.ix.toFixed(1):'n/a'}</b>${s.thin?' · thin data':''}</small><br><a href="#/store/${s.id}">See store</a></span>`;tip.hidden=false;place(c)};
+    tip.innerHTML=`${chLogo(s.ch).replace('clogo','clogo big')}<span><strong>${esc(s.nm)}</strong><br><small>${esc(s.ch)} · index <b class="${cls(s.ix)}">${s.ix?s.ix.toFixed(1):'n/a'}</b>${s.thin?' · thin data':''}</small><br><a href="#/store/${s.id}">See store</a></span>`;tip.hidden=false;place(c)};
   const hide=()=>{tip.hidden=true;on?.classList.remove('on');on=null};
   // pointers: drag, pinch, inertia, tap
   const pts=new Map();let last=null,moved=0,pinch=null,lastTap=0;
@@ -375,6 +383,11 @@ async function mapSection(el){const g=await nzmap(),[x0,x1,y0,y1]=g.b,W=g.W,H=g.
   apply()}
 
 // insights
+async function topGaps(el){try{const I=await intel();if(!el.isConnected||!I.gaps)return;
+  const cap=I.cap?new Date(I.cap):null,today=cap&&cap.toLocaleDateString('en-NZ',{timeZone:'Pacific/Auckland'})===new Date().toLocaleDateString('en-NZ',{timeZone:'Pacific/Auckland'});
+  const lab=cap?cap.toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric',timeZone:'Pacific/Auckland'}):'';
+  const st=id=>store(id),row=([i,lo,ls,hi,hs,n],k)=>{const a=st(ls),b=st(hs);return `<li><span class="pn"><a href="#/p/${i}"><b>${k+1}.</b> ${esc(D.products[i][0])}</a><small>${chLogo(a.ch)} Cheapest ${money(lo)} at <a href="#/store/${ls}">${esc(a.nm)}</a></small><small>${chLogo(b.ch)} Dearest ${money(hi)} at <a href="#/store/${hs}">${esc(b.nm)}</a></small></span><span class="range"><span class="up">${money(hi-lo)}</span><br><small>${Math.round((hi/lo-1)*100)}% gap · ${n} stores</small></span></li>`};
+  el.innerHTML=`<p class="kicker">${today?'Today':'Captured '+lab}</p><h2>${today?'Largest price gaps found in NZ today':'Largest price gaps found in NZ, captured '+lab}</h2><p class="say">The same product, the widest dollar gap between its cheapest and dearest regular shelf price. Specials removed, products stocked in 40 or more stores only.</p><ol class="plist" style="list-style:none;padding:0">${I.gaps.slice(0,5).map(row).join('')}</ol><p class="fine">Shelf prices as captured. Flagged for a closer look, not a finding. <a href="#/insights">More gaps in Insights</a></p>`}catch(e){el.hidden=true}}
 let INTEL;const intel=()=>INTEL??=fetch('/data/intel.json').then(r=>r.json());
 let PCH;const pchain=()=>PCH??=fetch('/data/pchain.json').then(r=>r.ok?r.json():{}).catch(()=>({}));
 const pct=(a,b)=>b?Math.round(a/b*100):0;
@@ -397,10 +410,10 @@ R.insights=async()=>{setTitle('Insights');main.innerHTML='<div class="loading">L
   <h3>Widest gaps inside one chain</h3><ul class="plist">${I.same.slice(0,20).map(([i,c,lo,ls,hi,hs,n])=>`<li><span class="pn"><a href="#/p/${i}">${esc(D.products[i][0])}</a><small>${esc(c)}, ${n} stores · cheapest at <a href="#/store/${ls}">${sn(ls)}</a>, dearest at <a href="#/store/${hs}">${sn(hs)}</a></small></span><span class="range"><span class="dn">${money(lo)}</span><br><small class="up">to ${money(hi)}</small></span></li>`).join('')}</ul>
   <p class="fine">Regular shelf prices only, specials removed. Owner-operated chains (Pak'nSave, New World) set prices store by store, so gaps are expected; they are shown so you can see them, not as a finding.</p></section>
   <section class="blk"><p class="kicker">Out of step with their own chain</p><h2>Store against its chain</h2><div class="grid2">
-  <div><h3>Dearer than their chain</h3><div class="results">${dear.map(([id,d])=>`<a class="res" href="#/store/${id}"><span><strong>${sn(id)}</strong><br><span class="meta">${esc(store(id).ch)} · index ${store(id).ix.toFixed(1)}</span></span><span class="amt up">+${d.toFixed(1)}</span></a>`).join('')}</div></div>
-  <div><h3>Cheaper than their chain</h3><div class="results">${chp.map(([id,d])=>`<a class="res" href="#/store/${id}"><span><strong>${sn(id)}</strong><br><span class="meta">${esc(store(id).ch)} · index ${store(id).ix.toFixed(1)}</span></span><span class="amt dn">${d.toFixed(1)}</span></a>`).join('')}</div></div></div>
+  <div><h3>Dearer than their chain</h3><div class="results">${dear.map(([id,d])=>`<a class="res" href="#/store/${id}"><span>${chLogo(store(id).ch)}<strong>${sn(id)}</strong><br><span class="meta">${esc(store(id).ch)} · index ${store(id).ix.toFixed(1)}</span></span><span class="amt up">+${d.toFixed(1)}</span></a>`).join('')}</div></div>
+  <div><h3>Cheaper than their chain</h3><div class="results">${chp.map(([id,d])=>`<a class="res" href="#/store/${id}"><span>${chLogo(store(id).ch)}<strong>${sn(id)}</strong><br><span class="meta">${esc(store(id).ch)} · index ${store(id).ix.toFixed(1)}</span></span><span class="amt dn">${d.toFixed(1)}</span></a>`).join('')}</div></div></div>
   <p class="fine">Points of index above or below the chain average (${ch.map(c=>`${esc(c)} ${I.chix[c]}`).join(', ')}). Flagged for comparison only. Local costs, product mix and specials can explain a gap.</p></section>
-  <section class="blk"><p class="kicker">Regions</p><h2>Region by region</h2><div class="tblwrap"><table class="table"><thead><tr><th>Region</th><th class="n">Stores</th><th class="n">Median index</th><th>Cheapest store</th><th>Dearest store</th></tr></thead><tbody>${I.regions.map(r=>`<tr><td>${esc(r.r)}</td><td class="n">${r.n}</td><td class="n ${cls(r.med)}">${r.med.toFixed(1)}</td><td><a href="#/store/${r.lo}">${sn(r.lo)}</a> <small class="dn">${store(r.lo).ix.toFixed(1)}</small></td><td><a href="#/store/${r.hi}">${sn(r.hi)}</a> <small class="up">${store(r.hi).ix.toFixed(1)}</small></td></tr>`).join('')}</tbody></table></div>
+  <section class="blk"><p class="kicker">Regions</p><h2>Region by region</h2><div class="tblwrap"><table class="table"><thead><tr><th>Region</th><th class="n">Stores</th><th class="n">Median index</th><th>Cheapest store</th><th>Dearest store</th></tr></thead><tbody>${I.regions.map(r=>`<tr><td>${esc(r.r)}</td><td class="n">${r.n}</td><td class="n ${cls(r.med)}">${r.med.toFixed(1)}</td><td>${chLogo(store(r.lo).ch)}<a href="#/store/${r.lo}">${sn(r.lo)}</a> <small class="dn">${store(r.lo).ix.toFixed(1)}</small></td><td>${chLogo(store(r.hi).ch)}<a href="#/store/${r.hi}">${sn(r.hi)}</a> <small class="up">${store(r.hi).ix.toFixed(1)}</small></td></tr>`).join('')}</tbody></table></div>
   <p class="note">Chain matters far more than place. Within each region, each chain's median index sits close to its national figure, so the store you choose counts more than the town you live in.</p></section>
   <section class="blk"><p class="kicker">Biggest dollar gaps</p><h2>Where the gap costs most</h2><p class="say">Products in 40 or more stores with the biggest dollar difference between cheapest and dearest regular price.</p>
   <ul class="plist">${I.gaps.slice(0,20).map(([i,lo,ls,hi,hs,n])=>`<li><span class="pn"><a href="#/p/${i}">${esc(D.products[i][0])}</a><small>${n} stores · ${money(hi-lo)} more at <a href="#/store/${hs}">${sn(hs)}</a> than <a href="#/store/${ls}">${sn(ls)}</a></small></span><span class="range"><span class="dn">${money(lo)}</span><br><small class="up">to ${money(hi)}</small></span><button class="add ${basket[i]?'in':''}" data-add="${i}" aria-label="Add ${esc(D.products[i][0])}">${basket[i]?'✓':'+'}</button></li>`).join('')}</ul>
@@ -422,3 +435,86 @@ $('.menu-btn').onclick=()=>{const o=$('#nav').classList.toggle('open');$('.menu-
 Promise.all(['meta','stores','products','dairy'].map(k=>fetch(`/data/${k}.json`).then(r=>r.json()))).then(([meta,stores,products,dairy])=>{
   Object.assign(D,{meta,stores,products,dairy});$('#fresh').textContent=`Prices as captured ${nzDate(meta.first)} to ${nzDate(meta.last)}. Data export ${nzTime(meta.generated)}.`;
   addEventListener('hashchange',route);route()}).catch(()=>{main.innerHTML='<div class="empty">Could not load price data. Please refresh.</div>'});
+
+/* ===== Shelf tickets in the gutters (vs national median) ===== */
+(function tickets(){const mq=matchMedia('(min-width:900px)'),rm=matchMedia('(prefers-reduced-motion: reduce)');let box,tk=[],raf=0;
+  function pick(){const P=D.products.filter(p=>p[6]>=40&&p[3]>=1.5&&p[5]>p[3]&&p[4]<p[3]);const out=[];for(let k=0;k<14;k++){const p=P[Math.floor(Math.random()*P.length)];const up=k%2==1;const v=up?p[5]:p[4];out.push({n:p[0],v,d:Math.abs(v-p[3]),up,m:p[3]})}return out}
+  function draw(){if(box)box.remove();if(!mq.matches||!D?.products)return;box=document.createElement('div');box.className='sa-tks';box.setAttribute('aria-hidden','true');
+    tk=pick().map((t,i)=>{const e=document.createElement('div');e.className='sa-tk '+(t.up?'up':'dn');const L=i%2==0;
+      e.style.cssText=`${L?'left':'right'}:${8+Math.random()*28}px;top:${(i>>1)*16+Math.random()*6}%`;
+      e.innerHTML=`<span class="tn">${esc(t.n)}</span><span class="tp">${money(t.v)}</span><span class="tu">${t.up?'▲':'▼'} ${money(t.d)} vs national median ${money(t.m)}</span>`;box.appendChild(e);
+      return {e,s:.15+Math.random()*.45,r:(Math.random()-.5)*10,ph:Math.random()*6.28}});document.body.prepend(box);loop()}
+  function loop(){cancelAnimationFrame(raf);const f=t=>{const y=scrollY;for(const k of tk){const sw=rm.matches?0:Math.sin(t/2400+k.ph)*6;k.e.style.transform=`translate3d(${sw}px,${rm.matches?0:-y*k.s}px,0) rotate(${k.r+(rm.matches?0:sw/4)}deg)`}if(!rm.matches)raf=requestAnimationFrame(f)};raf=requestAnimationFrame(f);if(rm.matches)addEventListener('scroll',()=>f(0),{passive:true})}
+  const go=()=>D?.products?draw():setTimeout(go,400);go();mq.addEventListener('change',draw);setInterval(()=>{if(!document.hidden&&mq.matches)draw()},45000)})();
+
+/* ===== Tip bar, tips, members, receipts, leaderboard, API ===== */
+const API='/api/';let TSK;const tsCfg=()=>TSK??=fetch(API+'config').then(r=>r.json()).catch(()=>({}));
+async function tsMount(form){const c=await tsCfg();if(!c.sitekey)return;if(!window.turnstile){await new Promise(r=>{const s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';s.onload=r;document.head.appendChild(s)})}
+  const d=form.querySelector('.ts');if(d&&!d.dataset.on){d.dataset.on=1;turnstile.render(d,{sitekey:c.sitekey,theme:'dark'})}}
+const mtok=()=>localStorage.getItem('sa_member');
+const storeOpts=()=>`<datalist id="dl-st">${D.stores.map(s=>`<option value="${esc(s.nm)}${s.t?', '+esc(s.t):''}">`).join('')}</datalist>`;
+const stFind=v=>D.stores.find(s=>(s.nm+(s.t?', '+s.t:''))===v)||D.stores.find(s=>s.nm===v);
+function prodAuto(inp){const dl=document.createElement('datalist');dl.id='dl-p'+Math.random().toString(36).slice(2);inp.setAttribute('list',dl.id);inp.after(dl);
+  inp.addEventListener('input',()=>{const q=inp.value.toLowerCase().trim();if(q.length<2)return;const w=q.split(/\s+/);dl.innerHTML=D.products.filter(p=>w.every(x=>p[0].toLowerCase().includes(x))).slice(0,20).map(p=>`<option value="${esc(p[0])}">`).join('')})}
+async function shrink(file){if(!file)return null;if(file.type==='application/pdf'){if(file.size>600*1024)throw new Error('PDF too large, keep it under 600 KB');return file}
+  if(!file.type.startsWith('image/'))throw new Error('Photo or PDF only');const img=await createImageBitmap(file);let w=img.width,h=img.height,m=1400;if(Math.max(w,h)>m){const k=m/Math.max(w,h);w=Math.round(w*k);h=Math.round(h*k)}
+  const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);for(const q of[.72,.6,.45,.35]){const b=await new Promise(r=>c.toBlob(r,'image/jpeg',q));if(b.size<=560*1024)return new File([b],'img.jpg',{type:'image/jpeg'})}throw new Error('Image too large')}
+async function post(path,fd,auth){const h={};if(auth)h.authorization='Bearer '+auth;const r=await fetch(API+path,{method:'POST',body:fd,headers:h});const j=await r.json().catch(()=>({error:'Network error'}));if(!r.ok||j.error)throw new Error(j.error||'Error');return j}
+const fld=(l,inner,hint='')=>`<label class="fl"><span>${l}${hint?` <small>${hint}</small>`:''}</span>${inner}</label>`;
+function wireForm(f,fn){tsMount(f);f.addEventListener('submit',async e=>{e.preventDefault();const b=f.querySelector('button[type=submit]'),o=f.querySelector('.fmsg');b.disabled=true;o.textContent='Sending';o.className='fmsg';
+  try{await fn(new FormData(f));}catch(x){o.textContent=x.message;o.className='fmsg err';try{turnstile.reset()}catch(_){}}b.disabled=false})}
+
+(function tipbar(){const b=document.createElement('a');b.className='tipbar';b.href='#/tip';b.innerHTML='<span>Spotted a rip-off?</span> <b>Tip us</b>';document.body.prepend(b)})();
+document.querySelector('#nav')?.insertAdjacentHTML('beforeend','<a href="#/join">Members</a><a href="#/leaderboard">Leaderboard</a><a href="#/api">API</a>');
+
+R.tip=()=>{setTitle('Tip us');main.innerHTML=`<div class="ph"><p class="kicker">Tip line</p><h1 style="font-size:clamp(36px,7vw,64px)">Spotted a rip-off? Tip us</h1><p class="lede">Shoppers and staff welcome. Anonymous by default. Every tip is private and checked by a person before anything is used. Nothing is published automatically.</p></div>
+<form class="sform" id="tipf">${storeOpts()}
+${fld('Store','<input name="store" list="dl-st" required autocomplete="off" placeholder="Start typing a store or town">')}
+${fld('Product','<input name="product" autocomplete="off" placeholder="e.g. Anchor milk 2L">','optional')}
+${fld('Price you saw','<input name="price" inputmode="decimal" placeholder="$">','optional')}
+${fld('What is wrong','<textarea name="issue" required rows="4" placeholder="Shelf said one price, till charged another, special not applied..."></textarea>')}
+${fld('Photo','<input type="file" name="photo_raw" accept="image/*">','optional, shrunk on your phone before sending')}
+${fld('Contact','<input name="contact" placeholder="Email or phone, if you are happy for us to follow up">','optional')}
+<label class="chk"><input type="checkbox" name="staff" value="1"> I work here</label>
+<input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="ts"></div>
+<button class="btn" type="submit">Send tip</button><p class="fmsg" role="status"></p></form>`;
+  const f=$('#tipf');prodAuto(f.product);wireForm(f,async fd=>{const s=stFind(fd.get('store'));fd.set('store_name',fd.get('store'));if(s)fd.set('store_id',s.id);
+    const ph=await shrink(f.photo_raw.files[0]);fd.delete('photo_raw');if(ph)fd.set('photo',ph);await post('tip',fd,mtok());
+    f.innerHTML='<h2>Thanks. Tip received.</h2><p class="say">It goes to a private queue and a person checks it. We may never publish it, and we never publish names.</p><p><a class="btn ghost" href="#/">Back to Shelf Audit</a></p>'})};
+
+R.join=async()=>{setTitle('Members');const t=mtok();
+  if(!t){main.innerHTML=`<div class="ph"><p class="kicker">Members</p><h1 style="font-size:clamp(36px,7vw,64px)">Help audit the shelves</h1><p class="lede">Join with a nickname and email, then upload receipts. Checked receipts help us catch till prices that do not match the shelf. Your email is never shown.</p></div>
+<form class="sform" id="joinf">${fld('Nickname','<input name="nick" required maxlength="30" autocomplete="nickname">','shown on the leaderboard')}${fld('Email','<input name="email" type="email" required autocomplete="email">','private')}
+<input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="ts"></div><button class="btn" type="submit">Join</button><p class="fmsg" role="status"></p></form>`;
+    wireForm($('#joinf'),async fd=>{const j=await post('join',fd);localStorage.setItem('sa_member',j.token);R.join()});return}
+  main.innerHTML='<div class="loading">Loading</div>';const r=await fetch(API+'me',{headers:{authorization:'Bearer '+t}});if(r.status===401){localStorage.removeItem('sa_member');return R.join()}const me=await r.json();
+  main.innerHTML=`<div class="ph"><p class="kicker">Members</p><h1 style="font-size:clamp(36px,7vw,64px)">Kia ora, ${esc(me.nick)}</h1><p class="lede">Upload a receipt. A person checks it against shelf prices before it counts.</p></div>
+<form class="sform" id="rcf">${storeOpts()}${fld('Store','<input name="store" list="dl-st" required autocomplete="off" placeholder="Start typing a store or town">')}
+${fld('Date','<input name="date" type="date" required>')}${fld('Total','<input name="total" inputmode="decimal" placeholder="$">')}${fld('Receipt','<input type="file" name="raw" accept="image/*,application/pdf" required>','photo or PDF')}
+<button class="btn" type="submit">Upload receipt</button><p class="fmsg" role="status"></p></form>
+<section class="blk"><h2>Your receipts</h2>${me.receipts.length?`<ul class="plist">${me.receipts.map(x=>`<li><span class="pn">${esc(x.store_name)}<small>${esc(x.rdate||'')} · ${x.total!=null?money(x.total):''}</small></span><span class="range"><small>${x.status==='pending'?'Received, pending check':x.status==='verified'?'Verified':'Not accepted'}</small></span></li>`).join('')}</ul>`:'<p class="say">None yet.</p>'}</section>`;
+  const f=$('#rcf');f.date.value=new Date().toISOString().slice(0,10);wireForm(f,async fd=>{const s=stFind(fd.get('store'));fd.set('store_name',fd.get('store'));if(s)fd.set('store_id',s.id);const x=await shrink(f.raw.files[0]);fd.delete('raw');fd.set('file',x);await post('receipt',fd,t);R.join()})};
+
+R.leaderboard=async()=>{setTitle('Leaderboard');main.innerHTML='<div class="loading">Loading</div>';const j=await fetch(API+'leaderboard').then(r=>r.json()).catch(()=>({rows:[]}));
+  main.innerHTML=`<div class="ph"><p class="kicker">Leaderboard</p><h1 style="font-size:clamp(36px,7vw,64px)">Top shelf auditors</h1><p class="lede">Ranked by checked receipts and checked tips. Only verified contributions count.</p></div><section class="blk">${j.rows?.length?`<ol class="plist" style="list-style:none;padding:0">${j.rows.map((r,i)=>`<li><span class="pn"><b>${i+1}.</b> ${esc(r.nick)}</span><span class="range">${r.rc} receipts<br><small>${r.tc} tips</small></span></li>`).join('')}</ol>`:`<h2>Be the first</h2><p class="say">No verified contributions yet.</p><p><a class="btn" href="#/join">Join and upload a receipt</a></p>`}</section>`};
+
+R.api=async()=>{setTitle('API');const I=await intel();const g=I.gaps[0],p=D.products[g[0]];const ex=(u,o)=>`<p class="kicker">GET <a href="${u}">${u}</a></p><pre class="code">${esc(JSON.stringify(o,null,2)).slice(0,900)}</pre>`;
+  const s0=D.stores[0];const host=location.origin;
+  main.innerHTML=`<div class="ph prose"><p class="kicker">Shelf Audit API</p><h1 style="font-size:clamp(36px,7vw,64px)">Know every shelf price in New Zealand before your shoppers do</h1><p class="lede">${D.meta.stores} New Zealand supermarkets, ${D.products.length.toLocaleString('en-NZ')} matched products. Benchmarks for supermarkets, evidence for regulators.</p><p><a class="btn" href="#enq">Request access</a> <a class="btn ghost" href="/api/v1/gaps.json">Try the open API</a></p><div class="stats"><div><b>${D.meta.stores}</b><span>stores</span></div><div><b>${D.products.length.toLocaleString('en-NZ')}</b><span>matched products</span></div><div><b>${(D.meta.prices/1e6).toFixed(1)} million</b><span>prices captured</span></div><div><b>4</b><span>chains</span></div></div></div>
+<div class="prose"><section class="blk"><p class="kicker">For supermarkets</p><h2>Price more intelligently</h2><p>See where you sit against competitors and neighbouring stores: chain and regional benchmarks, a price index by aisle, and store-level spreads on identical products. Useful for spotting a shelf that has drifted out of line before shoppers do.</p></section>
+<section class="blk"><p class="kicker">For regulators</p><h2>We are here to help</h2><p>Helping agencies such as the Commerce Commission find stores that have not quite got the hang of honest pricing yet. We flag patterns worth a closer look, with the evidence, so attention goes where it is most useful. Shelf Audit is independent and has no partnership with, or endorsement from, any agency or supermarket.</p></section>
+<section class="blk"><h2>Open endpoints</h2><p>Static JSON, no key needed. Captured ${esc(new Date(D.meta.last).toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'}))}.</p>
+<ul><li><code>/api/v1/stores.json</code> every store with chain, town, region, location and index</li><li><code>/api/v1/products/{id}.json</code> one product: median, range, chain medians, regular price range by chain, cheapest stores</li><li><code>/api/v1/index.json</code> chain index, chain by aisle, regions</li><li><code>/api/v1/gaps.json</code> largest regular-price gaps, products in 40+ stores</li></ul>
+${ex('/api/v1/gaps.json',{captured:I.cap,gaps:[{product_id:g[0],product:p[0],cheapest:{price:g[1],store:{id:g[2],name:D.stores[g[2]]?.nm}},dearest:{price:g[3],store:{id:g[4],name:D.stores[g[4]]?.nm}},gap:+(g[3]-g[1]).toFixed(2),stores:g[5]},'...']})}
+${ex('/api/v1/products/'+g[0]+'.json',{id:g[0],name:p[0],brand:p[1],category:p[2],median:p[3],min:p[4],max:p[5],stores:p[6],chain_median:p[7],'...':''})}
+${ex('/api/v1/stores.json',{count:D.stores.length,stores:[{id:s0.id,chain:s0.ch,name:s0.nm,town:s0.t,region:s0.r,index:s0.ix},'...']})}
+<p>Example: <code>curl ${esc(host)}/api/v1/gaps.json</code></p></section>
+<section class="blk"><h2>Coverage, updates and method</h2><p>Coverage: ${D.meta.stores} stores across Woolworths, Pak'nSave, New World and FreshChoice; ${D.meta.full} with full captures. FreshChoice data is thin and left out of chain comparisons. Some stores lack map coordinates.</p><p>Updates: captures are currently run manually, not on a fixed schedule. Each file carries its capture date. There is no price history yet, so changes over time are not available.</p><p>Method: identical products are matched across stores by barcode and name. Index 100 is the Woolworths national basket. Gaps use regular shelf prices with specials removed. Anything unusual is flagged for a closer look, never assumed. <a href="#/method">Full method</a></p></section>
+<section class="blk"><p class="kicker">Pricing</p><h2>Pick your coverage</h2><div class="prices">
+<div class="pcard"><p class="kicker">Local</p><p class="pbig">$595<small> / month + GST</small></p><p>Every store within a 50km radius of your location.</p><ul><li>Competitor and regional benchmarks</li><li>Index by aisle</li><li>Store-level spreads on identical products</li></ul><p class="note">Monthly, per calendar month.</p><a class="btn ghost" href="#enq" data-plan="Local">Request access</a></div>
+<div class="pcard feat"><p class="kicker">National · most popular</p><p class="pbig">$1,850<small> / month + GST</small></p><p>All ${D.meta.stores} stores in New Zealand.</p><p class="pann">Or $1,450 / month + GST paid annually ($17,400 + GST a year). Save $4,800 a year.</p><ul><li>Everything in Local, nationwide</li><li>Chain and region comparisons</li><li>Flagged pricing patterns with evidence</li></ul><a class="btn" href="#enq" data-plan="National">Request access</a></div>
+</div><p class="fine">Annual pricing currently applies to National only. No payment is taken online; we set up access after a conversation. The open endpoints above stay free.</p></section>
+<section class="blk" id="enq"><h2>Request access</h2><p>Or email <a href="mailto:guy.hollister@gmail.com">guy.hollister@gmail.com</a>.</p>
+<form class="sform" id="enqf">${fld('Name','<input name="name" required>')}${fld('Organisation','<input name="org">')}${fld('Email','<input name="email" type="email" required>')}${fld('Interested in','<select name="kind"><option>National plan</option><option>Local plan</option><option>Supermarket benchmarks</option><option>Regulator</option><option>Research or media</option><option>Other</option></select>')}${fld('Message','<textarea name="msg" rows="4"></textarea>')}<input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="ts"></div><button class="btn" type="submit">Send enquiry</button><p class="fmsg" role="status"></p></form></section></div>`;
+  main.querySelectorAll('a[href="#enq"]').forEach(a=>a.onclick=e=>{e.preventDefault();if(a.dataset.plan)$('#enqf').kind.value=a.dataset.plan==='Local'?'Local plan':'National plan';$('#enq').scrollIntoView({behavior:'smooth'})});
+  const f=$('#enqf');wireForm(f,async fd=>{await post('enquiry',fd);f.innerHTML='<h2>Thanks, enquiry received.</h2><p class="say">Guy will be in touch.</p>'})};
