@@ -16,7 +16,7 @@ const km=(a,b,c,d)=>{const R=6371,t=Math.PI/180,x=Math.sin((c-a)*t/2)**2+Math.co
 const store=id=>D.stores[id];
 const LOGO={'Woolworths':'woolworths',"Pak'nSave":'paknsave','New World':'newworld','FreshChoice':'freshchoice','Four Square':'foursquare'};
 const ini=c=>esc((c.match(/[A-Z]/g)||['?']).join('').slice(0,2));
-const chLogo=c=>LOGO[c]&&c!=='Four Square'?`<img class="clogo" src="/logos/${LOGO[c]}.png" alt="${esc(c)}" width="22" height="22" loading="lazy" onerror="this.outerHTML='<span class=&quot;clogo ini&quot; style=&quot;background:${CHCOL[c]||'#888'}&quot;>${ini(c)}</span>'">`:`<span class="clogo ini" style="background:${CHCOL[c]||'#888'}">${ini(c)}</span>`;
+const chLogo=c=>LOGO[c]&&c!=='Four Square'?`<img class="clogo" src="/logos/${LOGO[c]}.${c==="Pak'nSave"?'svg':'png'}" alt="${esc(c)}" height="24" loading="lazy" onerror="this.outerHTML='<span class=&quot;clogo ini&quot; style=&quot;background:${CHCOL[c]||'#888'}&quot;>${ini(c)}</span>'">`:`<span class="clogo ini" style="background:${CHCOL[c]||'#888'}">${ini(c)}</span>`;
 
 const ls={get:(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set:(k,v)=>localStorage.setItem(k,JSON.stringify(v))};
 let basket=ls.get('sa-basket',{});
