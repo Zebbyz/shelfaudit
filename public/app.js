@@ -3,7 +3,7 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelect
 const main=$('#main');
 const D={};
 const CH=['Woolworths',"Pak'nSave",'New World','FreshChoice'];
-const CHCOL={'Woolworths':'#1d6b45',"Pak'nSave":'#d9a400','New World':'#c8361f','FreshChoice':'#2f6fb0'};
+const CHCOL={'Woolworths':'#2fbf7a',"Pak'nSave":'#ffe14a','New World':'#ff4a36','FreshChoice':'#4a9bff'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=v=>v==null?'n/a':'$'+v.toFixed(2);
 const bigMoney=v=>v>=1e9?'$'+(v/1e9).toFixed(2).replace(/\.?0+$/,'')+' billion':v>=1e6?'$'+(v/1e6).toFixed(1).replace(/\.0$/,'')+' million':'$'+Math.round(v).toLocaleString('en-NZ');
@@ -79,39 +79,75 @@ const locBox=(id='loc')=>`<form class="search" id="${id}" role="search" onsubmit
 function wireLoc(id,cb){const el=$('#'+id);placeSearch(el,cb);$('[data-geo]',el).onclick=()=>geolocate(cb)}
 
 // ---------- pages ----------
+// ---------- v3 visual layer ----------
+const reveal=()=>{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});$$('main .blk,main .stats,main .chains,main .ph').forEach(e=>{e.classList.add('rv');io.observe(e)})};
+addEventListener('pointermove',e=>{const r=document.documentElement.style;r.setProperty('--mx',e.clientX+'px');r.setProperty('--my',e.clientY+'px')},{passive:true});
+function countUp(el){const to=parseFloat(el.dataset.to),dec=+(el.dataset.dec||0),suf=el.dataset.suf||'',t0=performance.now();const f=t=>{const p=Math.min((t-t0)/1600,1),v=to*(1-Math.pow(1-p,4));el.textContent=(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-NZ'))+suf;if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+function wireCounts(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);io.unobserve(e.target)}}),{threshold:.5});$$('[data-to]').forEach(e=>io.observe(e))}
+function tagField(cv){
+  const ctx=cv.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let W,H,mx=-999,my=-999,vis=true;
+  const rs=()=>{W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)};rs();addEventListener('resize',rs);
+  const pool=D.products.filter(p=>p[6]>=40&&p[3]>0).sort(()=>Math.random()-.5).slice(0,34);
+  const T=pool.map((p,i)=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:(Math.random()-.5)*1.2,vr:(Math.random()-.5)*.005,s:.7+Math.random()*.9,hot:i%4===0,nm:p[0].replace(/\s+\d.*$/,'').slice(0,18),pr:p[3].toFixed(2)}));
+  cv.parentNode.addEventListener('pointermove',e=>{const b=cv.getBoundingClientRect();mx=e.clientX-b.left;my=e.clientY-b.top},{passive:true});
+  new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(cv);
+  const draw=()=>{
+    if(!cv.isConnected)return;
+    if(vis){ctx.clearRect(0,0,W,H);
+      for(const t of T){const dx=t.x-mx,dy=t.y-my,d=Math.hypot(dx,dy);if(d<200){t.vx+=dx/d*.14;t.vy+=dy/d*.14;t.vr+=.001}
+        t.vx*=.985;t.vy*=.985;if(!RM){t.x+=t.vx;t.y+=t.vy;t.r+=t.vr}
+        if(t.x<-120)t.x=W+120;if(t.x>W+120)t.x=-120;if(t.y<-90)t.y=H+90;if(t.y>H+90)t.y=-90;
+        ctx.save();ctx.translate(t.x,t.y);ctx.rotate(t.r);ctx.scale(t.s,t.s);ctx.globalAlpha=t.hot?.92:.3;
+        ctx.fillStyle=t.hot?'#ffe14a':'#f4efe6';ctx.beginPath();ctx.roundRect(-70,-40,140,80,10);ctx.fill();
+        ctx.fillStyle='#0b0b0c';ctx.beginPath();ctx.arc(-58,-28,4.5,0,6.3);ctx.fill();
+        ctx.textAlign='center';ctx.font='700 11px Lato,Arial';ctx.fillText(t.nm.toUpperCase(),4,-18);ctx.font='900 34px Lato,Arial';ctx.fillText('$'+t.pr,4,22);ctx.restore()}}
+    requestAnimationFrame(draw)};
+  draw()}
+function gapSlider(p){
+  const cheap=store(p[8][0][0]),ratio=Math.round((p[5]/p[4]-1)*100);
+  return `<div class="cmp" id="cmp" style="--p:50%"><div class="pn2">${esc(p[0])} · ${p[6]} stores</div>
+  <div class="sd a"><small>Cheapest · ${esc(cheap.nm)}</small><span class="pr">${money(p[4])}</span></div>
+  <div class="sd b"><small>Dearest store, as captured</small><span class="pr">${money(p[5])}</span></div><div class="kb"></div></div>
+  <p class="fine" style="margin-top:12px">Drag to compare. The dearest store charges ${ratio}% more for the identical product. <a href="#/p/${D.products.indexOf(p)}">See every store</a>.</p>`}
+function wireSlider(){const cm=$('#cmp');if(!cm)return;let dn=0;const mv=x=>{const b=cm.getBoundingClientRect();cm.style.setProperty('--p',Math.max(4,Math.min(96,(x-b.left)/b.width*100))+'%')};
+  cm.addEventListener('pointerdown',e=>{dn=1;cm.setPointerCapture(e.pointerId);mv(e.clientX)});cm.addEventListener('pointermove',e=>{if(dn)mv(e.clientX)});cm.addEventListener('pointerup',()=>dn=0)}
 const R={};
 R['']=()=>{
   setTitle();const m=D.meta,c=m.chains;
   const best=Object.entries(c).filter(x=>x[1].ix).sort((a,b)=>a[1].ix-b[1].ix);
   const wide=D.products.filter(p=>p[6]>=30).map(p=>p[5]/p[4]).sort((a,b)=>b-a);const medGap=wide[Math.floor(wide.length/2)];
   const ex=D.products.filter(p=>p[6]>=60&&p[4]>2).sort((a,b)=>b[5]/b[4]-a[5]/a[4])[0];
+  const tk=D.products.filter(p=>p[6]>=50&&p[4]>1.5).sort((a,b)=>b[5]/b[4]-a[5]/a[4]).slice(0,24).map(p=>`<span>${esc(p[0])} <i>${money(p[4])}</i> to <i>${money(p[5])}</i></span>`).join('');
   main.innerHTML=`
-  <section class="hero">
-    <p class="kicker">Independent price watchdog, New Zealand</p>
-    <h1>Same product.<br><em>Different price.</em></h1>
-    <p class="lede">We price-check identical groceries across ${num(m.stores)} supermarkets, store by store, so you can see which one near you charges less for your basket, and who is creeping prices up.</p>
-    ${locBox('hloc')}
-    <p class="fine">Pick a town or tap Near me. Your location stays on your device.</p>
+  <section class="hero2"><canvas id="tf" aria-hidden="true"></canvas>
+    <div class="hero2-in">
+      <p class="kicker">Independent price watchdog · New Zealand</p>
+      <h1><span>Same <span class="o">product.</span></span><em>Different <span class="o">price.</span></em></h1>
+      <p class="lede">We price-check identical groceries across ${num(m.stores)} supermarkets, store by store, so you can see which one near you charges less for your basket, and who is creeping prices up.</p>
+      ${locBox('hloc')}
+      <p class="fine">Pick a town or tap Near me. Your location stays on your device.</p>
+    </div><div class="cue">SCROLL TO AUDIT</div>
   </section>
+  <div class="mq" aria-hidden="true"><div>${tk}${tk}</div></div>
   <div class="stats">
-    <div class="stat"><b>${num(m.stores)}</b><span>stores captured</span></div>
-    <div class="stat"><b>${(m.prices/1e6).toFixed(1)} million</b><span>shelf prices read</span></div>
-    <div class="stat"><b>${num(m.matched)}</b><span>products matched across stores</span></div>
-    <div class="stat"><b>${nzDate(m.last)}</b><span>latest capture</span></div>
+    <div class="stat"><b data-to="${m.stores}">${num(m.stores)}</b><span>stores captured</span></div>
+    <div class="stat"><b data-to="${(m.prices/1e6).toFixed(1)}" data-dec="1" data-suf="M">${(m.prices/1e6).toFixed(1)}M</b><span>shelf prices read</span></div>
+    <div class="stat"><b data-to="${m.matched}">${num(m.matched)}</b><span>products matched across stores</span></div>
+    <div class="stat"><b style="font-size:clamp(26px,4vw,40px)">${nzDate(m.last)}</b><span>latest capture</span></div>
   </div>
   <section class="blk" id="hnear" ${here?'':'hidden'}></section>
+  ${ex?`<section class="blk"><p class="kicker">Widest gap on a common item</p><h2>One product.<br>Two prices.</h2>${gapSlider(ex)}</section>`:''}
   <section class="blk">
     <p class="kicker">The big picture</p>
-    <h2>Which chain is cheapest?</h2>
+    <h2>Which chain<br>is cheapest?</h2>
     <p class="say">On the same products, ${esc(best[0][0])} averages ${(100-best[0][1].ix).toFixed(1)}% below the national median, and ${esc(best[best.length-1][0])} averages ${(best[best.length-1][1].ix-100).toFixed(1)}% above it.</p>
-    <div class="chains">${CH.map(n=>{const x=c[n];return `<div class="chain" style="border-top:8px solid ${CHCOL[n]}"><div class="note">${esc(n)}</div><div class="ix ${cls(x.ix)}">${x.ix?x.ix.toFixed(1):'n/a'} <small>index</small></div><div class="what">${x.ix?ixWord(x.ix):'Not enough matching products yet'}</div><div class="fine">${x.n} stores captured</div></div>`}).join('')}</div>
-    <p class="fine" style="margin-top:12px">Index 100 is the national median price for each identical product. 90 means you pay about 10% less. <a href="#/method">How we work it out</a>.</p>
+    <div class="chains">${CH.map(n=>{const x=c[n];return `<div class="chain" style="border-top:8px solid ${CHCOL[n]}"><div class="note">${esc(n)}</div><div class="ix ${cls(x.ix)}">${x.ix?`<span data-to="${x.ix.toFixed(1)}" data-dec="1">${x.ix.toFixed(1)}</span>`:'n/a'} <small>index</small></div><div class="what">${x.ix?ixWord(x.ix):'Not enough matching products yet'}</div><div class="fine">${x.n} stores captured</div></div>`}).join('')}</div>
+    <p class="fine" style="margin-top:14px">Index 100 is the national median price for each identical product. 90 means you pay about 10% less. <a href="#/method">How we work it out</a>.</p>
   </section>
   <section class="blk grid2">
-    <div><p class="kicker">Why it matters</p><h2>The gap is real</h2>
-    <p class="say">Across products stocked in 30 or more stores, the dearest store typically charges ${Math.round((medGap-1)*100)}% more than the cheapest for the exact same item.</p>
-    ${ex?`<div class="card"><div class="note">Widest gap on a common item</div><h3 style="margin:.3em 0"><a href="#/p/${D.products.indexOf(ex)}">${esc(ex[0])}</a></h3><p style="font:600 22px var(--mono);margin:0"><span class="dn">${money(ex[4])}</span> to <span class="up">${money(ex[5])}</span></p><p class="fine">Across ${ex[6]} stores, as captured. Specials included.</p></div>`:''}
-    </div>
+    <div><p class="kicker">Why it matters</p><h2>The gap<br>is real</h2>
+    <p class="say">Across products stocked in 30 or more stores, the dearest store typically charges ${Math.round((medGap-1)*100)}% more than the cheapest for the exact same item.</p></div>
     <div><p class="kicker">How often do prices differ?</p><h3>Gap between cheapest and dearest store, per product</h3>${hist(m.spread)}<p class="fine">Share of ${num(m.matched)} matched products.</p></div>
   </section>
   <section class="blk grid2">
@@ -122,6 +158,7 @@ R['']=()=>{
   </section>`;
   wireLoc('hloc',()=>{location.hash='#/near'});
   if(here)renderNear($('#hnear'),6);
+  tagField($('#tf'));wireSlider();
 };
 function renderNear(el,n=12){
   const s=nearby(n);el.hidden=false;
@@ -155,8 +192,8 @@ R.p=async id=>{const p=D.products[+id];if(!p)return R.notfound();setTitle(p[0]);
   <button class="btn" data-add="${id}">${basket[id]?'In your basket':'Add to my basket'}</button></div>
   <section class="blk grid2"><div><h3>Typical price by chain</h3><div class="bars">${chm.sort((a,b)=>a[1]-b[1]).map(([c,v])=>`<div class="bar"><span class="lbl">${esc(c)}</span><span class="trk"><span class="fill" style="left:0;width:${v/mx*100}%;background:${CHCOL[c]}"></span></span><span class="v">${money(v)}</span></div>`).join('')}</div><p class="fine">Median shelf price across that chain's captured stores.</p></div>
   <div><h3>Cheapest stores</h3><ol class="slist">${p[8].map(([s,v],i)=>`<li><a href="#/store/${s}"><span class="rk">${i+1}</span><span class="nm">${esc(store(s).nm)}<span class="sub">${esc(store(s).t)}</span></span><span class="pill dn">${money(v)}</span></a></li>`).join('')}</ol></div></section>
-  <section class="blk" id="pnear"></section>`;
-  wireAdd();
+  <section class="blk" id="pchain"></section><section class="blk" id="pnear"></section>`;
+  wireAdd();prodChain(id);
   const s=nearby(10);if(s.length){const pr=await Promise.all(s.map(x=>storePrices(x.id)));const rows=s.map((x,i)=>{const v=pr[i][id];return v==null?null:[x,Array.isArray(v)?v[0]:v,Array.isArray(v)]}).filter(Boolean).sort((a,b)=>a[1]-b[1]);
     $('#pnear').innerHTML=`<h3>Near ${esc(here.n)}</h3>${rows.length?`<ol class="slist">${rows.map(([x,v,sp],i)=>`<li><a href="#/store/${x.id}"><span class="rk">${i+1}</span><span class="nm">${esc(x.nm)}${sp?'<span class="badge">special</span>':''}<span class="sub">${x.d.toFixed(1)} km</span></span><span class="pill ${i===0?'dn':v>rows[0][1]?'up':'nu'}">${money(v)}</span></a></li>`).join('')}</ol>`:'<p class="note">Not captured at stores near you yet.</p>'}`}
   else $('#pnear').innerHTML=`<p class="note"><a href="#/near">Set your location</a> to see this product at stores near you.</p>`;
@@ -288,11 +325,66 @@ R.about=()=>{setTitle('About');main.innerHTML=`<div class="ph prose"><p class="k
   <p>So we started reading every shelf price, at every store we can reach, and comparing like with like. The result is the first store-by-store price index for New Zealand supermarkets that anyone can use.</p>
   <p>What it gives you: the cheapest store near you for what you actually buy, a record of who raises prices, and a plain look at where your dairy dollar goes.</p>
   <p>Built and run independently in Aotearoa New Zealand. Free to use.</p></div>`};
+
+
+let NZM;const nzmap=()=>NZM??=fetch('/data/nzmap.json').then(r=>r.json());
+async function mapSection(el){const g=await nzmap(),[x0,x1,y0,y1]=g.b,X=lo=>(lo-x0)/(x1-x0)*g.W,Y=la=>(y1-la)/(y1-y0)*g.H;
+  const st=D.stores.filter(s=>s.la!=null),miss=D.stores.length-st.length;
+  el.innerHTML=`<p class="kicker">Map</p><h2>Every store we capture</h2><p class="say">${num(st.length)} stores plotted. Tap or hover a dot for the store and its price index.</p>
+  <div class="nzmap"><svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="Map of New Zealand supermarkets"><path class="land" d="${g.d}"/>${st.map(s=>`<circle class="dot" tabindex="0" data-s="${s.id}" cx="${X(s.lo).toFixed(1)}" cy="${Y(s.la).toFixed(1)}" r="3.2"/>`).join('')}</svg><div class="mtip" hidden></div></div>
+  <p class="fine">${miss?`${miss} of ${D.stores.length} stores have no coordinates yet and are not shown. `:''}Locations are approximate. Coastline: Natural Earth.</p>`;
+  const box=$('.nzmap',el),tip=$('.mtip',el);let on=null;
+  const show=c=>{const s=store(+c.dataset.s);on?.classList.remove('on');on=c;c.classList.add('on');
+    tip.innerHTML=`<span class="mbadge" style="background:${CHCOL[s.ch]||'#888'}">${esc((s.ch.match(/[A-Z]/g)||['?']).join('').slice(0,2))}</span><span><strong>${esc(s.nm)}</strong><br><small>${esc(s.ch)} · index <b class="${cls(s.ix)}">${s.ix?s.ix.toFixed(1):'n/a'}</b>${s.thin?' · thin data':''}</small><br><a href="#/store/${s.id}">See store</a></span>`;
+    tip.hidden=false;const b=box.getBoundingClientRect(),r=c.getBoundingClientRect();let l=r.left-b.left+r.width/2,t=r.top-b.top;
+    tip.style.left=Math.max(8,Math.min(b.width-tip.offsetWidth-8,l-tip.offsetWidth/2))+'px';tip.style.top=(t-tip.offsetHeight-10<0?t+18:t-tip.offsetHeight-10)+'px'};
+  $$('.dot',el).forEach(c=>{c.addEventListener('mouseenter',()=>show(c));c.addEventListener('click',e=>{e.stopPropagation();show(c)});c.addEventListener('focus',()=>show(c))});
+  box.addEventListener('click',e=>{if(!e.target.closest('.mtip')){tip.hidden=true;on?.classList.remove('on')}})}
+
+// insights
+let INTEL;const intel=()=>INTEL??=fetch('/data/intel.json').then(r=>r.json());
+let PCH;const pchain=()=>PCH??=fetch('/data/pchain.json').then(r=>r.ok?r.json():{}).catch(()=>({}));
+const pct=(a,b)=>b?Math.round(a/b*100):0;
+R.insights=async()=>{setTitle('Insights');main.innerHTML='<div class="loading">Loading insights</div>';const I=await intel();if(location.hash.replace(/^#\/?/,'')!=='insights')return;
+  const m=D.meta,ch=Object.keys(I.chix);
+  const catNames=[...new Set(Object.values(I.chaincat).flatMap(o=>Object.keys(o)))].sort();
+  const dear=I.out.slice(-10).reverse(),chp=I.out.slice(0,10);
+  const sn=id=>esc(store(id).nm);
+  const h2h=Object.entries(I.h2h).map(([k,[a,t,b]])=>{const[x,y]=k.split('|'),n=a+t+b;return `<tr><td>${esc(x)} vs ${esc(y)}</td><td class="n">${num(n)}</td><td class="n dn">${pct(a,n)}%</td><td class="n">${pct(t,n)}%</td><td class="n up">${pct(b,n)}%</td></tr>`}).join('');
+  main.innerHTML=`<div class="ph"><p class="kicker">Insights</p><h1 style="font-size:clamp(36px,7vw,64px)">What the shelf data says</h1><p class="lede">Patterns across ${num(m.prices)} shelf prices from ${num(m.stores)} stores, captured ${nzDate(m.first)} to ${nzDate(m.last)}. Every number here comes straight from that capture.</p></div>
+  <section class="blk" id="imap"></section>
+  <section class="blk"><p class="kicker">Head to head</p><h2>Same product, chain against chain</h2><p class="say">For products both chains stock, how often the first chain's typical price is lower, the same, or higher.</p>
+  <div class="tblwrap"><table class="table"><thead><tr><th>Match-up</th><th class="n">Products</th><th class="n">First cheaper</th><th class="n">Same</th><th class="n">First dearer</th></tr></thead><tbody>${h2h}</tbody></table></div>
+  <p class="fine">Uses each chain's median shelf price per product. Specials on the capture day are included.</p></section>
+  <section class="blk"><p class="kicker">By aisle</p><h2>Where each chain is dear</h2><p class="say">Index by category for each chain's stores, against the national median of 100.</p>
+  <label class="chip"><select id="icat" aria-label="Chain">${ch.map(c=>`<option>${esc(c)}</option>`).join('')}</select></label>${legend()}<div class="bars" id="icb"></div>
+  <p class="fine">Stores with full data only. FreshChoice is left out until it has enough matched products.</p></section>
+  <section class="blk"><p class="kicker">One chain, many prices</p><h2>Same chain, different price</h2>
+  <p class="say">${ch.filter(c=>I.differ[c]).map(c=>{const[d,n]=I.differ[c];return `${esc(c)}: ${pct(d,n)}% of products stocked in 20 or more of its stores carry more than one regular price (${num(d)} of ${num(n)}).`}).join(' ')}</p>
+  <h3>Widest gaps inside one chain</h3><ul class="plist">${I.same.slice(0,20).map(([i,c,lo,ls,hi,hs,n])=>`<li><span class="pn"><a href="#/p/${i}">${esc(D.products[i][0])}</a><small>${esc(c)}, ${n} stores · cheapest at <a href="#/store/${ls}">${sn(ls)}</a>, dearest at <a href="#/store/${hs}">${sn(hs)}</a></small></span><span class="range"><span class="dn">${money(lo)}</span><br><small class="up">to ${money(hi)}</small></span></li>`).join('')}</ul>
+  <p class="fine">Regular shelf prices only, specials removed. Owner-operated chains (Pak'nSave, New World) set prices store by store, so gaps are expected; they are shown so you can see them, not as a finding.</p></section>
+  <section class="blk"><p class="kicker">Out of step with their own chain</p><h2>Store against its chain</h2><div class="grid2">
+  <div><h3>Dearer than their chain</h3><div class="results">${dear.map(([id,d])=>`<a class="res" href="#/store/${id}"><span><strong>${sn(id)}</strong><br><span class="meta">${esc(store(id).ch)} · index ${store(id).ix.toFixed(1)}</span></span><span class="amt up">+${d.toFixed(1)}</span></a>`).join('')}</div></div>
+  <div><h3>Cheaper than their chain</h3><div class="results">${chp.map(([id,d])=>`<a class="res" href="#/store/${id}"><span><strong>${sn(id)}</strong><br><span class="meta">${esc(store(id).ch)} · index ${store(id).ix.toFixed(1)}</span></span><span class="amt dn">${d.toFixed(1)}</span></a>`).join('')}</div></div></div>
+  <p class="fine">Points of index above or below the chain average (${ch.map(c=>`${esc(c)} ${I.chix[c]}`).join(', ')}). Flagged for comparison only. Local costs, product mix and specials can explain a gap.</p></section>
+  <section class="blk"><p class="kicker">Regions</p><h2>Region by region</h2><div class="tblwrap"><table class="table"><thead><tr><th>Region</th><th class="n">Stores</th><th class="n">Median index</th><th>Cheapest store</th><th>Dearest store</th></tr></thead><tbody>${I.regions.map(r=>`<tr><td>${esc(r.r)}</td><td class="n">${r.n}</td><td class="n ${cls(r.med)}">${r.med.toFixed(1)}</td><td><a href="#/store/${r.lo}">${sn(r.lo)}</a> <small class="dn">${store(r.lo).ix.toFixed(1)}</small></td><td><a href="#/store/${r.hi}">${sn(r.hi)}</a> <small class="up">${store(r.hi).ix.toFixed(1)}</small></td></tr>`).join('')}</tbody></table></div>
+  <p class="note">Chain matters far more than place. Within each region, each chain's median index sits close to its national figure, so the store you choose counts more than the town you live in.</p></section>
+  <section class="blk"><p class="kicker">Biggest dollar gaps</p><h2>Where the gap costs most</h2><p class="say">Products in 40 or more stores with the biggest dollar difference between cheapest and dearest regular price.</p>
+  <ul class="plist">${I.gaps.slice(0,20).map(([i,lo,ls,hi,hs,n])=>`<li><span class="pn"><a href="#/p/${i}">${esc(D.products[i][0])}</a><small>${n} stores · ${money(hi-lo)} more at <a href="#/store/${hs}">${sn(hs)}</a> than <a href="#/store/${ls}">${sn(ls)}</a></small></span><span class="range"><span class="dn">${money(lo)}</span><br><small class="up">to ${money(hi)}</small></span><button class="add ${basket[i]?'in':''}" data-add="${i}" aria-label="Add ${esc(D.products[i][0])}">${basket[i]?'✓':'+'}</button></li>`).join('')}</ul>
+  <p class="fine">Pack sizes are matched on product names. A big gap can be a mismatch; tell us and we will fix it.</p></section>
+  <section class="blk"><p class="kicker">Specials</p><h2>How much is on special</h2><div class="stats">${Object.entries(I.specials).map(([c,[a,n]])=>`<div class="stat"><b>${pct(a,n)}%</b><span>of ${esc(c)} shelf prices on special</span></div>`).join('')}</div>
+  <p class="fine">Share of all captured store prices marked as a special or promotion on the capture day.</p></section>
+  <section class="blk"><div class="card"><p class="kicker">Price changes over time</p><h3>Warming up</h3><p class="note">Every store has been captured once so far. Rises and falls, and any Upticker flags, appear once the second national pass lands. <a href="#/uptickers">Uptickers watch</a></p></div></section>`;
+  const cb=()=>{const o=I.chaincat[$('#icat').value]||{};$('#icb').innerHTML=Object.entries(o).sort((a,b)=>b[1]-a[1]).map(([c,v])=>ixBar(c,v)).join('')};$('#icat').onchange=cb;cb();wireAdd();mapSection($('#imap'))};
+async function prodChain(id){const el=$('#pchain');if(!el)return;const P=await pchain(),r=P[id];if(!r||!$('#pchain'))return;
+  const rows=Object.entries(r).filter(([,v])=>v[2]>=2).sort((a,b)=>a[1][0]-b[1][0]);if(!rows.length)return;
+  el.innerHTML=`<h3>Inside each chain</h3><p class="note">Regular shelf price range across that chain's stores, specials removed.</p><div class="tblwrap"><table class="table"><thead><tr><th>Chain</th><th class="n">Stores</th><th class="n">Lowest</th><th class="n">Highest</th><th class="n">Gap</th></tr></thead><tbody>${rows.map(([c,[lo,hi,n]])=>`<tr><td>${esc(c)}</td><td class="n">${n}</td><td class="n dn">${money(lo)}</td><td class="n ${hi-lo>0.005?'up':''}">${money(hi)}</td><td class="n">${hi-lo>0.005?money(hi-lo):'one price'}</td></tr>`).join('')}</tbody></table></div>`}
+
 R.notfound=()=>{main.innerHTML='<div class="ph"><h1>Not found</h1><p><a href="#/">Back to the start</a></p></div>'};
 
 function route(){const h=location.hash.replace(/^#\/?/,'');const [p,...a]=h.split('/');const[pp,q]=p.split('?');
   $$('#nav a').forEach(x=>x.classList.toggle('on',x.getAttribute('href')==='#/'+pp));$('#nav').classList.remove('open');$('.menu-btn').setAttribute('aria-expanded','false');
-  (R[pp]||R.notfound)(a[0]??q);window.scrollTo(0,0);main.focus({preventScroll:true});basketBar()}
+  (R[pp]||R.notfound)(a[0]??q);window.scrollTo(0,0);main.focus({preventScroll:true});basketBar();reveal();wireCounts()}
 $('.menu-btn').onclick=()=>{const o=$('#nav').classList.toggle('open');$('.menu-btn').setAttribute('aria-expanded',o)};
 Promise.all(['meta','stores','products','dairy'].map(k=>fetch(`/data/${k}.json`).then(r=>r.json()))).then(([meta,stores,products,dairy])=>{
   Object.assign(D,{meta,stores,products,dairy});$('#fresh').textContent=`Prices as captured ${nzDate(meta.first)} to ${nzDate(meta.last)}. Data export ${nzTime(meta.generated)}.`;
