@@ -378,7 +378,7 @@ async function mapSection(el){const g=await nzmap(),[x0,x1,y0,y1]=g.b,W=g.W,H=g.
   svg.addEventListener('dblclick',e=>e.preventDefault());
   dots.forEach(c=>{c.addEventListener('mouseenter',()=>{if(!pts.size)show(c)});c.addEventListener('focus',()=>show(c))});
   $$('.mctl button',el).forEach(b=>b.onclick=()=>{const z=+b.dataset.z;if(!z)return fly(1,0,0);const nk=Math.max(1,Math.min(40,k*z));fly(nk,W/2-(W/2-tx)*nk/k,H/2-(H/2-ty)*nk/k)});
-  $$('#mch .chip',el).forEach(b=>b.onclick=()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');const offc=new Set($$('#mch .chip',el).filter(x=>x.getAttribute('aria-pressed')==='false').map(x=>x.dataset.c));dots.forEach(d=>d.classList.toggle('off',offc.has(store(+d.dataset.s).ch)));if(on&&on.classList.contains('off'))hide()});
+  $$('#mch .chip',el).forEach(b=>b.onclick=()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');const offc=new Set($$('#mch .chip',el).filter(x=>x.getAttribute('aria-pressed')==='false').map(x=>x.dataset.c));dots.forEach(d=>{const x=offc.has(store(+d.dataset.s).ch);if(!x&&d.classList.contains('off'))d.classList.add('re');d.classList.toggle('off',x)});if(on&&on.classList.contains('off'))hide()});
   $$('#mrg .chip',el).forEach(b=>b.onclick=()=>{const r=b.dataset.r;hide();if(!r)return fly(1,0,0);const s=st.filter(x=>x.r===r);flyBox(s.map(x=>X(x.lo)),s.map(x=>Y(x.la)))});
   apply()}
 
