@@ -1,0 +1,290 @@
+{
+ "observed_at": "2026-11-01T16:00+13:00",
+ "observer": "Guy Hollister",
+ "chain": "Woolworths",
+ "store": "Woolworths Whanganui, Taupo Quay (confirmed by Guy)",
+ "db_store_key": "2770231 (DB label 'Woolworths Whanganui, Wilson Street', the only Woolworths in Whanganui; Taupo Quay/Wilson St corner)",
+ "photos_dir": "data/field_photos/2026-11-01",
+ "online_reference": "national/prices.db snapshot 2026-10-31 13:40 NZDT",
+ "pack_notes": [
+  "Milo Cereal 350g $7.29 = $2.08/100g vs Milo Cereal 620g regular $9.80 = $1.58/100g (special $1.26): smaller pack dearer per 100g, flagged for comparison only"
+ ],
+ "observations": [
+  {
+   "name": "Delisio Greek Tzatziki 130g",
+   "woolworths_sku": "6027909",
+   "shelf_price": 3,
+   "was_price": 3.35,
+   "ticket_unit_per_100g": 2.31,
+   "calc_unit_per_100g": 2.31,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 3,
+    "was_price": 3.35
+   },
+   "national_median_now": 3,
+   "national_median_regular": 3.35,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 10.4
+  },
+  {
+   "name": "Delisio Caramelised Onion & Vinegar 140g",
+   "woolworths_sku": "198484",
+   "shelf_price": 3,
+   "was_price": 3.35,
+   "ticket_unit_per_100g": 2.14,
+   "calc_unit_per_100g": 2.14,
+   "photos": 2,
+   "online_same_store_2026_10_31": {
+    "price": 3,
+    "was_price": 3.35
+   },
+   "national_median_now": 3,
+   "national_median_regular": 3.35,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 10.4
+  },
+  {
+   "name": "Pure Delish Chunky Frt&Nut Muesli 500g",
+   "woolworths_sku": "783674",
+   "shelf_price": 12.6,
+   "was_price": 14.99,
+   "ticket_unit_per_100g": 2.52,
+   "calc_unit_per_100g": 2.52,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 12.6,
+    "was_price": 14.99
+   },
+   "national_median_now": 12.6,
+   "national_median_regular": 14.99,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 15.9
+  },
+  {
+   "name": "Jordans Granola Low Sugar Alm Hnut 500g",
+   "woolworths_sku": "686551",
+   "shelf_price": 7,
+   "was_price": 8.95,
+   "ticket_unit_per_100g": 1.4,
+   "calc_unit_per_100g": 1.4,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7,
+    "was_price": 8.95
+   },
+   "national_median_now": 7,
+   "national_median_regular": 8.95,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 21.8,
+   "ticket_label": "20% off",
+   "note": "flagged: ticket says 20% off, actual 21.8% off"
+  },
+  {
+   "name": "Jordans LS Granola Bbry Coconut 500g",
+   "woolworths_sku": "85598",
+   "shelf_price": 7,
+   "was_price": 8.95,
+   "ticket_unit_per_100g": null,
+   "calc_unit_per_100g": 1.4,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7,
+    "was_price": 8.95
+   },
+   "national_median_now": 7,
+   "national_median_regular": 8.95,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 21.8,
+   "ticket_label": "20% off",
+   "note": "flagged: ticket says 20% off, actual 21.8% off; ticket code transcribed as 855598, DB SKU 85598, check photo"
+  },
+  {
+   "name": "Kelloggs Crispix Honey 260g",
+   "woolworths_sku": "702057",
+   "shelf_price": 7.49,
+   "was_price": null,
+   "ticket_unit_per_100g": 2.88,
+   "calc_unit_per_100g": 2.88,
+   "photos": 2,
+   "online_same_store_2026_10_31": {
+    "price": 7.49,
+    "was_price": null
+   },
+   "national_median_now": 7.49,
+   "national_median_regular": 7.49,
+   "shelf_vs_online": "match"
+  },
+  {
+   "name": "Pure Delish Rberry & Maple Nograinola 400g",
+   "woolworths_sku": "824948",
+   "shelf_price": 16.19,
+   "was_price": 17.99,
+   "ticket_unit_per_100g": 4.05,
+   "calc_unit_per_100g": 4.05,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 16.19,
+    "was_price": 17.99
+   },
+   "national_median_now": 16.19,
+   "national_median_regular": 17.99,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 10.0
+  },
+  {
+   "name": "Weet-Bix Bites Wild Berry 500g",
+   "woolworths_sku": "319428",
+   "shelf_price": 6.99,
+   "was_price": 8.49,
+   "ticket_unit_per_100g": 1.4,
+   "calc_unit_per_100g": 1.4,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 6.99,
+    "was_price": 8.49
+   },
+   "national_median_now": 6.99,
+   "national_median_regular": 8.49,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 17.7
+  },
+  {
+   "name": "Nestle Nesquik Choc Crunchy Cereal 310g",
+   "woolworths_sku": "6029801",
+   "shelf_price": 7.29,
+   "was_price": null,
+   "ticket_unit_per_100g": 2.35,
+   "calc_unit_per_100g": 2.35,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7.29,
+    "was_price": null
+   },
+   "national_median_now": 7.29,
+   "national_median_regular": 7.29,
+   "shelf_vs_online": "match"
+  },
+  {
+   "name": "Kelloggs Corn Flakes 380g",
+   "woolworths_sku": "702098",
+   "shelf_price": 4.39,
+   "was_price": null,
+   "ticket_unit_per_100g": 1.16,
+   "calc_unit_per_100g": 1.16,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 4.39,
+    "was_price": null
+   },
+   "national_median_now": 4.39,
+   "national_median_regular": 4.39,
+   "shelf_vs_online": "match"
+  },
+  {
+   "name": "Nestle Milo Cereal 620g",
+   "woolworths_sku": "387352",
+   "shelf_price": 7.8,
+   "was_price": 9.8,
+   "ticket_unit_per_100g": 1.26,
+   "calc_unit_per_100g": 1.26,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7.8,
+    "was_price": 9.8
+   },
+   "national_median_now": 7.8,
+   "national_median_regular": 9.8,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 20.4,
+   "ticket_label": "20% off",
+   "note": "flagged: ticket says 20% off, actual 20.4% off"
+  },
+  {
+   "name": "Nestle Nesquik Cereal Choc Crnch 600g",
+   "woolworths_sku": "6018784",
+   "shelf_price": 7.8,
+   "was_price": 9.79,
+   "ticket_unit_per_100g": 1.3,
+   "calc_unit_per_100g": 1.3,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7.8,
+    "was_price": 9.79
+   },
+   "national_median_now": 7.8,
+   "national_median_regular": 9.79,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 20.3,
+   "ticket_label": "20% off",
+   "note": "flagged: ticket says 20% off, actual 20.3% off"
+  },
+  {
+   "name": "Milo Cereal 350g",
+   "woolworths_sku": "197921",
+   "shelf_price": 7.29,
+   "was_price": null,
+   "ticket_unit_per_100g": 2.08,
+   "calc_unit_per_100g": 2.08,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7.29,
+    "was_price": null
+   },
+   "national_median_now": 7.29,
+   "national_median_regular": 7.29,
+   "shelf_vs_online": "match"
+  },
+  {
+   "name": "Milo Duo Vanilla Cereal 340g",
+   "woolworths_sku": "319318",
+   "shelf_price": 7.29,
+   "was_price": null,
+   "ticket_unit_per_100g": 2.14,
+   "calc_unit_per_100g": 2.14,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7.29,
+    "was_price": null
+   },
+   "national_median_now": 7.29,
+   "national_median_regular": 7.29,
+   "shelf_vs_online": "match"
+  },
+  {
+   "name": "Kelloggs LCMs Cereal Marshmallow 295g",
+   "woolworths_sku": "6055340",
+   "shelf_price": 7.99,
+   "was_price": null,
+   "ticket_unit_per_100g": 2.71,
+   "calc_unit_per_100g": 2.71,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7.99,
+    "was_price": null
+   },
+   "national_median_now": 7.99,
+   "national_median_regular": 7.99,
+   "shelf_vs_online": "match"
+  },
+  {
+   "name": "Nestle Milo Protein Cereal 535g",
+   "woolworths_sku": "387014",
+   "shelf_price": 7.8,
+   "was_price": 9.8,
+   "ticket_unit_per_100g": 1.46,
+   "calc_unit_per_100g": 1.46,
+   "photos": 1,
+   "online_same_store_2026_10_31": {
+    "price": 7.8,
+    "was_price": 9.8
+   },
+   "national_median_now": 7.8,
+   "national_median_regular": 9.8,
+   "shelf_vs_online": "match",
+   "actual_discount_pct": 20.4,
+   "ticket_label": "20% off",
+   "note": "flagged: ticket says 20% off, actual 20.4% off"
+  }
+ ]
+}
