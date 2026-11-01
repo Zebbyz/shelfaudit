@@ -75,3 +75,11 @@ W('index.json',{'captured':cap,'note':'Index 100 = Woolworths national basket. L
 W('gaps.json',{'captured':cap,'rule':'Regular shelf prices, specials removed, products in 40+ stores','gaps':[{'product_id':g[0],'product':P[g[0]][0],'cheapest':{'price':g[1],'store':sref(g[2])},'dearest':{'price':g[3],'store':sref(g[4])},'gap':round(g[3]-g[1],2),'gap_pct':round((g[3]/g[1]-1)*100,1),'stores':g[5]} for g in gaps]})
 for i,p in enumerate(P):
     W(f'products/{i}.json',{'captured':cap,'id':i,'name':p[0],'brand':p[1],'category':p[2],'median':p[3],'min':p[4],'max':p[5],'stores':p[6],'chain_median':p[7],'chain_regular_range':{c:{'lo':v[0],'hi':v[1],'stores':v[2]} for c,v in pchain.get(str(i),pchain.get(i,{})).items()} if pchain else {},'cheapest':[{'price':x[1],'store':sref(x[0])} for x in p[8]]})
+# verified in-store shelf captures (source=shelf_photo)
+FD=json.load(open(f'{D}/field.json')) if os.path.exists(f'{D}/field.json') else []
+W('field_checks.json',{'source':'shelf_photo','note':'Prices photographed on the shelf by Shelf Audit, kept separate from online captures','checks':[{'product_id':x['p'],'product':x['n'],'store':sref(x['s']) if x['s'] is not None else None,'shelf_price':x['pr'],'was_price':x['w'],'label':x['l'],'captured_at':x['at'],'online_price':x['op'],'matches_online':x['m'],'note':x['note']} for x in FD]})
+for x in FD:
+  if x['p'] is None: continue
+  fn=f'{A}/products/{x["p"]}.json'
+  if os.path.exists(fn):
+    o=json.load(open(fn));o.setdefault('verified_on_shelf',[]).append({'store':sref(x['s']),'shelf_price':x['pr'],'captured_at':x['at'],'matches_online':x['m'],'source':x['src']});json.dump(o,open(fn,'w'),separators=(',',':'))

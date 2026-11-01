@@ -187,3 +187,5 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 @media (min-width:900px){img.clogo{height:30px;max-width:136px}.clogo.ini{width:36px;height:36px}}
 .pn small:has(> .clogo),.pn small:has(> a > .clogo){display:flex;align-items:center;gap:0;flex-wrap:wrap;row-gap:4px;margin-top:4px}
 .slist a:has(> .clogo){grid-template-columns:30px auto minmax(0,1fr) auto}.slist a .nm{min-width:0;overflow-wrap:anywhere}.lbl .clogo{margin-right:8px}
+.badge.ok{background:#1f8a4c;color:#fff;margin-left:0}
+.vshelf{margin:14px 0}.vshelf p{margin:6px 0}.vshelf summary{cursor:pointer;list-style:none}.vshelf summary::-webkit-details-marker{display:none}.vshelf .plist{margin-top:10px}

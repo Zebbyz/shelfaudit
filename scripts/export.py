@@ -48,7 +48,7 @@ for r,d in prod.items():
   if mx/mn>4: continue
   ch,nm=cname[r]; w,_=dedup(nm); nm=' '.join(w); nm=nm[:1].upper()+nm[1:]
   b=brand(ch,cname[r][1])
-  out.append(dict(n=nm,b=b,g=B2G.get(b.lower(),'Other brands'),c=cat(nm),chs=len({s[0] for s in d}),d=d,md=st.median(ps),mn=mn,mx=mx))
+  out.append(dict(r=r,n=nm,b=b,g=B2G.get(b.lower(),'Other brands'),c=cat(nm),chs=len({s[0] for s in d}),d=d,md=st.median(ps),mn=mn,mx=mx))
 # store index
 A=defaultdict(lambda:[[],0,{}])
 for o in out:
@@ -77,6 +77,11 @@ for s in stores:
 # product catalogue: most widely stocked
 out.sort(key=lambda o:(-o['chs'],-len(o['d'])))
 P=out[:6000]
+try:
+  _fr={find(cid(ch,pid)) for ch,pid in c.execute('select chain,product_id from shelf_captures')}
+  P+=[o for o in out[6000:] if o['r'] in _fr]
+except sqlite3.OperationalError: pass
+PIX={o['r']:i for i,o in enumerate(P)}
 CHS=['Woolworths',"Pak'nSave",'New World','FreshChoice']
 cat_=[]; per=defaultdict(dict)
 for i,o in enumerate(P):
@@ -88,6 +93,14 @@ for i,o in enumerate(P):
   cat_.append([o['n'][:70],o['b'],o['c'],round(o['md'],2),o['mn'],o['mx'],len(o['d']),chm,[[SID[s],p] for s,(p,_) in cheapest]])
   for s,(p,sp) in o['d'].items(): per[SID[s]][i]=[p,sp] if sp else p
 for sid,m in per.items(): json.dump(m,open(f'{OUT}/s/{sid}.json','w'),separators=(',',':'))
+# verified in-store shelf captures (source=shelf_photo), kept separate from online scrape rows
+field=[]
+try:
+  for ch,sk,pid,nm,pr,was,lab,at,src,op,ow,note in c.execute('select chain,store_key,product_id,name,price,was_price,label,captured_at,source,online_price,online_was,note from shelf_captures order by captured_at'):
+    r=find(cid(ch,pid)); i=PIX.get(r); s_=SID.get((ch,sk))
+    field.append(dict(p=i,s=s_,n=nm,pr=pr,w=was,l=lab,at=at,src=src,op=op,ow=ow,m=abs((op or 0)-pr)<0.005,note=note))
+except sqlite3.OperationalError: pass
+json.dump(field,open(OUT+'/field.json','w'),separators=(',',':'),ensure_ascii=False)
 json.dump(stores,open(OUT+'/stores.json','w'),separators=(',',':'),ensure_ascii=False)
 json.dump(cat_,open(OUT+'/products.json','w'),separators=(',',':'),ensure_ascii=False)
 chi={}
@@ -97,7 +110,7 @@ for chn in CHS:
 hist=Counter(min(int(100*(o['mx']-o['mn'])/o['mn']//10)*10,100) for o in out)
 dairy=json.load(open(AA+'/dairy_track.json'))
 meta=dict(generated=__import__('datetime').datetime.now().astimezone().isoformat(timespec='minutes'),first=min(s['at'] for s in stores),last=max(s['at'] for s in stores),
-  stores=len(stores),full=sum(1 for s in stores if s['ix'] and not s['thin']),prices=len(items),matched=len(out),cross=sum(o['chs']>1 for o in out),chains=chi,spread=sorted(hist.items()))
+  stores=len(stores),full=sum(1 for s in stores if s['ix'] and not s['thin']),prices=len(items),matched=len(out),cross=sum(o['chs']>1 for o in out),chains=chi,field=len(field),fieldStores=len({x['s'] for x in field}),spread=sorted(hist.items()))
 json.dump(meta,open(OUT+'/meta.json','w'),ensure_ascii=False)
 json.dump(dict(updated=dairy['updated'],fonterra=dairy['fonterra_forecasts'],gdt=dairy['gdt_events'],shelf=dairy['shelf'],notes=dairy.get('shelf_notes',[]),sources=dairy.get('sources',{})),open(OUT+'/dairy.json','w'),ensure_ascii=False)
 print(meta['stores'],meta['full'],len(P),meta['matched'],sum(1 for s in stores if not s['la']))
