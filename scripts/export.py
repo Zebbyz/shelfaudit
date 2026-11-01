@@ -78,7 +78,7 @@ for s in stores:
 out.sort(key=lambda o:(-o['chs'],-len(o['d'])))
 P=out[:6000]
 try:
-  _fr={find(cid(ch,pid)) for ch,pid in c.execute('select chain,product_id from shelf_captures')}
+  _fr={find(cid(ch,pid)) for ch,pid in c.execute("select chain,product_id from shelf_captures where coalesce(label,'') not in ('weighed','bag')")}
   P+=[o for o in out[6000:] if o['r'] in _fr]
 except sqlite3.OperationalError: pass
 PIX={o['r']:i for i,o in enumerate(P)}
@@ -96,7 +96,7 @@ for sid,m in per.items(): json.dump(m,open(f'{OUT}/s/{sid}.json','w'),separators
 # verified in-store shelf captures (source=shelf_photo), kept separate from online scrape rows
 field=[]
 try:
-  for ch,sk,pid,nm,pr,was,lab,at,src,op,ow,note in c.execute('select chain,store_key,product_id,name,price,was_price,label,captured_at,source,online_price,online_was,note from shelf_captures order by captured_at'):
+  for ch,sk,pid,nm,pr,was,lab,at,src,op,ow,note in c.execute("select chain,store_key,product_id,name,price,was_price,label,captured_at,source,online_price,online_was,note from shelf_captures where coalesce(label,'') not in ('weighed','bag') order by captured_at"):
     r=find(cid(ch,pid)); i=PIX.get(r); s_=SID.get((ch,sk))
     field.append(dict(p=i,s=s_,n=nm,pr=pr,w=was,l=lab,at=at,src=src,op=op,ow=ow,m=abs((op or 0)-pr)<0.005,note=note))
 except sqlite3.OperationalError: pass
@@ -110,7 +110,7 @@ for chn in CHS:
 hist=Counter(min(int(100*(o['mx']-o['mn'])/o['mn']//10)*10,100) for o in out)
 dairy=json.load(open(AA+'/dairy_track.json'))
 meta=dict(generated=__import__('datetime').datetime.now().astimezone().isoformat(timespec='minutes'),first=min(s['at'] for s in stores),last=max(s['at'] for s in stores),
-  stores=len(stores),full=sum(1 for s in stores if s['ix'] and not s['thin']),prices=len(items),matched=len(out),cross=sum(o['chs']>1 for o in out),chains=chi,field=len(field),fieldStores=len({x['s'] for x in field}),spread=sorted(hist.items()))
+  stores=len(stores),full=sum(1 for s in stores if s['ix'] and not s['thin']),prices=len(items),matched=len(out),cross=sum(o['chs']>1 for o in out),chains=chi,field=len(field),fieldStores=len({x['s'] for x in field}),fieldShelf=sum(x['src']=='shelf_photo' for x in field),fieldReceipt=sum(x['src']=='receipt_photo' for x in field),spread=sorted(hist.items()))
 json.dump(meta,open(OUT+'/meta.json','w'),ensure_ascii=False)
 json.dump(dict(updated=dairy['updated'],fonterra=dairy['fonterra_forecasts'],gdt=dairy['gdt_events'],shelf=dairy['shelf'],notes=dairy.get('shelf_notes',[]),sources=dairy.get('sources',{})),open(OUT+'/dairy.json','w'),ensure_ascii=False)
 print(meta['stores'],meta['full'],len(P),meta['matched'],sum(1 for s in stores if not s['la']))

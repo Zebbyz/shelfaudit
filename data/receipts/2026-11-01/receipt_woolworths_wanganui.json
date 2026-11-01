@@ -1,0 +1,119 @@
+{
+ "source": "receipt_photo",
+ "chain": "woolworths",
+ "store_key": "2770231",
+ "store": "Woolworths 9151 Wanganui, Cnr Taupo Quay and Wilson Street",
+ "date": "2026-11-01",
+ "total": 64.05,
+ "items": 10,
+ "sum_check": "lines sum to $64.05, matches subtotal and total",
+ "payment": "card (details omitted)",
+ "photos": [
+  "data/receipts/2026-11-01/receipt_1_card_section_cropped.jpg",
+  "data/receipts/2026-11-01/receipt_2_card_section_cropped.jpg"
+ ],
+ "photo_note": "Payment section cropped off; no card details stored",
+ "online_reference": "Woolworths Whanganui online, 31 Oct 2026 1:40pm NZDT",
+ "lines": [
+  {
+   "line": "WW Hickory Smoked Boneless Ham",
+   "sku": "6040157",
+   "charged": 14.36,
+   "was": null,
+   "online": 18.7,
+   "online_was": null,
+   "label": "weighed",
+   "note": "weighed item, $18.70/kg online implies about 0.768kg; cannot verify without the weight"
+  },
+  {
+   "line": "WW Paper Bag",
+   "sku": null,
+   "charged": 0.39,
+   "was": null,
+   "online": null,
+   "online_was": null,
+   "label": "bag",
+   "note": "not in online catalogue"
+  },
+  {
+   "line": "WW Chk Bacon Moz Trtellini 300g",
+   "sku": "651879",
+   "charged": 4.49,
+   "was": null,
+   "online": 4.49,
+   "online_was": null,
+   "label": null,
+   "note": null
+  },
+  {
+   "line": "Delmaine Premium Cipriani Sauce 325gm",
+   "sku": "265034",
+   "charged": 7.19,
+   "was": null,
+   "online": 7.19,
+   "online_was": null,
+   "label": null,
+   "note": null
+  },
+  {
+   "line": "WW Chicken Tenderloins Small",
+   "sku": "57043",
+   "charged": 11.83,
+   "was": null,
+   "online": 23.7,
+   "online_was": null,
+   "label": "weighed",
+   "note": "weighed item, $23.70/kg online implies about 0.499kg; cannot verify without the weight"
+  },
+  {
+   "line": "Hellers Mild Chorizo 4 Pack",
+   "sku": "528296",
+   "charged": 6.8,
+   "was": null,
+   "online": 6.8,
+   "online_was": null,
+   "label": null,
+   "note": null
+  },
+  {
+   "line": "Talleys Mussels Lime&Coriander 375g",
+   "sku": "552564",
+   "charged": 9.0,
+   "was": null,
+   "online": 6.99,
+   "online_was": 9.0,
+   "label": "club price online",
+   "note": "flagged: charged the regular $9.00; online showed $6.99 Everyday Rewards club price (non-member $9.00). Charged regular price, not the club price"
+  },
+  {
+   "line": "Natures Fresh White Toast 700gm",
+   "sku": "275560",
+   "charged": 3.99,
+   "was": null,
+   "online": 3.99,
+   "online_was": null,
+   "label": null,
+   "note": null
+  },
+  {
+   "line": "Delisio Prawn Cocktail 130g",
+   "sku": "198494",
+   "charged": 3.0,
+   "was": 3.35,
+   "online": 3.0,
+   "online_was": 3.35,
+   "label": "^ promo",
+   "note": null
+  },
+  {
+   "line": "Delisio SweetChilli Relish 140g",
+   "sku": "198268",
+   "charged": 3.0,
+   "was": 3.35,
+   "online": 3.0,
+   "online_was": 3.35,
+   "label": "^ promo",
+   "note": null
+  }
+ ]
+}
