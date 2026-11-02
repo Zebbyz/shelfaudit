@@ -334,3 +334,12 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .nwcall{margin:22px 0 8px;padding:20px 22px;border-left:8px solid var(--red);background:rgba(255,74,54,.1);border-radius:0 14px 14px 0}
 .nwcall p{margin:0;font-weight:900;font-size:clamp(20px,3.2vw,30px);line-height:1.25;color:var(--ink)}
 .nwcall small{display:block;margin-top:10px;font-size:13px;opacity:.75;color:var(--ink)}
+#stbars{margin:22px 0 6px}#stbars h3{margin:0 0 6px}
+.sbkey{font-size:13px;margin:0 0 10px;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}.sbkey .k{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:-6px}
+.sbrow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;margin:6px 0}
+.sblab{font-size:14px;line-height:1.2}.sblab span{display:block;font-size:12px;opacity:.75}
+.sbbar{display:flex;height:28px;border-radius:6px;overflow:hidden;gap:1px;background:#000}
+.sbbar i{flex:1 1 0;min-width:0;cursor:pointer}.sbbar i:hover,.sbbar i:focus{outline:2px solid #fff;outline-offset:-2px}
+#stbars .up{background:#ff4a36}#stbars .ok{background:#2fbf71}#stbars .na{background:#666}
+.sbtip{font-size:13px;min-height:1.3em;margin:8px 0 0;font-weight:700}
+@media(max-width:600px){.sbrow{grid-template-columns:1fr;gap:4px;margin:10px 0}.sbbar{height:24px}}
