@@ -242,3 +242,4 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 
 .rc-g{border:0!important;border-radius:0!important;-webkit-mask:none!important;mask:none!important}
 .rc-t{display:flex;flex-direction:column;align-items:center;text-align:center;margin:0 0 18px;font:700 clamp(26px,5vw,46px)/1.1 "IM Fell English",serif;letter-spacing:.02em;text-transform:uppercase;opacity:1}
+.rc-hd .hlogo .clogo.hero{height:84px;max-width:300px}@media (min-width:900px){.rc-hd .hlogo .clogo.hero{height:110px;max-width:380px}}@media (max-width:760px){.rc-hd .hlogo .clogo.hero{height:64px;max-width:220px}}

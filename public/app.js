@@ -578,7 +578,7 @@ let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??
   el.innerHTML=`<section class="rc" aria-label="Worst pricing in New Zealand">
   <div class="rc-in"><h1 class="rc-k rc-t"><span>Shelf Audit report card</span><span>Worst pricing in NZ</span></h1>
   <div class="rc-main">
-   <div class="rc-b"><div class="rc-hd">${heroLogo(w.ch)}<div class="rc-g" aria-label="Grade ${w.g}"><span>${w.g}</span><small>Fail</small></div></div><h2><a ${lk(w)}>${esc(w.nm)}</a></h2>
+   <div class="rc-b"><div class="rc-hd"><div class="rc-g" aria-label="Grade ${w.g}"><span>${w.g}</span><small>Fail</small></div>${heroLogo(w.ch)}</div><h2><a ${lk(w)}>${esc(w.nm)}</a></h2>
    <p class="rc-s"><b>${w.ix.toFixed(1)}</b> score · ${pct(w.ix)} above typical ${esc(w.ch)} pricing</p>
    <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
    ${lifeCost(w.nat-100,'the typical NZ price for the same products')}
