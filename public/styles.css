@@ -229,3 +229,5 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 .ovl{margin:14px 0;max-width:760px}.ovl table{width:100%;border-collapse:collapse;font-size:15px}
 .ovl th,.ovl td{padding:6px 8px;border-bottom:1px solid #fff2;text-align:left}.ovl .n{text-align:right;font-family:var(--mono);white-space:nowrap}
 .ovl.dk{background:#0004;border-radius:8px;padding:12px}.ovl.dk a{color:#fff}.ovl.dk .up{color:#ffe14a}
+.rc-g span{font-style:normal;font-weight:700;-webkit-text-stroke:3px #fff}
+.rc-g small{font-style:normal;font-weight:700}
