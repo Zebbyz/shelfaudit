@@ -206,3 +206,6 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 .rc-gg.gD{background:#ffd0d0}.rc-n{flex:1}.rc-x{font:700 13px var(--mono)}
 .rc-f{margin:0;font-size:12px;opacity:.85}.rc-f a{color:#fff}
 @media (max-width:760px){.rc-g{width:76px;height:76px;font-size:62px}.rc-main{gap:14px;align-items:flex-start}.rc-top{grid-template-columns:1fr}}
+
+/* large chain logo whenever a store is featured */
+.hlogo{margin:0 0 14px}.hlogo .clogo.hero{height:72px;width:auto;max-width:280px;padding:8px 14px;border-radius:10px;margin:0;box-shadow:0 1px 4px rgba(0,0,0,.15)}.hlogo span.clogo.hero{width:72px;height:72px;font-size:24px}@media (min-width:900px){.hlogo .clogo.hero{height:96px;max-width:360px}.hlogo span.clogo.hero{width:96px;height:96px}}
