@@ -286,3 +286,9 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .rc-near p{grid-column:1/-1;margin:4px 0 0;font:700 16px/1.3 Lato,Arial}.rc-near a{color:#fff;text-decoration:underline}
 .rc-near>div:first-child{text-align:left}.rc-near>div:nth-child(2){text-align:right}.rc-near p{text-align:left}
 .rc-near{border:0;background:none;padding:0}
+.gh-pair{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:620px;margin:0 auto 12px}
+.gh-pair .gh-hero{background:none;padding:0;margin:0;text-align:left}
+.gh-pair .gh-dist{border:0;padding:0;margin:0;display:block;text-align:right}
+.gh-pair .gh-dist b{display:block;font-size:clamp(40px,11vw,80px)}.gh-pair .gh-dist span{display:block;margin-top:8px}
+.gh-pair .gh-dist b{font:900 clamp(56px,16vw,120px)/1 Lato,Arial,sans-serif;color:#fff;letter-spacing:-.02em}
+.gh-pair>div{flex:1}
