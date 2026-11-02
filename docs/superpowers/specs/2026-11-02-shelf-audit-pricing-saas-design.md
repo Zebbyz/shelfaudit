@@ -61,7 +61,7 @@ Advise cockpit on Cloudflare. Full POS middleware is not part of v1.
 ### Store package
 
 - Connect a store, set rules, see flagged lines and recommended prices, export a clean price list to apply by hand.
-- Multi-store ownership: an owner with several stores (for example four) connects all of them under one account and compares them side by side, line by line, with each store's flags and recommendations shown together.
+- Multi-store ownership: an owner with several stores (for example four) connects all of them under one account and compares them side by side, line by line, with each store's flags and recommendations shown together. Every store in the compare must hold its own paid seat (see 10.1).
 
 ### Head office package
 
@@ -96,6 +96,17 @@ Advise cockpit on Cloudflare. Full POS middleware is not part of v1.
 
 - Flat pricing: API Local and National fees plus SaaS subscriptions.
 - No cut of supermarket sales. That was a metaphor for the logic, not the billing model.
+
+### 10.1 Licensing rule: one paid seat per physical store
+
+- One paid seat covers one physical store, identified by its trading address and store identity.
+- Multi-store side-by-side compare only works when every store in the compare is licensed on the account.
+- Copy-pasting the same catalogue into one seat as extra "stores" is not allowed. A seat cannot hold more than one store.
+- Enforcement in v1:
+  - Each seat is bound to one store location (address, plus the matching Shelf Audit store ID where one exists). Adding a store means adding a seat.
+  - The integrator flags uploads where a second store's catalogue is a near copy of another on the account, or where the location does not match the seat, and holds it for review.
+  - Seat changes (moving a seat to a different store) are logged and limited, so one licence cannot be rotated around several shops.
+- Terms of service state the rule plainly, and breaches mean back-billing for the unlicensed stores.
 
 ## 11. Build order
 
