@@ -589,7 +589,7 @@ let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??
    <p class="rc-s"><b>${w.nat.toFixed(1)}</b> national price index · ${pct(w.nat)} above the typical NZ price for the same products (${w.ix.toFixed(1)} against its own chain)</p>
    <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
    
-   ${lifeCost(w.nat-100,'the typical NZ price for the same products')}
+   ${(()=>{const n=(w.near||[]).filter(x=>w.nat>x.nat);if(!n.length)return lifeCost(w.nat-100,'the typical NZ price for the same products');const b=n.reduce((a,x)=>x.wk>a.wk?x:a,n[0]);return lifeCost(Math.round(LIFE.basket*(w.nat-b.nat))/LIFE.basket,b.nm+', the nearest cheaper competitor ('+b.km+' km away)')})()}
    ${pnsGap(w)}
    ${nearSave(w)}
    ${w.id!=null?'<div id="rcov"></div>':''}

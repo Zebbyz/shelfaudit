@@ -309,3 +309,5 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 @media(max-width:520px){.gh-pair{gap:8px}.gh-pair>.gh-hero,.gh-pair>.gh-dist{padding:12px 10px}}
 .gh-pair,.gh-row{max-width:900px;margin-left:auto;margin-right:auto}
 .gaphero .gh-pair,.gaphero .gh-row,.gaphero .gh-loc{width:100%;max-width:760px;margin-left:auto;margin-right:auto;box-sizing:border-box}.gaphero .gh-pair>*{box-sizing:border-box}
+/* black cost panel and dark red gap panel: identical width */
+.rc .life,.rc .ovl.gapbox{width:100%;max-width:none;box-sizing:border-box;margin-left:0;margin-right:0}
