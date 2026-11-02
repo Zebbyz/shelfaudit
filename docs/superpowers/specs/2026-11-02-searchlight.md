@@ -1,11 +1,11 @@
-# Basket Brief (Shelf Audit for groups)
+# Searchlight (Shelf Audit for groups)
 
 Date: 2 November 2026. Owner: Guy Hollister, Unlimited Potential.
 
 ## Member tiers
 1. Stores: Price Pilot for supermarket owners (pricing cockpit, 50 / 100 km fences).
 2. Consumers: Shelf Audit app (GPS store audit PDF, receipts, tips, syndicates).
-3. Groups: Basket Brief for schools, sports clubs, community groups and syndicates.
+3. Groups: Searchlight for schools, sports clubs, community groups and syndicates.
 
 ## Problem
 Schools and clubs buy the same groceries every week (breakfast clubs, canteens, fundraisers, sausage sizzles) and rarely check which local store does the whole list cheapest.
@@ -28,4 +28,4 @@ Schools and clubs buy the same groceries every week (breakfast clubs, canteens, 
 Free for one list a week; paid group tier for unlimited lists, history and PDF reports. Numbers to be locked by Guy.
 
 ## Build status
-v1 demo at /basket-brief/ with mock prices, parse, compare, savings and CSV export.
+v1 demo at /searchlight/ with mock prices, parse, compare, savings and CSV export.

@@ -1,5 +1,5 @@
 <!doctype html><html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Basket Brief for schools and groups | Shelf Audit</title><meta name="description" content="Basket Brief: upload your group shopping list and find the cheapest local supermarket"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Searchlight for schools and groups | Shelf Audit</title><meta name="description" content="Searchlight: upload your group shopping list and find the cheapest local supermarket"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"><style>.pp{max-width:1100px;margin:0 auto;padding:28px 18px 60px}.pp h1{font-size:clamp(28px,6vw,46px);margin:.2em 0}.pp .lede{color:var(--ink2);font-size:18px;max-width:60ch}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:22px 0}.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 .pc.hot{border-color:var(--amber)}.price{font-size:38px;font-weight:900}.price small{font-size:15px;color:var(--mute);font-weight:400}.ann{color:var(--green)}
@@ -7,10 +7,10 @@
 .badge{display:inline-block;background:var(--amber);color:#000;font-weight:900;font-size:12px;padding:3px 8px;border-radius:6px}.btnp{display:inline-block;background:var(--red);color:#fff;font-weight:900;padding:12px 18px;border-radius:10px;text-decoration:none;margin:6px 8px 6px 0}
 .btnp.alt{background:transparent;border:1px solid var(--ink2);color:var(--ink)}.note{color:var(--mute);font-size:14px}.crumb a{color:var(--ink2)}</style></head><body>
 <header class="top"><a href="/" class="brand" aria-label="Shelf Audit home"><span class="tag">SA</span><span>Shelf Audit</span></a>
-<nav style="display:flex;gap:14px;flex-wrap:wrap"><a href="/">Watchdog</a><a href="/app/">Shopper app</a><a href="/basket-brief/">Basket Brief</a><a href="/plans/">For supermarkets</a></nav></header>
+<nav style="display:flex;gap:14px;flex-wrap:wrap"><a href="/">Watchdog</a><a href="/app/">Shopper app</a><a href="/searchlight/">Searchlight</a><a href="/plans/">For supermarkets</a></nav></header>
 <style>.bb textarea,.bb input,.bb select{width:100%;box-sizing:border-box;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit;font-size:16px}.bb label{display:block;font-weight:700;margin:12px 0 4px}
 .row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.row.best{color:var(--green);font-weight:900}.save{font-size:34px;font-weight:900;color:var(--green)}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--line);text-align:left}td.n,th.n{text-align:right}</style>
-<main class="pp bb"><p class="crumb"><a href="/">Shelf Audit</a> / Basket Brief</p><span class="badge">For schools, clubs and groups</span><h1>Basket Brief</h1>
+<main class="pp bb"><p class="crumb"><a href="/">Shelf Audit</a> / Searchlight</p><span class="badge">For schools, clubs and groups</span><h1>Searchlight</h1>
 <p class="lede">Schools, sports clubs, kapa haka groups and shopping syndicates: drop in what you plan to buy, and we tell you which nearby supermarket does it cheapest and how much your group saves.</p>
 <div class="grid">
 <div class="pc"><h2>1. Create your group</h2><label>Group name</label><input id="gname" placeholder="Papakura Primary PTA"><label>Group type</label><select id="gtype"><option>School</option><option>Sports club</option><option>Community group</option><option>Syndicate</option></select><label>Suburb or postcode</label><input id="gloc" placeholder="Papakura 2110"><p class="note">Demo only. Accounts and shared group logins are coming.</p></div>
@@ -38,8 +38,8 @@ const best=tot[0],worst=tot[tot.length-1];$('out').hidden=false;$('ctx').textCon
 $('stores').innerHTML=tot.map((s,k)=>`<div class="row ${k?'':'best'}"><span>${k?'':'Shop here: '}${s.n} <small>${s.km} km</small></span><span>${f(s.t)}</span></div>`).join('');
 $('save').textContent=f(worst.t-best.t);$('savenote').textContent=`Shopping at ${best.n} instead of ${worst.n}. Over 40 school weeks that is about ${f((worst.t-best.t)*40)}.`;
 $('lines').innerHTML='<table><tr><th>Qty</th><th>Item</th>'+tot.map(s=>`<th class="n">${s.n}</th>`).join('')+'</tr>'+rows.map(r=>`<tr><td>${r.q}</td><td>${r.i}</td>`+tot.map(s=>`<td class="n">${f(r.q*base(r.i)*s.f)}</td>`).join('')+'</tr>').join('')+'</table>';window._tot=tot;$('out').scrollIntoView({behavior:'smooth'})};
-$('exp').onclick=()=>{const t=window._tot;let c='Qty,Item,'+t.map(s=>s.n).join(',')+'\n'+rows.map(r=>[r.q,'"'+r.i+'"',...t.map(s=>(r.q*base(r.i)*s.f).toFixed(2))].join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/csv'}));a.download='basket-brief.csv';a.click()};
+$('exp').onclick=()=>{const t=window._tot;let c='Qty,Item,'+t.map(s=>s.n).join(',')+'\n'+rows.map(r=>[r.q,'"'+r.i+'"',...t.map(s=>(r.q*base(r.i)*s.f).toFixed(2))].join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/csv'}));a.download='searchlight.csv';a.click()};
 </script>
 <footer class="foot"><div class="foot-in"><div><strong>Shelf Audit</strong><p>An independent price watchdog for New Zealand shoppers. Not affiliated with any supermarket.</p></div>
-<div class="foot-links"><a href="/">Shopper watchdog</a><a href="/app/">Shopper app</a><a href="/basket-brief/">Basket Brief</a><a href="/plans/">Price Pilot plans</a></div>
+<div class="foot-links"><a href="/">Shopper watchdog</a><a href="/app/">Shopper app</a><a href="/searchlight/">Searchlight</a><a href="/plans/">Price Pilot plans</a></div>
 <p class="fine">Concept, design and execution by <a href="https://unlimitedpotential.co.nz" rel="noopener">Unlimited Potential</a></p></div></footer></body></html>
