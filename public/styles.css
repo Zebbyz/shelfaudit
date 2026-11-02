@@ -359,3 +359,5 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .stamp small{font-size:10px;font-weight:700;letter-spacing:.08em}.stamp em{font-style:normal;font-size:10px;color:var(--amber);font-weight:700}
 .chain .stamp{margin-top:12px}.sbh .stamp{margin-left:6px}
 .sbc{grid-template-columns:1fr auto auto}.sg{font-style:normal;font-weight:900;font-size:12px;width:20px;height:18px;line-height:18px;text-align:center;border-radius:4px;color:#000}.sg.ok{background:#2fbf71}.sg.no{background:var(--red)}
+.stamp.ok,.stamp.no{color:#fff;border-color:transparent}.stamp.ok{background:#1f9d57}.stamp.no{background:#e23a26}.stamp em{color:#fff;background:#0006;padding:2px 4px;border-radius:3px}
+.sg.ok,.sg.no{color:#fff}.sg.ok{background:#1f9d57}.sg.no{background:#e23a26}
