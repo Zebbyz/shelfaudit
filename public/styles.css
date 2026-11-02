@@ -322,3 +322,11 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .gaps .range .up{font-size:36px;font-weight:900}
 .gaps .range small{font-size:15px}
 @media(max-width:560px){.gaps .gp{font-size:22px}.gaps .range .up{font-size:28px}.plist.gaps .pn small{font-size:15px}}
+
+.cgwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0;border:1px solid var(--line);border-radius:12px}
+.cg{border-collapse:collapse;width:100%;min-width:520px;font:700 15px var(--mono)}
+.cg th,.cg td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.cg thead th{font-family:inherit;font-size:13px;background:var(--card)}
+.cg th[scope=row],.cg thead th:first-child{text-align:left;font-family:Lato,sans-serif;position:sticky;left:0;background:var(--card);z-index:1}
+.cg td.best{outline:2px solid var(--green);outline-offset:-2px}.cg td span{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+.cg td.na{color:var(--mute);font-weight:400;font-size:12px}

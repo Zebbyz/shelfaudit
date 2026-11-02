@@ -153,7 +153,7 @@ R['']=()=>{
     <h2>Which chain<br>is cheapest?</h2>
     <p class="say">On the same products, ${esc(best[0][0])} averages ${(100-best[0][1].ix).toFixed(1)}% below the national median, and ${esc(best[best.length-1][0])} averages ${(best[best.length-1][1].ix-100).toFixed(1)}% above it.</p>
     <div class="chains">${[...CH].sort((a,b)=>(c[b].ix||0)-(c[a].ix||0)).map(n=>{const x=c[n];return `<div class="chain" style="border-top:8px solid ${CHCOL[n]}"><div class="note">${esc(n)}</div><div class="ix ${cls(x.ix)}">${x.ix?`<span data-to="${x.ix.toFixed(1)}" data-dec="1">${x.ix.toFixed(1)}</span>`:'n/a'} <small>index</small></div><div class="what">${x.ix?ixWord(x.ix):'Not enough matching products yet'}</div><div class="fine">${x.n} stores captured</div></div>`}).join('')}</div>
-    <p class="fine" style="margin-top:14px">Index 100 is the national median price for each identical product. 90 means you pay about 10% less. <a href="#/method">How we work it out</a>.</p>
+    <div id="catgrid"></div><p class="fine" style="margin-top:14px">Index 100 is the national median price for each identical product. 90 means you pay about 10% less. <a href="#/method">How we work it out</a>.</p>
   </section>
   <section class="blk grid2">
     <div><p class="kicker">Why it matters</p><h2>The gap<br>is real</h2>
@@ -168,7 +168,7 @@ R['']=()=>{
   </section>`;
   wireLoc('hloc',()=>{location.hash='#/near'});
   if(here)renderNear($('#hnear'),6);
-  topGaps($('#htop'));
+  topGaps($('#htop'));catGrid($('#catgrid'),[...CH].sort((a,b)=>(c[b].ix||0)-(c[a].ix||0)));
   tagField($('#tf'));wireSlider();
 };
 function renderNear(el,n=12){
@@ -394,6 +394,16 @@ async function mapSection(el){const g=await nzmap(),[x0,x1,y0,y1]=g.b,W=g.W,H=g.
   $$('#mrg .chip',el).forEach(b=>b.onclick=()=>{const r=b.dataset.r;hide();if(!r)return fly(1,0,0);const s=st.filter(x=>x.r===r);flyBox(s.map(x=>X(x.lo)),s.map(x=>Y(x.la)))});
   apply()}
 
+
+// category x chain heat grid
+async function catGrid(el,order){try{const I=await intel();if(!el.isConnected||!I.chaincat)return;const cc=I.chaincat;
+  const cats=[...new Set(Object.values(cc).flatMap(o=>Object.keys(o)))].sort();
+  const bg=v=>{const d=Math.max(-15,Math.min(15,v-100))/15;return d>0?`rgba(255,74,54,${(.15+.6*d).toFixed(2)})`:`rgba(61,220,151,${(.15+.6*-d).toFixed(2)})`};
+  const cap=I.cap?new Date(I.cap).toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric',timeZone:'Pacific/Auckland'}):'';
+  const head=order.map(n=>`<th style="border-top:6px solid ${CHCOL[n]}">${esc(n)}</th>`).join('');
+  const rows=cats.map(c=>{const vals=order.map(n=>cc[n]&&cc[n][c]);const ok=vals.filter(v=>v!=null),mn=Math.min(...ok);
+    return `<tr><th scope="row">${esc(c)}</th>${vals.map(v=>v==null?'<td class="na">No data</td>':`<td style="background:${bg(v)}"${v===mn?' class="best"':''}>${v.toFixed(1)}${v===mn?' <span>cheapest</span>':''}</td>`).join('')}</tr>`}).join('');
+  el.innerHTML=`<h3 style="margin:26px 0 6px">Price index by aisle, every chain</h3><p class="say" style="font-size:16px">Each chain's typical price for the same products in each category, against the national median of 100. Lower is cheaper. Columns run dearest to cheapest overall.</p><div class="cgwrap"><table class="cg"><thead><tr><th>Category</th>${head}</tr></thead><tbody>${rows}</tbody></table></div><p class="fine">Source: Shelf Audit shelf price capture${cap?', '+cap:''}, ${cats.length} categories. Median shelf price per product, stores with full data only. FreshChoice has no category data yet because too few of its products match across stores.</p>`}catch(e){el.hidden=true}}
 // insights
 async function topGaps(el){try{const I=await intel();if(!el.isConnected||!I.gaps)return;
   const cap=I.cap?new Date(I.cap):null,today=cap&&cap.toLocaleDateString('en-NZ',{timeZone:'Pacific/Auckland'})===new Date().toLocaleDateString('en-NZ',{timeZone:'Pacific/Auckland'});
