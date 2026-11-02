@@ -333,3 +333,4 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 
 .nwcall{margin:22px 0 8px;padding:20px 22px;border-left:8px solid var(--red);background:rgba(255,74,54,.1);border-radius:0 14px 14px 0}
 .nwcall p{margin:0;font-weight:900;font-size:clamp(20px,3.2vw,30px);line-height:1.25;color:var(--ink)}
+.nwcall small{display:block;margin-top:10px;font-size:13px;opacity:.75;color:var(--ink)}
