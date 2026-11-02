@@ -21,6 +21,7 @@ Shelf Audit works like an insurer.
 
 - Customers buy access and play with the data however they like.
 - Local: $595 per calendar month plus GST, stores within a 50 km radius of the customer's location.
+- Local 100 km (premium): stores within a 100 km radius. Priced a lot more than the 50 km Local tier. Exact price to be set.
 - National: $1,850 per month plus GST paid monthly, or $1,450 per month plus GST paid annually.
 - A National key gets the entire nation instantly, all stores and products in one go.
 - Hosted on Cloudflare Pages Functions with D1. No RapidAPI or other marketplace.
@@ -122,6 +123,7 @@ All of this ships under the Price Pilot name, on the Shelf Audit platform.
 ## 10. Billing
 
 - Flat pricing: API Local and National fees plus SaaS subscriptions.
+- Competitor radius ("look over the fence"): Price Pilot customers can see every supermarket within 50 km of their store, aligned with the Local API price context ($595 per month plus GST). A wider 100 km radius is a premium tier that costs a lot more than 50 km. National remains the full NZ view of every store.
 - No cut of supermarket sales. That was a metaphor for the logic, not the billing model.
 
 ### 10.1 Licensing rule: one paid seat per physical store
