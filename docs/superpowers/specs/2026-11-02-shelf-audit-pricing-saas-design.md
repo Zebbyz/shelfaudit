@@ -1,4 +1,6 @@
-# Shelf Audit Pricing SaaS: Design Spec
+# Price Pilot (Shelf Audit platform): Design Spec
+
+Product name: **Price Pilot**. Price Pilot is the pricing SaaS built on the Shelf Audit platform. Shelf Audit remains the data platform and the paid API brand; Price Pilot is the product stores and head offices buy and log in to.
 
 Date: 2 November 2026
 Status: Approved by Guy Hollister
@@ -25,8 +27,9 @@ Shelf Audit works like an insurer.
 - No rate limiting required.
 - Already partially live on the intel preview under `/api/v1/p/`.
 
-### 2.2 Pricing SaaS (rigid engine)
+### 2.2 Price Pilot: pricing SaaS (rigid engine)
 
+- Product name: Price Pilot (Shelf Audit platform), locked by Guy on 2 November 2026.
 - A rigid system that tunes the customer's whole business pricing model.
 - Advise first: the engine flags lines and recommends prices, the customer applies them.
 - Write-back to the customer's POS comes later as a paid upgrade.
@@ -79,6 +82,8 @@ Combining scopes:
 Advise cockpit on Cloudflare. Full POS middleware is not part of v1.
 
 ## 7. Product shape
+
+All of this ships under the Price Pilot name, on the Shelf Audit platform.
 
 ### Store package
 
