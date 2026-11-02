@@ -216,3 +216,12 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 .life-s{margin:4px 0 10px;font-size:15px;opacity:.9}
 .life-l{margin:0;padding-left:18px;font-size:16px;line-height:1.4}.life-l li{margin:4px 0}.life-l b{color:#ffe14a}
 .life-f{margin:10px 0 0;font-size:12px;opacity:.75}.life-f a{color:#fff}
+
+.rc-hd{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-bottom:8px}
+.rc-hd .hlogo,.rc-hd img{margin:0}
+.rc-g{flex:none;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:transparent;color:#fff;border:6px double #fff;border-radius:50%;box-shadow:none;transform:rotate(-12deg);font-family:"IM Fell English",serif;position:relative;mix-blend-mode:normal;opacity:.95;-webkit-mask:radial-gradient(circle at 30% 40%,#000 60%,#000c 70%,#000 80%)}
+.rc-g span{font:italic 400 96px/.8 "IM Fell English",serif}
+.rc-g small{font:400 14px/1 "IM Fell English",serif;letter-spacing:.3em;text-transform:uppercase;margin-top:2px}
+.rc-b h2{font-family:"IM Fell English",serif;text-transform:none;letter-spacing:0}
+.rc-k{font-family:"IM Fell English",serif;font-size:15px;letter-spacing:.12em}
+@media (max-width:760px){.rc-g{width:88px;height:88px}.rc-g span{font-size:66px}.rc-g small{font-size:11px}.rc-hd{gap:16px}}

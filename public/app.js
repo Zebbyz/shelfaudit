@@ -268,7 +268,7 @@ R.store=id=>{const s=store(+id);if(!s)return R.notfound();setTitle(s.nm);
   main.innerHTML=`<p class="crumb"><a href="#/league">League table</a></p><div class="ph">${heroLogo(s.ch)}<p class="kicker" style="color:${CHCOL[s.ch]}">${esc(s.ch)} · ${esc(s.t)}${s.r?', '+esc(s.r):''}</p><h1 style="font-size:clamp(34px,7vw,64px)">${esc(s.nm)}</h1>
   ${fieldStore(s.id)}${w?`<p><span class="badge flag">Under watch</span> <span class="note">${esc(w[1])}</span></p>`:''}
   <div class="stats" style="border-top:2px solid var(--ink)"><div class="stat"><b class="${cls(s.ix)}">${s.ix?s.ix.toFixed(1):'n/a'}</b><span>price index</span></div><div class="stat"><b>${s.above??'n/a'}%</b><span>of items above national median</span></div><div class="stat"><b>${num(s.m)}</b><span>matched products</span></div><div class="stat"><b>${rank>=0?`${rank+1} of ${D.meta.full}`:'n/a'}</b><span>cheapest nationally</span></div></div>
-  <p class="say" style="margin-top:20px">${s.ix?`On identical products, this store is ${ixWord(s.ix)}.`:'Not enough matched products to rank this store.'} ${s.thin?'Thin data: fewer than 1,000 matched products, so treat the index as a rough guide.':''}</p>${s.ix&&!s.thin?lifeCost(s.ix-100,'the national median for the same products'):''}<p class="fine">Captured ${nzTime(s.at)}.</p></div>
+  <p class="say" style="margin-top:20px">${s.ix?`On identical products, this store is ${ixWord(s.ix)}.`:'Not enough matched products to rank this store.'} ${s.thin?'Thin data: fewer than 1,000 matched products, so treat the index as a rough guide.':''}</p>${s.ix?lifeCost(s.ix-100,'the national median for the same products'):''}<p class="fine">Captured ${nzTime(s.at)}.</p></div>
   ${cats.length?`<section class="blk"><h3>By aisle</h3><p class="note">Index for each category against the national median.</p>${legend()}<div class="bars">${cats.map(([c,v])=>ixBar(c,v)).join('')}</div></section>`:''}
   ${peers.length?`<section class="blk"><h3>Compared with stores nearby</h3>${legend()}<div class="bars">${[{...s,d:0},...peers].sort((a,b)=>b.ix-a.ix).map(x=>ixBar(x.id===s.id?x.nm+' (this store)':x.nm,x.ix,`#/store/${x.id}`,x.id===s.id?'':x.d.toFixed(1)+' km',x.ch)).join('')}</div></section>`:''}
   <section class="blk"><a class="btn" href="#/basket">Price my basket here and nearby</a></section>`;
@@ -550,8 +550,8 @@ let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??
   const w=REP.top[0];if(!w)return;const lk=x=>x.id!=null?`href="#/store/${x.id}"`:'';const pct=v=>(v-100).toFixed(1)+'%';
   el.innerHTML=`<section class="rc" aria-label="Worst pricing in New Zealand">
   <div class="rc-in"><p class="rc-k">Shelf Audit report card · Worst pricing in NZ</p>
-  <div class="rc-main"><div class="rc-g" aria-label="Grade ${w.g}">${w.g}</div>
-   <div class="rc-b">${heroLogo(w.ch)}<h2><a ${lk(w)}>${esc(w.nm)}</a></h2>
+  <div class="rc-main">
+   <div class="rc-b"><div class="rc-hd">${heroLogo(w.ch)}<div class="rc-g" aria-label="Grade ${w.g}"><span>${w.g}</span><small>Fail</small></div></div><h2><a ${lk(w)}>${esc(w.nm)}</a></h2>
    <p class="rc-s"><b>${w.ix.toFixed(1)}</b> score · ${pct(w.ix)} above typical ${esc(w.ch)} pricing</p>
    <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
    ${lifeCost(w.nat-100,'the typical NZ price for the same products')}
