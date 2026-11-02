@@ -330,3 +330,6 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .cg th[scope=row],.cg thead th:first-child{text-align:left;font-family:Lato,sans-serif;position:sticky;left:0;background:var(--card);z-index:1}
 .cg td.best{outline:2px solid var(--green);outline-offset:-2px}.cg td span{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
 .cg td.na{color:var(--mute);font-weight:400;font-size:12px}
+
+.nwcall{margin:22px 0 8px;padding:20px 22px;border-left:8px solid var(--red);background:rgba(255,74,54,.1);border-radius:0 14px 14px 0}
+.nwcall p{margin:0;font-weight:900;font-size:clamp(20px,3.2vw,30px);line-height:1.25;color:var(--ink)}
