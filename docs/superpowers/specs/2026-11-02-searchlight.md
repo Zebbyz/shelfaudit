@@ -24,8 +24,8 @@ Schools and clubs buy the same groceries every week (breakfast clubs, canteens, 
 - Bulk pooling across several groups; supplier direct quotes.
 - Term savings report; ComCom evidence pack from aggregate group data.
 
-## Pricing (to set)
-Free for one list a week; paid group tier for unlimited lists, history and PDF reports. Numbers to be locked by Guy.
+## Pricing (locked 2 November 2026)
+Shelf Audit clips the ticket: fee is 5% of the dollars saved versus the dearest local store for the same list. No saving, no fee. Papakura demo: $66.70 saved, $3.34 fee, group keeps $63.36. Fee shown on compare results and the features page.
 
 ## Build status
 v1 demo at /searchlight/ with mock prices, parse, compare, savings and CSV export.
