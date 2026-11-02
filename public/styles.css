@@ -256,3 +256,14 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 
 /* Store names in clean sans (Lato) */
 .rc-b h2,.gh-t{font-family:"Lato","Helvetica Neue",Arial,sans-serif;font-weight:900;font-style:normal;letter-spacing:-.01em}.gh-t span{font-weight:400}
+/* Gap compare redesign */
+.gaphero{text-align:center;padding:8px 0 4px;font-family:Lato,"Helvetica Neue",Arial,sans-serif}
+.gh-vs{display:flex;flex-direction:column;align-items:center;gap:2px;margin:0 0 14px}
+.gh-a,.gh-b{font:900 clamp(20px,5vw,30px)/1.15 Lato,Arial,sans-serif;color:#fff;text-decoration:none}.gh-b{color:#ffe14a;border-bottom:2px solid #ffe14a55}
+.gh-v{font:700 12px/1 Lato,Arial;letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin:4px 0}
+.gh-hero{background:#0006;border-radius:16px;padding:18px 12px;margin:0 auto 12px;max-width:560px}
+.gh-hero b{display:block;font:900 clamp(56px,16vw,120px)/1 Lato,Arial,sans-serif;color:#ffe14a;letter-spacing:-.02em}
+.gh-hero i{display:block;font:700 clamp(13px,3vw,16px)/1.3 Lato,Arial;font-style:normal;text-transform:uppercase;letter-spacing:.1em;margin-top:8px}
+.gh-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:560px;margin:0 auto}
+.gh-row div{background:#0003;border-radius:10px;padding:10px 4px}
+.gh-row b{display:block;font:900 clamp(16px,4.6vw,26px)/1.1 Lato,Arial}.gh-row i{display:block;font:700 10px/1.2 Lato,Arial;font-style:normal;text-transform:uppercase;letter-spacing:.1em;opacity:.8;margin-top:4px}
