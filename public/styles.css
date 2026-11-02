@@ -280,3 +280,7 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .gh-dist{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 12px;padding:10px 14px;border:2px dashed #ffe14a;border-radius:14px;max-width:560px}
 .gh-dist b{font:900 clamp(30px,8vw,52px)/1 Lato,Arial,sans-serif;color:#fff}
 .gh-dist span{font:700 clamp(13px,3vw,17px)/1.3 Lato,Arial;text-transform:uppercase;letter-spacing:.08em}
+.rc-near{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;padding:14px;background:#0003;border:2px solid #fff;border-radius:14px;text-align:center}
+.rc-near b{display:block;font:900 clamp(34px,9vw,60px)/1 Lato,Arial,sans-serif;color:#fff}
+.rc-near i{display:block;font:700 13px/1.3 Lato,Arial;font-style:normal;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.rc-near p{grid-column:1/-1;margin:4px 0 0;font:700 16px/1.3 Lato,Arial}.rc-near a{color:#fff;text-decoration:underline}

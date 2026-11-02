@@ -588,6 +588,7 @@ let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??
    <div class="rc-b"><div class="rc-hd"><div class="rc-g" aria-label="Grade ${w.g}"><span>${w.g}</span><small>Fail</small></div>${heroLogo(w.ch)}</div><h2><a ${lk(w)}>${esc(w.nm)}</a></h2>
    <p class="rc-s"><b>${w.nat.toFixed(1)}</b> national price index · ${pct(w.nat)} above the typical NZ price for the same products (${w.ix.toFixed(1)} against its own chain)</p>
    <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
+   ${(()=>{const n=w.near||[];if(!n.length)return '';const b=n.reduce((a,x)=>x.wk>a.wk?x:a,n[0]);const y=Math.round(Math.round(LIFE.basket*(w.nat-b.nat))/100*52);return `<div class="rc-near"><div><b>$${num(y)}</b><i>saved a year</i></div><div><b>${b.km} km</b><i>${b.min} min drive</i></div><p>Nearest cheaper competitor: <a href="#/store/${b.id}">${esc(b.nm)}</a></p></div>`})()}
    ${lifeCost(w.nat-100,'the typical NZ price for the same products')}
    ${pnsGap(w)}
    ${nearSave(w)}
