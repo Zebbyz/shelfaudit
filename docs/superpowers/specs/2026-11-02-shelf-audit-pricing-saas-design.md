@@ -45,6 +45,28 @@ The customer's own rules, enforced against national Shelf Audit data. Examples:
 - No line more than 5% above the chain median.
 - Match the cheapest competitor within 10 km.
 
+### 4.1 Rules engine scope
+
+Stores and head offices will want to move pricing at every level, not just line by line. Every rule targets a scope, and scopes can be combined.
+
+Rule scopes:
+
+- **Brand:** every line from one brand (for example all Pams, all Anchor).
+- **Item:** one specific SKU or barcode in one store.
+- **Product:** the same product across sizes and variants (for example Anchor Blue Top in every size).
+- **Category:** a whole aisle or category tree level (for example Dairy, or Dairy > Milk).
+- **Seasonal section:** an entire seasonal range (for example Christmas, Easter, BBQ season, back to school), with start and end dates so the rule switches on and off by itself.
+- **Keyword:** any line whose name or description matches a keyword or phrase (for example "gluten free", "organic", "lamb").
+- **Custom tag:** any group the customer defines and tags themselves (for example "key value items", "loss leaders", "local suppliers").
+
+Combining scopes:
+
+- Scopes can be joined with AND, OR and NOT (for example Brand = Pams AND Category = Dairy, NOT keyword "organic").
+- Rules can apply to one store, a hand-picked group of stores, or the whole account.
+- When rules overlap, the most specific scope wins (item, then product, then keyword or custom tag, then brand, then category, then seasonal section, then account-wide), unless the customer sets an explicit priority.
+- Every rule shows a preview of how many lines it touches and the price change before it is applied.
+- Actions per rule: set a ceiling or floor against national Shelf Audit data, match or beat a nearby competitor, apply a fixed or percentage move, or hold a price.
+
 ## 5. Connectors
 
 - Day one the connector pulls prices and the product list only. Cost, margin, promos and stock come later.
