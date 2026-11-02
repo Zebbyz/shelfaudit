@@ -322,6 +322,7 @@ R.method=()=>{setTitle('Method and freshness');const m=D.meta;main.innerHTML=`<d
   <div class="prose"><h2>1. Capture</h2><p>We read the public online shelf price for every product at each store's own online shop: Woolworths, New World, Pak'nSave and FreshChoice (including SuperValue). Each capture is time-stamped and hash-chained, so a later edit would show.</p>
   <h2>2. Match identical products</h2><p>Foodstuffs stores share product codes. Across chains we match on brand words and pack size, for example "Anchor Blue Milk 2L". Products in fewer than five stores, or with a price gap over four times, are left out as likely mismatches.</p>
   <h2>3. Index</h2><p>For each product we take the national median price. A store's index is the average of its price divided by that median, times 100. So 100 is typical, 90 means about 10% cheaper, 105 means about 5% dearer. Stores with fewer than 1,000 matched products are marked thin data.</p>
+  <h2 id="near">Drive time and savings nearby</h2><p>For the worst-graded store we list up to six cheaper supermarkets within 25 km. Drive time and distance are one way by road, from OpenStreetMap road data through the public OSRM router, without live traffic. Saving a week = typical shop $214.10 × (worst store national index minus nearby store national index) ÷ 100. A year is 52 weeks. Fuel and time cost are not included.</p>
   <h2 id="life">What a dear store costs</h2><p>To make an index real, we turn it into dollars, hours and groceries. We take a typical weekly supermarket shop and add the store's gap above the median. Extra a week = $214.10 × gap %. A year is 52 weeks. Hours of work = extra ÷ hourly wage. Groceries = yearly extra ÷ the median shelf price of that item.</p>
   <ul><li><b>Typical shop $214.10 a week</b>: Stats NZ Household Economic Survey, year ended June 2023, average weekly household spend on grocery food ($139.40), meat, poultry and fish ($31.40), fruit and vegetables ($27.70) and non-alcoholic drinks ($15.60). Restaurant and takeaway food is left out. These are 2023 dollars, so the real figure today is likely higher and our estimate is conservative.</li>
   <li><b>Minimum wage $23.95 an hour</b>: adult rate from 1 April 2026, Minimum Wage Order 2026 (employment.govt.nz).</li>
@@ -553,6 +554,13 @@ async function overList(id,el,n=12,dark){if(!el)return;const P=await storePrices
   if(!rows.length){el.innerHTML='';return}
   el.innerHTML=`<div class="ovl${dark?' dk':''}"><p class="life-k">Priced above the NZ median: ${num(tot)} lines</p><table><thead><tr><th>Product</th><th class="n">This store</th><th class="n">NZ median</th><th class="n">Extra</th></tr></thead><tbody>${rows.map(([i,v,m])=>`<tr><td><a href="#/p/${i}">${esc(pr[i][0])}</a></td><td class="n up">${money(v)}</td><td class="n">${money(m)}</td><td class="n up">+${Math.round((v/m-1)*100)}%</td></tr>`).join('')}</tbody></table><p class="life-f">Regular shelf prices, specials removed. NZ median is the middle price across every store that sells the item (5 or more stores). Flagged for comparison only.</p></div>`}
 
+
+// Cheaper stores near the worst store: road drive time (OpenStreetMap via OSRM) and weekly saving, baked by scripts/build_report.py
+function nearSave(w){const n=w.near||[];if(!n.length)return '';const b=n.reduce((a,x)=>x.wk>a.wk?x:a,n[0]);
+  return `<div class="ovl dk near"><p class="life-k">Drive a few minutes, save money</p><p class="life-s">Shopping at <a href="#/store/${b.id}">${esc(b.nm)}</a>, ${b.min} min away, instead saves about <b>${money(b.wk)}</b> a week, <b>$${num(Math.round(b.wk*52))}</b> a year.</p>
+  <table><thead><tr><th>Cheaper store nearby</th><th class="n">Drive</th><th class="n">Distance</th><th class="n">Save a week</th><th class="n">Save a year</th></tr></thead><tbody>${n.map(x=>`<tr><td>${chLogo(x.ch)} <a href="#/store/${x.id}">${esc(x.nm)}</a></td><td class="n">${x.min} min</td><td class="n">${x.km} km</td><td class="n up">${money(x.wk)}</td><td class="n up">$${num(Math.round(x.wk*52))}</td></tr>`).join('')}</tbody></table>
+  <p class="life-f">Drive time and distance one way by road from ${esc(w.nm)}, from OpenStreetMap road data (OSRM router), normal traffic not included. Saving = typical weekly shop $${LIFE.basket.toFixed(2)} × the gap in national price index between the two stores (${w.nat.toFixed(1)} here). Fuel not included. Estimate only.</p></div>`}
+
 // Report card: worst-priced store in NZ. Data baked by scripts/build_report.py
 let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??=await fetch('/data/report.json').then(r=>r.json())}catch{return}
   const w=REP.top[0];if(!w)return;const lk=x=>x.id!=null?`href="#/store/${x.id}"`:'';const pct=v=>(v-100).toFixed(1)+'%';
@@ -563,6 +571,7 @@ let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??
    <p class="rc-s"><b>${w.ix.toFixed(1)}</b> score · ${pct(w.ix)} above typical ${esc(w.ch)} pricing</p>
    <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
    ${lifeCost(w.nat-100,'the typical NZ price for the same products')}
+   ${nearSave(w)}
    ${w.id!=null?'<div id="rcov"></div>':''}
    ${w.id!=null?`<a class="rc-btn" ${lk(w)}>See the evidence</a>`:''}</div></div>
   <ol class="rc-top">${REP.top.map(x=>`<li><a ${lk(x)}><span class="rc-r">${x.rank}</span><span class="rc-gg g${x.g}">${x.g}</span>${chLogo(x.ch||chOf(x.nm))}<span class="rc-n">${esc(x.nm)}</span><span class="rc-x">${x.ix.toFixed(1)}</span></a></li>`).join('')}</ol>
