@@ -34,6 +34,7 @@ print(json.dumps(out[0]), dist)
 import math, urllib.request
 BASKET = 214.10
 NAT = {key(r['store']): float(r['national_index']) for r in rows}
+GR = {key(r['store']): grade(float(r['within_chain_index'])) for r in rows}
 def hav(a, b):
     p = math.pi / 180; d = math.sin((b['la'] - a['la']) * p / 2) ** 2 + math.cos(a['la'] * p) * math.cos(b['la'] * p) * math.sin((b['lo'] - a['lo']) * p / 2) ** 2
     return 12742 * math.asin(math.sqrt(d))
@@ -55,7 +56,7 @@ for t in rep['top']:
         dur, dist, src = j['durations'][0][1:], j['distances'][0][1:], 'osrm'
     except Exception as e:
         print('OSRM failed, straight-line fallback', e); dur = [c[0] * 1.3 / 50 * 3600 for c in cand]; dist = [c[0] * 1300 for c in cand]; src = 'est'
-    t['near'] = sorted([{'id': s['id'], 'nm': s['nm'], 'ch': s['ch'], 'nat': n, 'km': round(dist[i] / 1000, 1), 'min': max(1, round(dur[i] / 60)),
+    t['near'] = sorted([{'id': s['id'], 'nm': s['nm'], 'ch': s['ch'], 'nat': n, 'g': GR.get(key(s['nm'])), 'km': round(dist[i] / 1000, 1), 'min': max(1, round(dur[i] / 60)),
                   'wk': round(BASKET * (t['nat'] - n) / 100, 2), 'src': src} for i, (_, s, n) in enumerate(cand)], key=lambda x: x['min'])[:6]
 json.dump(rep, open('public/data/report.json', 'w'), separators=(',', ':'))
 print(json.dumps(rep['top'][0]['near'], indent=0))
