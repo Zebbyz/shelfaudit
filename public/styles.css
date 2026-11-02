@@ -253,3 +253,6 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .gh-big b{font:800 clamp(40px,10vw,84px)/1 var(--mono,inherit);color:#ffe14a}.gh-big div:first-child b{font-size:clamp(52px,13vw,112px)}
 .gh-big i{font-style:normal;font-size:clamp(13px,2.4vw,17px);text-transform:uppercase;letter-spacing:.12em;margin-top:6px}
 .gh-ix{margin:14px 0 0;font-size:clamp(15px,2.6vw,19px);opacity:.9}
+
+/* Store names in clean sans (Lato) */
+.rc-b h2,.gh-t{font-family:"Lato","Helvetica Neue",Arial,sans-serif;font-weight:900;font-style:normal;letter-spacing:-.01em}.gh-t span{font-weight:400}
