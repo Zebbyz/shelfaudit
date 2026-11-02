@@ -29,3 +29,12 @@ Free for one list a week; paid group tier for unlimited lists, history and PDF r
 
 ## Build status
 v1 demo at /searchlight/ with mock prices, parse, compare, savings and CSV export.
+
+## Submit back to Searchlight (added 2 November 2026)
+
+- Optional checkbox after a compare: "Submit this compare back to Searchlight". Off by default.
+- When ticked, Shelf Audit emails the dearer supermarket: date and time, that a local school, business or club shopped elsewhere after comparing their store, their total vs the cheaper store total, dollars saved. CC the Commerce Commission.
+- Group name is withheld unless the group opts in.
+- Phase 1 (now): checkbox, live preview of the report text, copy on /searchlight and /searchlight/features. Nothing is sent.
+- Email template: docs/templates/searchlight-submit-back-email.md.
+- Phase 2: store contact list, ComCom address confirmed, sending switched on only after Guy approves.
