@@ -342,4 +342,4 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .sbbar i{flex:1 1 0;min-width:0;cursor:pointer}.sbbar i:hover,.sbbar i:focus{outline:2px solid #fff;outline-offset:-2px}
 #stbars .up{background:#ff4a36}#stbars .ok{background:#2fbf71}#stbars .na{background:#666}
 .sbtip{font-size:13px;min-height:1.3em;margin:8px 0 0;font-weight:700}
-@media(max-width:600px){.sbrow{grid-template-columns:1fr;gap:4px;margin:10px 0}.sbbar{height:24px}}
+@media(max-width:600px){.sbrow{grid-template-columns:1fr;gap:4px;margin:10px 0}.sbbar{height:24px;gap:0}}
