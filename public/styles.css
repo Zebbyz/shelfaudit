@@ -308,3 +308,4 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .gh-pair .gh-dist em{font-size:clamp(26px,7vw,52px)}
 @media(max-width:520px){.gh-pair{gap:8px}.gh-pair>.gh-hero,.gh-pair>.gh-dist{padding:12px 10px}}
 .gh-pair,.gh-row{max-width:900px;margin-left:auto;margin-right:auto}
+.gaphero .gh-pair,.gaphero .gh-row,.gaphero .gh-loc{width:100%;max-width:760px;margin-left:auto;margin-right:auto;box-sizing:border-box}.gaphero .gh-pair>*{box-sizing:border-box}
