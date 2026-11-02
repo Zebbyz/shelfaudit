@@ -298,3 +298,13 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .gh-pair>.gh-dist{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding-left:16px;border-left:2px dashed #ffe14a80}
 .gh-pair .gh-dist b{font:900 clamp(56px,16vw,120px)/1 Lato,Arial,sans-serif;color:#fff}
 .gh-pair .gh-dist em{display:block;font:900 clamp(22px,6vw,40px)/1 Lato,Arial;font-style:normal;color:#fff;text-transform:uppercase}
+
+/* split: two separate dashed panels side by side, filling width */
+.gh-pair{background:none;border:0;padding:0;max-width:none;width:100%;display:flex;gap:14px;align-items:stretch}
+.gh-pair>.gh-hero,.gh-pair>.gh-dist{background:#0006;border:2px dashed #ffe14a;border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;justify-content:center}
+.gh-pair>.gh-hero{flex:1.4 1 0}
+.gh-pair>.gh-dist{flex:1 1 0;align-items:center;text-align:center;border-left:2px dashed #ffe14a;padding-left:16px}
+.gh-pair .gh-dist b{font-size:clamp(72px,20vw,160px)}
+.gh-pair .gh-dist em{font-size:clamp(26px,7vw,52px)}
+@media(max-width:520px){.gh-pair{gap:8px}.gh-pair>.gh-hero,.gh-pair>.gh-dist{padding:12px 10px}}
+.gh-pair,.gh-row{max-width:900px;margin-left:auto;margin-right:auto}
