@@ -2,7 +2,7 @@
 --serif:"Lato","Helvetica Neue",Arial,sans-serif;--sans:Calibri,Carlito,"Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;--r:18px;--mx:50vw;--my:30vh}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.55 var(--sans);font-feature-settings:"tnum" 1;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;background:radial-gradient(520px circle at var(--mx) var(--my),#ffe14a12,transparent 62%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;background:radial-gradient(180px circle at var(--mx) var(--my),#ffe14a2e,transparent 70%),radial-gradient(560px circle at var(--mx) var(--my),#ffe14a26,transparent 65%)}
 body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:41;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:inherit}img,svg{max-width:100%}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--tag);color:#000;padding:8px 12px;z-index:99}
