@@ -189,3 +189,20 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 .slist a:has(> .clogo){grid-template-columns:30px auto minmax(0,1fr) auto}.slist a .nm{min-width:0;overflow-wrap:anywhere}.lbl .clogo{margin-right:8px}
 .badge.ok{background:#1f8a4c;color:#fff;margin-left:0}
 .vshelf{margin:14px 0}.vshelf p{margin:6px 0}.vshelf summary{cursor:pointer;list-style:none}.vshelf summary::-webkit-details-marker{display:none}.vshelf .plist{margin-top:10px}
+
+/* REPORT CARD */
+.rc{margin:0 calc(50% - 50vw);background:#c8102e;color:#fff;border-bottom:4px solid #000}
+.rc-in{max-width:1180px;margin:0 auto;padding:22px 20px 18px}
+.rc-k{font:700 12px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;margin:0 0 14px;opacity:.9}
+.rc-main{display:flex;gap:22px;align-items:center}
+.rc-g{flex:none;width:110px;height:110px;display:grid;place-items:center;background:#fff;color:#c8102e;font:900 92px/1 var(--serif);border-radius:10px;transform:rotate(-4deg);box-shadow:6px 6px 0 #000}
+.rc-b h2{font-size:clamp(30px,5.4vw,60px);margin:0 0 6px}.rc-b h2 a{text-decoration:none}
+.rc-s{margin:0;font:700 16px var(--mono)}.rc-s b{font-size:22px}
+.rc-e{margin:8px 0 0;font-size:16px;max-width:70ch;opacity:.95}
+.rc-btn{display:inline-block;margin-top:12px;background:#000;color:#fff;text-decoration:none;font:700 12px var(--serif);letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border-radius:999px}
+.rc-top{list-style:none;padding:0;margin:18px 0 10px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.rc-top a{display:flex;align-items:center;gap:8px;background:#0003;border-radius:8px;padding:8px 10px;text-decoration:none;font-size:14px;line-height:1.15;height:100%}
+.rc-r{font:700 11px var(--mono);opacity:.7}.rc-gg{flex:none;width:26px;height:26px;display:grid;place-items:center;border-radius:5px;background:#fff;color:#c8102e;font:900 16px var(--serif)}
+.rc-gg.gD{background:#ffd0d0}.rc-n{flex:1}.rc-x{font:700 13px var(--mono)}
+.rc-f{margin:0;font-size:12px;opacity:.85}.rc-f a{color:#fff}
+@media (max-width:760px){.rc-g{width:76px;height:76px;font-size:62px}.rc-main{gap:14px;align-items:flex-start}.rc-top{grid-template-columns:1fr}}

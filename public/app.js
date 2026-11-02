@@ -118,12 +118,13 @@ function wireSlider(){const cm=$('#cmp');if(!cm)return;let dn=0;const mv=x=>{con
   cm.addEventListener('pointerdown',e=>{dn=1;cm.setPointerCapture(e.pointerId);mv(e.clientX)});cm.addEventListener('pointermove',e=>{if(dn)mv(e.clientX)});cm.addEventListener('pointerup',()=>dn=0)}
 const R={};
 R['']=()=>{
+  setTimeout(reportCard,0);
   setTitle();const m=D.meta,c=m.chains;
   const best=Object.entries(c).filter(x=>x[1].ix).sort((a,b)=>a[1].ix-b[1].ix);
   const wide=D.products.filter(p=>p[6]>=30).map(p=>p[5]/p[4]).sort((a,b)=>b-a);const medGap=wide[Math.floor(wide.length/2)];
   const ex=D.products.filter(p=>p[6]>=60&&p[4]>2).sort((a,b)=>b[5]/b[4]-a[5]/a[4])[0];
   const tk=D.products.filter(p=>p[6]>=50&&p[4]>1.5).sort((a,b)=>b[5]/b[4]-a[5]/a[4]).slice(0,24).map(p=>`<span>${esc(p[0])} <i>${money(p[4])}</i> to <i>${money(p[5])}</i></span>`).join('');
-  main.innerHTML=`
+  main.innerHTML=`<div id="rcard"></div>
   <section class="hero2"><canvas id="tf" aria-hidden="true"></canvas>
     <div class="hero2-in">
       <p class="kicker">Independent price watchdog · New Zealand</p>
@@ -521,3 +522,16 @@ ${ex('/api/v1/stores.json',{count:D.stores.length,stores:[{id:s0.id,chain:s0.ch,
 
 function fieldFor(k,id){const f=(D.field||[]).filter(x=>x[k]===id);if(!f.length)return '';return `<div class="vshelf">${f.map(x=>`<p><span class="badge ${x.m?'ok':'flag'}">${x.src==='receipt_photo'?'✓ Checked on receipt':'✓ Verified on shelf'}</span> <span class="note">${money(x.pr)}${x.w?` (was ${money(x.w)})`:''} ${x.src==='receipt_photo'?'charged':''} at <a href="#/store/${x.s}">${esc(store(x.s).nm)}</a>, ${x.src==='receipt_photo'?'receipt':'photographed'} ${nzDate(x.at)}. ${x.m?'Matches the online price.':`Online showed ${money(x.op)}${x.l?' ('+esc(x.l)+')':''}. Flagged for comparison only.`}</span></p>`).join('')}</div>`}
 function fieldStore(id){const f=(D.field||[]).filter(x=>x.s===id);if(!f.length)return '';const ok=f.filter(x=>x.m).length;return `<details class="vshelf"><summary><span class="badge ok">✓ Verified on shelf</span> <span class="note">Field checks: ${f.length} prices checked in store (shelf tickets and receipts), ${ok} of ${f.length} match online</span></summary><ul class="plist">${f.map(x=>`<li><span class="pn">${x.p!=null?`<a href="#/p/${x.p}">${esc(x.n)}</a>`:esc(x.n)}${x.l?`<small>Ticket: ${esc(x.l)}</small>`:''}</span><span class="range"><span class="${x.w?'dn':''}">${money(x.pr)}</span><br><small>${x.src==='receipt_photo'?'receipt · ':''}${x.m?'matches online':'<span class="up">online '+money(x.op)+'</span>'}</small></span></li>`).join('')}</ul></details>`}
+
+// Report card: worst-priced store in NZ. Data baked by scripts/build_report.py
+let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??=await fetch('/data/report.json').then(r=>r.json())}catch{return}
+  const w=REP.top[0];if(!w)return;const lk=x=>x.id!=null?`href="#/store/${x.id}"`:'';const pct=v=>(v-100).toFixed(1)+'%';
+  el.innerHTML=`<section class="rc" aria-label="Worst pricing in New Zealand">
+  <div class="rc-in"><p class="rc-k">Shelf Audit report card · Worst pricing in NZ</p>
+  <div class="rc-main"><div class="rc-g" aria-label="Grade ${w.g}">${w.g}</div>
+   <div class="rc-b"><h2><a ${lk(w)}>${esc(w.nm)}</a></h2>
+   <p class="rc-s"><b>${w.ix.toFixed(1)}</b> score · ${pct(w.ix)} above typical ${esc(w.ch)} pricing</p>
+   <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
+   ${w.id!=null?`<a class="rc-btn" ${lk(w)}>See the evidence</a>`:''}</div></div>
+  <ol class="rc-top">${REP.top.map(x=>`<li><a ${lk(x)}><span class="rc-r">${x.rank}</span><span class="rc-gg g${x.g}">${x.g}</span><span class="rc-n">${esc(x.nm)}</span><span class="rc-x">${x.ix.toFixed(1)}</span></a></li>`).join('')}</ol>
+  <p class="rc-f">Grade scale: score is the store's regular shelf price index against its own chain, 100 = chain median for the same products. A under 99 · B 99 to 101 · C 101 to 103 · D 103 to 105 · F 105 and over. Of ${num(REP.stores)} stores graded: ${Object.entries(REP.dist).map(([g,n])=>`${g} ${num(n)}`).join(', ')}. Specials removed. Flagged lines are for comparison, not an allegation. <a href="#/method">Method</a></p></div></section>`}
