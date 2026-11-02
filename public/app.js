@@ -579,7 +579,8 @@ async function storeNat(s){try{REP??=await fetch('/data/report.json').then(r=>r.
   if(st){st.textContent=nat.toFixed(1);st.className=cls(nat);st.nextElementSibling.textContent='national price index'}
   const sw=$('#sword');if(sw)sw.textContent=`On identical products, this store is ${ixWord(nat)}.`;
   if(th)th.textContent=`National index ${nat.toFixed(1)} from ${num(n)} matched products on regular shelf prices, the same figure used in the report card.`;
-  c.innerHTML=lifeCost(nat-100,'the typical NZ price for the same products')}
+  c.innerHTML=nearCost(REP.top.find(t=>t.id==s.id),nat)}
+function nearCost(w,nat){const n=((w&&w.near)||[]).filter(x=>nat>x.nat);if(!n.length)return lifeCost(nat-100,'the typical NZ price for the same products');const b=n.reduce((a,x)=>x.wk>a.wk?x:a,n[0]);return lifeCost(Math.round(LIFE.basket*(nat-b.nat))/LIFE.basket,b.nm+', the nearest cheaper competitor ('+b.km+' km away)')}
 let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??=await fetch('/data/report.json').then(r=>r.json())}catch{return}
   const w=REP.top[0];if(!w)return;const lk=x=>x.id!=null?`href="#/store/${x.id}"`:'';const pct=v=>(v-100).toFixed(1)+'%';
   el.innerHTML=`<section class="rc" aria-label="Worst pricing in New Zealand">
@@ -589,7 +590,7 @@ let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??
    <p class="rc-s"><b>${w.nat.toFixed(1)}</b> national price index · ${pct(w.nat)} above the typical NZ price for the same products (${w.ix.toFixed(1)} against its own chain)</p>
    <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
    
-   ${(()=>{const n=(w.near||[]).filter(x=>w.nat>x.nat);if(!n.length)return lifeCost(w.nat-100,'the typical NZ price for the same products');const b=n.reduce((a,x)=>x.wk>a.wk?x:a,n[0]);return lifeCost(Math.round(LIFE.basket*(w.nat-b.nat))/LIFE.basket,b.nm+', the nearest cheaper competitor ('+b.km+' km away)')})()}
+   ${nearCost(w,w.nat)}
    ${pnsGap(w)}
    ${nearSave(w)}
    ${w.id!=null?'<div id="rcov"></div>':''}
