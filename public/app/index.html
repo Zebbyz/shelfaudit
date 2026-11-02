@@ -1,0 +1,21 @@
+<!doctype html><html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shelf Audit app</title>
+<link rel="icon" href="/favicon.svg"><link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Lato,sans-serif;background:#f4f1ec;color:#1a1a1a}
+header{background:#7a0e12;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+header a{color:#fff;text-decoration:none;font-weight:900}main{padding:16px;max-width:520px;margin:auto}
+.card{background:#fff;border-radius:14px;padding:16px;margin:0 0 12px;box-shadow:0 1px 3px #0002}
+button,.btn{display:block;width:100%;padding:14px;border:0;border-radius:10px;background:#c4161c;color:#fff;font:700 16px Lato;margin:8px 0;cursor:pointer;text-align:center;text-decoration:none}
+.ghost{background:#eee;color:#222}input,select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font:16px Lato;margin:4px 0 8px}
+.big{font-size:40px;font-weight:900;color:#c4161c}.row{display:flex;gap:8px}.row>*{flex:1}.muted{color:#666;font-size:14px}
+nav.tabs{position:sticky;bottom:0;display:flex;background:#fff;border-top:1px solid #ddd}nav.tabs a{flex:1;text-align:center;padding:10px 2px;font-size:12px;color:#7a0e12;text-decoration:none;font-weight:700}
+.thumbs{display:flex;flex-wrap:wrap;gap:6px}.thumbs img{width:72px;height:96px;object-fit:cover;border-radius:6px}
+.store{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee;cursor:pointer}
+footer{text-align:center;font-size:12px;padding:16px;color:#666}footer a{color:#7a0e12}
+</style></head><body>
+<header><a href="#/">Shelf Audit</a><span id="who" class="muted" style="color:#fdd"></span></header>
+<main id="v"></main>
+<nav class="tabs"><a href="#/locate">Stores</a><a href="#/receipt">Receipt</a><a href="#/tip">Dob in</a><a href="#/syn">Syndicate</a><a href="#/me">Me</a></nav>
+<footer><a href="/">Shelf Audit home</a> · Concept, design and execution by <a href="https://unlimitedpotential.co.nz" rel="noopener">Unlimited Potential</a></footer>
+<script src="app.js"></script></body></html>
