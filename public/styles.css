@@ -311,6 +311,6 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .gaphero .gh-pair,.gaphero .gh-row,.gaphero .gh-loc{width:100%;max-width:760px;margin-left:auto;margin-right:auto;box-sizing:border-box}.gaphero .gh-pair>*{box-sizing:border-box}
 /* black cost panel and dark red gap panel: identical width */
 .rc .life,.rc .ovl.gapbox{width:100%;max-width:none;box-sizing:border-box;margin-left:0;margin-right:0}
-/* narrower black + dark red panels, no dead space; still identical width */
-.rc .life,.rc .ovl.gapbox{max-width:620px;margin-left:auto;margin-right:auto}
+/* black + dark red panels ~20% narrower than full card width; identical width */
+.rc .life,.rc .ovl.gapbox{width:80%;max-width:none;margin-left:auto;margin-right:auto}@media(max-width:600px){.rc .life,.rc .ovl.gapbox{width:100%}}
 .rc .ovl.gapbox .gh-pair,.rc .ovl.gapbox .gh-row,.rc .ovl.gapbox .gh-loc{max-width:100%}
