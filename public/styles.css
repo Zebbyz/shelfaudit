@@ -314,3 +314,11 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 /* black + dark red panels ~20% narrower than full card width; identical width */
 .rc .life,.rc .ovl.gapbox{width:80%;max-width:none;margin-left:0;margin-right:auto}@media(max-width:600px){.rc .life,.rc .ovl.gapbox{width:100%}}
 .rc .ovl.gapbox .gh-pair,.rc .ovl.gapbox .gh-row,.rc .ovl.gapbox .gh-loc{max-width:100%}
+
+/* larger prices in Largest price gaps */
+.plist.gaps .pn small{font-size:16px;line-height:1.5;display:block;margin-top:4px}
+.gaps .gp{font-size:26px;font-weight:900;color:var(--ink);font-family:"JetBrains Mono",monospace;vertical-align:-2px;margin:0 4px}
+.gaps .gp.lo{color:var(--green)}.gaps .gp.hi{color:var(--red)}
+.gaps .range .up{font-size:36px;font-weight:900}
+.gaps .range small{font-size:15px}
+@media(max-width:560px){.gaps .gp{font-size:22px}.gaps .range .up{font-size:28px}.plist.gaps .pn small{font-size:15px}}
