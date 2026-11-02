@@ -1,0 +1,45 @@
+<!doctype html><html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Basket Brief for schools and groups | Shelf Audit</title><meta name="description" content="Basket Brief: upload your group shopping list and find the cheapest local supermarket"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"><style>.pp{max-width:1100px;margin:0 auto;padding:28px 18px 60px}.pp h1{font-size:clamp(28px,6vw,46px);margin:.2em 0}.pp .lede{color:var(--ink2);font-size:18px;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:22px 0}.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.pc.hot{border-color:var(--amber)}.price{font-size:38px;font-weight:900}.price small{font-size:15px;color:var(--mute);font-weight:400}.ann{color:var(--green)}
+.feat{list-style:none;padding:0;margin:14px 0}.feat li{padding:9px 0;border-bottom:1px solid var(--line)}.feat b{display:block}.feat span{color:var(--ink2);font-size:15px}
+.badge{display:inline-block;background:var(--amber);color:#000;font-weight:900;font-size:12px;padding:3px 8px;border-radius:6px}.btnp{display:inline-block;background:var(--red);color:#fff;font-weight:900;padding:12px 18px;border-radius:10px;text-decoration:none;margin:6px 8px 6px 0}
+.btnp.alt{background:transparent;border:1px solid var(--ink2);color:var(--ink)}.note{color:var(--mute);font-size:14px}.crumb a{color:var(--ink2)}</style></head><body>
+<header class="top"><a href="/" class="brand" aria-label="Shelf Audit home"><span class="tag">SA</span><span>Shelf Audit</span></a>
+<nav style="display:flex;gap:14px;flex-wrap:wrap"><a href="/">Watchdog</a><a href="/app/">Shopper app</a><a href="/basket-brief/">Basket Brief</a><a href="/plans/">For supermarkets</a></nav></header>
+<style>.bb textarea,.bb input,.bb select{width:100%;box-sizing:border-box;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit;font-size:16px}.bb label{display:block;font-weight:700;margin:12px 0 4px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.row.best{color:var(--green);font-weight:900}.save{font-size:34px;font-weight:900;color:var(--green)}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--line);text-align:left}td.n,th.n{text-align:right}</style>
+<main class="pp bb"><p class="crumb"><a href="/">Shelf Audit</a> / Basket Brief</p><span class="badge">For schools, clubs and groups</span><h1>Basket Brief</h1>
+<p class="lede">Schools, sports clubs, kapa haka groups and shopping syndicates: drop in what you plan to buy, and we tell you which nearby supermarket does it cheapest and how much your group saves.</p>
+<div class="grid">
+<div class="pc"><h2>1. Create your group</h2><label>Group name</label><input id="gname" placeholder="Papakura Primary PTA"><label>Group type</label><select id="gtype"><option>School</option><option>Sports club</option><option>Community group</option><option>Syndicate</option></select><label>Suburb or postcode</label><input id="gloc" placeholder="Papakura 2110"><p class="note">Demo only. Accounts and shared group logins are coming.</p></div>
+<div class="pc"><h2>2. Add your buy list</h2><label>Paste one item per line (qty x item)</label><textarea id="list" rows="8">24 x Milk 2L
+10 x White bread 600g
+6 x Butter 500g
+12 x Bananas 1kg
+8 x Weet-Bix 1.2kg
+5 x Cheese 1kg block</textarea><label>Or upload a saved order or receipt (CSV, TXT, photo)</label><input type="file" id="file" accept=".csv,.txt,image/*"><p><button class="btnp" id="go">Compare local stores</button></p></div>
+</div>
+<div class="pc" id="out" hidden><h2>3. Where to shop</h2><p class="note" id="ctx"></p><div id="stores"></div><p>Your group saves</p><div class="save" id="save"></div><p class="note" id="savenote"></p><details><summary>Line by line</summary><div id="lines"></div></details>
+<p><button class="btnp alt" id="exp">Export CSV</button><button class="btnp alt" onclick="alert('PDF brief and email are coming soon.')">Email PDF brief (soon)</button></p></div>
+<div class="pc" style="margin-top:16px"><h2>Coming next</h2><ul><li>Import saved carts from online supermarket sites</li><li>Split the shop across two stores when it saves more</li><li>Bulk buy pooling across several schools or clubs</li><li>Term-by-term savings report for your board or committee</li></ul></div>
+<p class="note">Mock prices for the demo. Live version uses nightly Shelf Audit prices for stores near you.</p></main>
+<script>
+const S=[{n:"Pak'nSave",f:0.86,km:2.1},{n:"Woolworths",f:1.0,km:0.8},{n:"New World",f:1.07,km:1.4},{n:"FreshChoice",f:1.04,km:3.2}];
+const B={milk:4.6,bread:2.9,butter:7.9,banana:3.8,weet:8.5,cheese:15.9};
+function base(i){i=i.toLowerCase();for(const k in B)if(i.includes(k))return B[k];let h=0;for(const c of i)h=(h*31+c.charCodeAt(0))%900;return 2+h/100}
+let rows=[];
+function parse(t){return t.split(/\n/).map(l=>l.trim()).filter(Boolean).map(l=>{const m=l.match(/^(\d+)\s*[x×]?\s*(.+)$/i);return m?{q:+m[1],i:m[2]}:{q:1,i:l}})}
+const $=s=>document.getElementById(s),f=v=>'$'+v.toFixed(2);
+$('file').onchange=e=>{const x=e.target.files[0];if(!x)return;if(x.type.startsWith('image')){alert('Receipt photo reading is coming soon. Paste the list for now.');return}x.text().then(t=>$('list').value=t.replace(/,/g,' x ').replace(/"/g,''))};
+$('go').onclick=()=>{rows=parse($('list').value);if(!rows.length)return;const tot=S.map(s=>({...s,t:rows.reduce((a,r)=>a+r.q*base(r.i)*s.f,0)})).sort((a,b)=>a.t-b.t);
+const best=tot[0],worst=tot[tot.length-1];$('out').hidden=false;$('ctx').textContent=($('gname').value||'Your group')+' · '+$('gtype').value+' · near '+($('gloc').value||'you');
+$('stores').innerHTML=tot.map((s,k)=>`<div class="row ${k?'':'best'}"><span>${k?'':'Shop here: '}${s.n} <small>${s.km} km</small></span><span>${f(s.t)}</span></div>`).join('');
+$('save').textContent=f(worst.t-best.t);$('savenote').textContent=`Shopping at ${best.n} instead of ${worst.n}. Over 40 school weeks that is about ${f((worst.t-best.t)*40)}.`;
+$('lines').innerHTML='<table><tr><th>Qty</th><th>Item</th>'+tot.map(s=>`<th class="n">${s.n}</th>`).join('')+'</tr>'+rows.map(r=>`<tr><td>${r.q}</td><td>${r.i}</td>`+tot.map(s=>`<td class="n">${f(r.q*base(r.i)*s.f)}</td>`).join('')+'</tr>').join('')+'</table>';window._tot=tot;$('out').scrollIntoView({behavior:'smooth'})};
+$('exp').onclick=()=>{const t=window._tot;let c='Qty,Item,'+t.map(s=>s.n).join(',')+'\n'+rows.map(r=>[r.q,'"'+r.i+'"',...t.map(s=>(r.q*base(r.i)*s.f).toFixed(2))].join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/csv'}));a.download='basket-brief.csv';a.click()};
+</script>
+<footer class="foot"><div class="foot-in"><div><strong>Shelf Audit</strong><p>An independent price watchdog for New Zealand shoppers. Not affiliated with any supermarket.</p></div>
+<div class="foot-links"><a href="/">Shopper watchdog</a><a href="/app/">Shopper app</a><a href="/basket-brief/">Basket Brief</a><a href="/plans/">Price Pilot plans</a></div>
+<p class="fine">Concept, design and execution by <a href="https://unlimitedpotential.co.nz" rel="noopener">Unlimited Potential</a></p></div></footer></body></html>

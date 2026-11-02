@@ -1,0 +1,31 @@
+# Basket Brief (Shelf Audit for groups)
+
+Date: 2 November 2026. Owner: Guy Hollister, Unlimited Potential.
+
+## Member tiers
+1. Stores: Price Pilot for supermarket owners (pricing cockpit, 50 / 100 km fences).
+2. Consumers: Shelf Audit app (GPS store audit PDF, receipts, tips, syndicates).
+3. Groups: Basket Brief for schools, sports clubs, community groups and syndicates.
+
+## Problem
+Schools and clubs buy the same groceries every week (breakfast clubs, canteens, fundraisers, sausage sizzles) and rarely check which local store does the whole list cheapest.
+
+## Flow
+1. Create a group (name, type, suburb). Shared login per group, later multiple members.
+2. Add a buy list: paste lines, upload CSV / TXT, saved online supermarket order export, or receipt photo (multi-photo stitch shared with consumer app).
+3. Map each line to Shelf Audit products (barcode, name match, size normalise).
+4. Compare every store inside the group's radius using nightly Shelf Audit prices.
+5. Show cheapest store, total per store, distance, savings $ per shop and per year (40 school weeks).
+6. Export CSV now; PDF brief by email to the board or committee later.
+
+## Later
+- Import saved carts from online supermarket systems directly.
+- Split-shop suggestion when two stores beat one by more than travel cost.
+- Bulk pooling across several groups; supplier direct quotes.
+- Term savings report; ComCom evidence pack from aggregate group data.
+
+## Pricing (to set)
+Free for one list a week; paid group tier for unlimited lists, history and PDF reports. Numbers to be locked by Guy.
+
+## Build status
+v1 demo at /basket-brief/ with mock prices, parse, compare, savings and CSV export.
