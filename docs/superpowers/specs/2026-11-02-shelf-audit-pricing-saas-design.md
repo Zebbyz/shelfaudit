@@ -1,0 +1,113 @@
+# Shelf Audit Pricing SaaS: Design Spec
+
+Date: 2 November 2026
+Status: Approved by Guy Hollister
+Language: NZ English. No em dashes.
+
+## 1. Vision: the insurance logic
+
+Shelf Audit works like an insurer.
+
+- Some supermarkets over-price and rip off customers. Internally Guy calls these Uptickers. In all public and customer-facing copy they are described neutrally as "flagged" stores or lines.
+- Some supermarkets price fairly and play the game to sell more and keep customers. These are the honest customers.
+- The SaaS is built for the honest ones. It helps them stay sharp, win volume and keep shoppers.
+- National observed prices from the Shelf Audit scrape are the shared risk pool. Every store is measured against the same national data.
+
+## 2. Two layers
+
+### 2.1 Paid API (freestyle)
+
+- Customers buy access and play with the data however they like.
+- Local: $595 per calendar month plus GST, stores within a 50 km radius of the customer's location.
+- National: $1,850 per month plus GST paid monthly, or $1,450 per month plus GST paid annually.
+- A National key gets the entire nation instantly, all stores and products in one go.
+- Hosted on Cloudflare Pages Functions with D1. No RapidAPI or other marketplace.
+- No rate limiting required.
+- Already partially live on the intel preview under `/api/v1/p/`.
+
+### 2.2 Pricing SaaS (rigid engine)
+
+- A rigid system that tunes the customer's whole business pricing model.
+- Advise first: the engine flags lines and recommends prices, the customer applies them.
+- Write-back to the customer's POS comes later as a paid upgrade.
+
+## 3. Buyers
+
+Both packages from day one, priced differently:
+
+- Store package: independent and franchise stores, including owners of several stores.
+- Head office package: chains such as Foodstuffs and Woolworths NZ.
+
+## 4. What "clean pricing" means
+
+The customer's own rules, enforced against national Shelf Audit data. Examples:
+
+- No line more than 5% above the chain median.
+- Match the cheapest competitor within 10 km.
+
+## 5. Connectors
+
+- Day one the connector pulls prices and the product list only. Cost, margin, promos and stock come later.
+- Plug-and-play for stores is a centrepiece of v1.
+- Generic integrator kit now: CSV or SFTP price file, one-time column mapping, scheduled nightly sync.
+- Named NZ POS connectors come later.
+
+## 6. Approach
+
+Advise cockpit on Cloudflare. Full POS middleware is not part of v1.
+
+## 7. Product shape
+
+### Store package
+
+- Connect a store, set rules, see flagged lines and recommended prices, export a clean price list to apply by hand.
+- Multi-store ownership: an owner with several stores (for example four) connects all of them under one account and compares them side by side, line by line, with each store's flags and recommendations shown together.
+
+### Head office package
+
+- The same engine across many stores.
+- Chain-wide rules, league tables, and which stores are drifting.
+
+### Underneath both
+
+- National scrape plus the paid API data as the enforcement layer.
+- File connectors day one. Write-back later.
+
+## 8. Architecture
+
+- Cloudflare Pages for the store and head office UIs.
+- Pages Functions for the rules engine and the API.
+- D1 for tenants, stores, rules, uploaded catalogues and recommendations.
+- National data from the Shelf Audit scrape.
+- Integrator module: column mapper and scheduled sync, named POS adapters later.
+- No Supabase.
+- Custom domain later (shelfaudit.co.nz is available). DNS only, no code change.
+
+## 9. Store day flow
+
+1. Plug in the generic kit and map the price file columns once.
+2. Nightly sync pulls prices and products.
+3. Rules engine compares each line to national Shelf Audit data under the customer's rules.
+4. Cockpit shows flagged lines and recommended prices.
+5. Customer exports a clean list (write-back later).
+6. Multi-store owners see their stores side by side. Head office sees the same across the whole chain.
+
+## 10. Billing
+
+- Flat pricing: API Local and National fees plus SaaS subscriptions.
+- No cut of supermarket sales. That was a metaphor for the logic, not the billing model.
+
+## 11. Build order
+
+1. Finish the paid API and load full per-store prices into D1.
+2. Generic integrator kit.
+3. Rules engine and store cockpit (advise and export), including multi-store side-by-side compare.
+4. Head office multi-store view.
+5. Named POS connectors and write-back later.
+
+## 12. Out of scope for v1
+
+- Commerce Commission filing (separate track, nothing sent without Guy's go).
+- Stripe billing automation details.
+- Turnstile.
+- R2, unless it becomes necessary.
