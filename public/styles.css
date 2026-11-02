@@ -336,7 +336,7 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .nwcall small{display:block;margin-top:10px;font-size:13px;opacity:.75;color:var(--ink)}
 #stbars{margin:22px 0 6px}#stbars h3{margin:0 0 6px}
 .sbkey{font-size:13px;margin:0 0 12px;line-height:1.6}.sbkey .k{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin:0 4px 0 8px}.sbkey .k:first-child{margin-left:0}
-#stbars .up{background:var(--red)}#stbars .ok{background:#2fbf71}#stbars .na{background:#666}
+#stbars .fill.up,#stbars .k.up{background:var(--red)}#stbars .fill.ok,#stbars .k.ok{background:#2fbf71}#stbars .fill.na,#stbars .k.na{background:#666}
 .sbg{margin:18px 0}.sbg h4{margin:0 0 10px;font-size:18px}.sbg h4 span{display:block;font-size:13px;font-weight:400;color:var(--mute)}
 .sbgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 18px}
 .sbc{display:grid;grid-template-columns:1fr auto;gap:3px 8px;text-decoration:none;color:var(--ink)}
