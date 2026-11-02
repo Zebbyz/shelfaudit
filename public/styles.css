@@ -209,3 +209,10 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 
 /* large chain logo whenever a store is featured */
 .hlogo{margin:0 0 14px}.hlogo .clogo.hero{height:72px;width:auto;max-width:280px;padding:8px 14px;border-radius:10px;margin:0;box-shadow:0 1px 4px rgba(0,0,0,.15)}.hlogo span.clogo.hero{width:72px;height:72px;font-size:24px}@media (min-width:900px){.hlogo .clogo.hero{height:96px;max-width:360px}.hlogo span.clogo.hero{width:96px;height:96px}}
+
+.life{margin:16px 0 4px;background:#000;color:#fff;border-left:6px solid #ffe14a;border-radius:8px;padding:14px 16px;max-width:760px}
+.life-k{margin:0 0 6px;font:700 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#ffe14a}
+.life-big{margin:0;font:900 clamp(26px,5vw,44px)/1.05 var(--serif)}.life-big b{color:#ff6b6b}
+.life-s{margin:4px 0 10px;font-size:15px;opacity:.9}
+.life-l{margin:0;padding-left:18px;font-size:16px;line-height:1.4}.life-l li{margin:4px 0}.life-l b{color:#ffe14a}
+.life-f{margin:10px 0 0;font-size:12px;opacity:.75}.life-f a{color:#fff}
