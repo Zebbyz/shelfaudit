@@ -345,5 +345,6 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .sbc .mid{position:absolute;top:0;bottom:0;width:2px;background:var(--ink)}
 .sbc .nm{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sbc .v{font:700 13px var(--mono)}
 .sbc:hover .nm{color:var(--tag)}
-.sbmore{display:none;margin-top:10px;background:none;border:1px solid var(--mute);color:var(--ink);border-radius:8px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
-@media(max-width:600px){.sbgrid{grid-template-columns:1fr}.sbg:not(.open) .sbc.more{display:none}.sbmore{display:inline-block}}
+.sbmore{display:inline-block;margin-top:10px;background:none;border:1px solid var(--mute);color:var(--ink);border-radius:8px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.sbg:not(.open) .sbc.more{display:none}
+@media(max-width:600px){.sbgrid{grid-template-columns:1fr}}
