@@ -1,3 +1,4 @@
+import {partner,issue,ensure} from './_partner.js';
 // Shelf Audit API: tips, members, receipts, leaderboard, admin. D1 only.
 const J=(o,s=200)=>new Response(JSON.stringify(o),{status:s,headers:{'content-type':'application/json','cache-control':'no-store'}});
 const sha=async t=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -21,6 +22,7 @@ async function admin(env,req){const t=req.headers.get('x-admin-token')||'';const
 export async function onRequest({request:req,env,params}){
   const p=(params.path||[]).join('/'),m=req.method;
   const ip=await sha((req.headers.get('cf-connecting-ip')||'x')+'|sa');
+  if(p.startsWith('v1/p/'))return partner(env,req,p);
   if(p.startsWith('v1/'))return env.ASSETS.fetch(req);
   try{
   if(p==='config')return J({sitekey:(await cfg(env,'ts_sitekey'))||null});
@@ -63,6 +65,10 @@ export async function onRequest({request:req,env,params}){
     if(p==='admin/list'){const t=await env.DB.prepare('SELECT id,created,store_name,product,price,issue,contact,staff,member_id,status,photo_type,length(photo) psz FROM tips ORDER BY id DESC LIMIT 200').all();
       const r=await env.DB.prepare('SELECT r.id,r.created,m.nick,m.email,r.store_name,r.rdate,r.total,r.status,r.img_type,length(r.img) isz FROM receipts r JOIN members m ON m.id=r.member_id ORDER BY r.id DESC LIMIT 200').all();
       const n=await env.DB.prepare('SELECT COUNT(*) n FROM members').first();const q=await env.DB.prepare('SELECT * FROM enquiries ORDER BY id DESC LIMIT 200').all();return J({tips:t.results,receipts:r.results,members:n.n,enquiries:q.results})}
+    if(p==='admin/apikey'&&m==='POST')return J(await issue(env,await req.json()));
+    if(p==='admin/apikeys'){await ensure(env);const r=await env.DB.prepare("SELECT k.id,k.prefix,k.org,k.email,k.plan,k.billing,k.lat,k.lon,k.radius_km,k.status,k.created,k.expires,(SELECT n FROM api_usage u WHERE u.key_id=k.id AND u.bucket='d'||date('now')) today FROM api_keys k ORDER BY k.id DESC").all();return J({keys:r.results})}
+    if(p==='admin/apikey/status'&&m==='POST'){await ensure(env);const b=await req.json();if(!['active','revoked','paused'].includes(b.status))return J({error:'bad status'},400);
+      await env.DB.prepare('UPDATE api_keys SET status=? WHERE id=?').bind(b.status,b.id|0).run();return J({ok:true})}
     if(p==='admin/set'&&m==='POST'){const b=await req.json();const tb=b.kind==='tip'?'tips':'receipts';
       if(!['pending','verified','rejected'].includes(b.status))return J({error:'bad status'},400);
       await env.DB.prepare(`UPDATE ${tb} SET status=? WHERE id=?`).bind(b.status,b.id|0).run();return J({ok:true})}

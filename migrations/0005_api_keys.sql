@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS api_keys(id INTEGER PRIMARY KEY,prefix TEXT NOT NULL,key_hash TEXT UNIQUE NOT NULL,org TEXT,email TEXT,plan TEXT NOT NULL CHECK(plan IN('local','national')),billing TEXT,lat REAL,lon REAL,radius_km REAL,status TEXT NOT NULL DEFAULT 'active',created TEXT DEFAULT CURRENT_TIMESTAMP,expires TEXT,note TEXT);
+CREATE TABLE IF NOT EXISTS api_usage(key_id INTEGER NOT NULL,bucket TEXT NOT NULL,n INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(key_id,bucket));
