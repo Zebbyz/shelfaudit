@@ -561,16 +561,28 @@ function nearSave(w){const n=w.near||[];if(!n.length)return '';const b=n.reduce(
   <table><thead><tr><th>Cheaper store nearby</th><th class="n">Drive</th><th class="n">Distance</th><th class="n">Save a week</th><th class="n">Save a year</th></tr></thead><tbody>${n.map(x=>`<tr><td>${chLogo(x.ch)} <a href="#/store/${x.id}">${esc(x.nm)}</a></td><td class="n">${x.min} min</td><td class="n">${x.km} km</td><td class="n up">${money(x.wk)}</td><td class="n up">$${num(Math.round(x.wk*52))}</td></tr>`).join('')}</tbody></table>
   <p class="life-f">Drive time and distance one way by road from ${esc(w.nm)}, from OpenStreetMap road data (OSRM router), normal traffic not included. Saving = typical weekly shop $${LIFE.basket.toFixed(2)} × the gap in national price index between the two stores (${w.nat.toFixed(1)} here). Fuel not included. Estimate only.</p></div>`}
 
+
+// Pak'nSave vs FreshChoice: yearly gap = typical weekly shop x index gap x 52
+function pnsGap(w){const L=LIFE;const ns=(w.near||[]).find(x=>x.ch==="Pak'nSave");
+  const med=a=>{a=a.filter(v=>v>0).sort((x,y)=>x-y);return a.length?a[a.length>>1]:null};
+  const S=(typeof D!=='undefined'&&D&&D.stores)||[];const cm=c=>med(S.filter(s=>s.ch===c).map(s=>s.ix));
+  const pi=cm("Pak'nSave"),fi=cm('FreshChoice');const rows=[];
+  if(ns&&w.nat>ns.nat){const g=w.nat-ns.nat,wk=L.basket*g/100;rows.push(`<tr><td>${esc(w.nm)} vs <a href="#/store/${ns.id}">${esc(ns.nm)}</a></td><td class="n">${w.nat.toFixed(1)} vs ${ns.nat.toFixed(1)}</td><td class="n up">${g.toFixed(1)}%</td><td class="n up">${money(wk)}</td><td class="n up">$${num(Math.round(wk*52))}</td></tr>`)}
+  if(pi&&fi&&fi>pi){const g=fi-pi,wk=L.basket*g/100;rows.push(`<tr><td>Typical FreshChoice vs typical Pak'nSave (NZ)</td><td class="n">${fi.toFixed(1)} vs ${pi.toFixed(1)}</td><td class="n up">${g.toFixed(1)}%</td><td class="n up">${money(wk)}</td><td class="n up">$${num(Math.round(wk*52))}</td></tr>`)}
+  if(!rows.length)return '';
+  return `<div class="ovl dk"><p class="life-k">Pak'nSave vs FreshChoice: the gap a year</p><table><thead><tr><th>Compare</th><th class="n">Index</th><th class="n">Gap</th><th class="n">A week</th><th class="n">A year</th></tr></thead><tbody>${rows.join('')}</tbody></table><p class="life-f">Yearly gap = typical weekly shop $${L.basket.toFixed(2)} × gap in national price index ÷ 100 × 52 weeks. Chain figures use the median store index. Estimate only.</p></div>`}
+
 // Report card: worst-priced store in NZ. Data baked by scripts/build_report.py
 let REP;async function reportCard(){const el=$('#rcard');if(!el)return;try{REP??=await fetch('/data/report.json').then(r=>r.json())}catch{return}
   const w=REP.top[0];if(!w)return;const lk=x=>x.id!=null?`href="#/store/${x.id}"`:'';const pct=v=>(v-100).toFixed(1)+'%';
   el.innerHTML=`<section class="rc" aria-label="Worst pricing in New Zealand">
-  <div class="rc-in"><p class="rc-k">Shelf Audit report card · Worst pricing in NZ</p>
+  <div class="rc-in"><h1 class="rc-k rc-t"><span>Shelf Audit report card</span><span>Worst pricing in NZ</span></h1>
   <div class="rc-main">
    <div class="rc-b"><div class="rc-hd">${heroLogo(w.ch)}<div class="rc-g" aria-label="Grade ${w.g}"><span>${w.g}</span><small>Fail</small></div></div><h2><a ${lk(w)}>${esc(w.nm)}</a></h2>
    <p class="rc-s"><b>${w.ix.toFixed(1)}</b> score · ${pct(w.ix)} above typical ${esc(w.ch)} pricing</p>
    <p class="rc-e">Typical line ${w.med}% above its own chain. ${num(w.o20)} products flagged more than 20% dearer (${w.o20p}% of ${num(w.n)} checked).${w.ex?` Example: ${esc(w.ex.p)} ${money(w.ex.v)} vs ${money(w.ex.m)} chain median.`:''}</p>
    ${lifeCost(w.nat-100,'the typical NZ price for the same products')}
+   ${pnsGap(w)}
    ${nearSave(w)}
    ${w.id!=null?'<div id="rcov"></div>':''}
    ${w.id!=null?`<a class="rc-btn" ${lk(w)}>See the evidence</a>`:''}</div></div>
