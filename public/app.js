@@ -566,11 +566,11 @@ function nearSave(w){const n=w.near||[];if(!n.length)return '';const b=n.reduce(
 function pnsGap(w){const L=LIFE;const ns=(w.near||[]).find(x=>x.ch==="Pak'nSave");
   const med=a=>{a=a.filter(v=>v>0).sort((x,y)=>x-y);return a.length?a[a.length>>1]:null};
   const S=(typeof D!=='undefined'&&D&&D.stores)||[];const cm=c=>med(S.filter(s=>s.ch===c).map(s=>s.ix));
-  const pi=cm("Pak'nSave"),fi=cm('FreshChoice');const rows=[];
-  if(ns&&w.nat>ns.nat){const g=w.nat-ns.nat,wk=L.basket*g/100;rows.push(`<tr><td>${esc(w.nm)} vs <a href="#/store/${ns.id}">${esc(ns.nm)}</a></td><td class="n">${w.nat.toFixed(1)} vs ${ns.nat.toFixed(1)}</td><td class="n up">${g.toFixed(1)}%</td><td class="n up">${money(wk)}</td><td class="n up">$${num(Math.round(wk*52))}</td></tr>`)}
+  const pi=cm("Pak'nSave"),fi=cm('FreshChoice');const rows=[];let hero='';
+  if(ns&&w.nat>ns.nat){const g=w.nat-ns.nat,wk=L.basket*g/100;hero=`<div class="gaphero"><p class="gh-t">${esc(w.nm)} <span>vs</span> <a href="#/store/${ns.id}">${esc(ns.nm)}</a></p><div class="gh-big"><div><b>$${num(Math.round(wk*52))}</b><i>more a year</i></div><div><b>${money(wk)}</b><i>more a week</i></div><div><b>${g.toFixed(1)}%</b><i>dearer</i></div></div><p class="gh-ix">National price index ${w.nat.toFixed(1)} vs ${ns.nat.toFixed(1)}</p></div>`}
   if(pi&&fi&&fi>pi){const g=fi-pi,wk=L.basket*g/100;rows.push(`<tr><td>Typical FreshChoice vs typical Pak'nSave (NZ)</td><td class="n">${fi.toFixed(1)} vs ${pi.toFixed(1)}</td><td class="n up">${g.toFixed(1)}%</td><td class="n up">${money(wk)}</td><td class="n up">$${num(Math.round(wk*52))}</td></tr>`)}
-  if(!rows.length)return '';
-  return `<div class="ovl dk"><p class="life-k">Pak'nSave vs FreshChoice: the gap a year</p><table><thead><tr><th>Compare</th><th class="n">Index</th><th class="n">Gap</th><th class="n">A week</th><th class="n">A year</th></tr></thead><tbody>${rows.join('')}</tbody></table><p class="life-f">Yearly gap = typical weekly shop $${L.basket.toFixed(2)} × gap in national price index ÷ 100 × 52 weeks. Chain figures use the median store index. Estimate only.</p></div>`}
+  if(!rows.length&&!hero)return '';
+  return `<div class="ovl dk gapbox"><p class="life-k">Pak'nSave vs FreshChoice: the gap a year</p>${hero}${rows.length?`<table>`:''}<thead><tr><th>Compare</th><th class="n">Index</th><th class="n">Gap</th><th class="n">A week</th><th class="n">A year</th></tr></thead>${rows.length?`<tbody>${rows.join('')}</tbody></table>`:''}<p class="life-f">Yearly gap = typical weekly shop $${L.basket.toFixed(2)} × gap in national price index ÷ 100 × 52 weeks. Chain figures use the median store index. Estimate only.</p></div>`}
 
 // Report card: worst-priced store in NZ. Data baked by scripts/build_report.py
 // One source of truth for a store's cost: the national index from report.json (same as the report card).

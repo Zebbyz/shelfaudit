@@ -245,3 +245,11 @@ img.clogo.big{height:30px;max-width:140px;width:auto;margin:0}
 .rc-hd .hlogo .clogo.hero{height:84px;max-width:300px}@media (min-width:900px){.rc-hd .hlogo .clogo.hero{height:110px;max-width:380px}}@media (max-width:760px){.rc-hd .hlogo .clogo.hero{height:64px;max-width:220px}}
 .rc-t{width:100%;box-sizing:border-box;margin-left:auto;margin-right:auto;letter-spacing:.04em;padding-left:.04em}.rc-t span{display:block;width:100%;text-align:center}
 details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}details.ovl>summary::-webkit-details-marker{display:none}details.ovl>summary .op{font-size:11px;text-decoration:underline}details.ovl[open]>summary .op{font-size:0}details.ovl[open]>summary .op::after{content:'Close';font-size:11px}details.ovl:not([open]){padding-bottom:10px}
+
+.ovl.gapbox{max-width:none;padding:18px}
+.gaphero{text-align:center;padding:10px 0 16px}
+.gh-t{margin:0 0 12px;font:700 clamp(20px,4vw,30px)/1.2 var(--mono,inherit)}.gh-t span{opacity:.7;font-weight:400}
+.gh-big{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px}.gh-big div{display:flex;flex-direction:column;align-items:center}
+.gh-big b{font:800 clamp(40px,10vw,84px)/1 var(--mono,inherit);color:#ffe14a}.gh-big div:first-child b{font-size:clamp(52px,13vw,112px)}
+.gh-big i{font-style:normal;font-size:clamp(13px,2.4vw,17px);text-transform:uppercase;letter-spacing:.12em;margin-top:6px}
+.gh-ix{margin:14px 0 0;font-size:clamp(15px,2.6vw,19px);opacity:.9}
