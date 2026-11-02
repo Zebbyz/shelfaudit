@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
-<body style="position:relative">
+<body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <a href="#/" class="brand" aria-label="Shelf Audit home"><span class="tag">SA</span><span>Shelf Audit</span></a>
@@ -65,11 +65,28 @@
 </footer>
 <script src="/app.js" type="module"></script>
 <style>
-#cyr-layer{position:absolute;inset:0;pointer-events:none;z-index:40;overflow:hidden}
-.cyr-tag{position:absolute;font:900 14px/1 system-ui,sans-serif;letter-spacing:.08em;color:#111;padding:8px 12px;border:2px dashed #111;border-radius:4px;box-shadow:3px 3px 0 rgba(0,0,0,.45);opacity:.92;white-space:nowrap}
-.cyr-tag::before{content:"\1F9FE ";}
-@media(max-width:640px){.cyr-tag{font-size:11px;padding:6px 8px}}
+.cyr-band{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 48px;margin:40px auto;padding:10px 16px;max-width:1180px;clear:both}
+.cyr-tag{display:inline-flex;align-items:center;gap:14px;font:900 clamp(22px,3.4vw,34px)/1 Lato,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#c8102e;background:#fffdf5;padding:20px 30px 26px;border:5px solid #fff;border-radius:14px;box-shadow:0 0 0 2px #c8102e,0 10px 24px rgba(0,0,0,.22);white-space:nowrap;position:relative}
+.cyr-tag::before{content:"";width:.9em;height:1.1em;flex:none;background:#c8102e;-webkit-mask:linear-gradient(#000 0 0) top/100% 15% no-repeat,linear-gradient(#000 0 0) 0 45%/100% 12% no-repeat,linear-gradient(#000 0 0) 0 75%/70% 12% no-repeat;mask:linear-gradient(#000 0 0) top/100% 15% no-repeat,linear-gradient(#000 0 0) 0 45%/100% 12% no-repeat,linear-gradient(#000 0 0) 0 75%/70% 12% no-repeat}
+.cyr-tag::after{content:"";position:absolute;left:12px;right:12px;bottom:8px;border-bottom:3px dashed #c8102e;opacity:.5}
+.cyr-tag.alt{background:#c8102e;color:#fff;box-shadow:0 0 0 2px #c8102e,0 10px 24px rgba(0,0,0,.22)}.cyr-tag.alt::before{background:#fff}.cyr-tag.alt::after{border-color:#fff}
+.cyr-tag.y{background:#ffd400;color:#111}.cyr-tag.y::before{background:#111}.cyr-tag.y::after{border-color:#111}
+@media(max-width:640px){.cyr-band{gap:18px;margin:28px auto}.cyr-tag{padding:16px 20px 22px}}
 </style>
-<div id="cyr-layer" aria-hidden="true"><span class="cyr-tag" style="top:32%;left:15%;transform:rotate(19deg) scale(0.8);background:#ffd400">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:76%;left:10%;transform:rotate(15deg) scale(0.95);background:#ffd400">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:7%;left:39%;transform:rotate(-18deg) scale(0.8);background:#ff3b5c">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:52%;left:7%;transform:rotate(14deg) scale(0.95);background:#ffd400">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:59%;left:52%;transform:rotate(-19deg) scale(1.3);background:#ff8a00">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:8%;left:21%;transform:rotate(13deg) scale(1.1);background:#ff3b5c">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:41%;left:48%;transform:rotate(14deg) scale(0.95);background:#00e5a0">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:13%;left:51%;transform:rotate(-10deg) scale(0.8);background:#00e5a0">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:52%;left:7%;transform:rotate(-19deg) scale(0.95);background:#ff8a00">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:48%;left:48%;transform:rotate(-2deg) scale(1.3);background:#ffffff">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:36%;left:23%;transform:rotate(-11deg) scale(0.8);background:#ff3b5c">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:55%;left:47%;transform:rotate(-1deg) scale(1.1);background:#ffffff">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:58%;left:8%;transform:rotate(10deg) scale(0.95);background:#ffffff">CHECK YOUR RECEIPT</span><span class="cyr-tag" style="top:71%;left:15%;transform:rotate(9deg) scale(0.8);background:#ffffff">CHECK YOUR RECEIPT</span></div>
+<script>(function(){
+var V=['','alt','y'],R=[-4,3,-2,5,-3,2];
+function band(i,n){var d=document.createElement('div');d.className='cyr-band';d.setAttribute('aria-hidden','true');for(var k=0;k<n;k++){var t=document.createElement('span');t.className='cyr-tag '+V[(i+k)%3];t.style.transform='rotate('+R[(i*2+k)%6]+'deg)';t.textContent='Check your receipt';d.appendChild(t)}return d}
+function home(){var h=location.hash;return !h||h==='#/'||h==='#'}
+function run(){document.querySelectorAll('.cyr-band').forEach(function(b){b.remove()});if(!home())return;
+var m=document.getElementById('main'),f=document.getElementById('fines');
+var kids=[].slice.call(m.children).filter(function(c){return !c.classList.contains('loading')});
+var i=0;kids.forEach(function(c,j){if(j>0&&j%2===1&&j<kids.length-1)m.insertBefore(band(i++,j%4===1?2:1),c.nextSibling)});
+f.parentNode.insertBefore(band(i++,2),f);
+var ps=f.querySelectorAll('h3');if(ps[0])f.insertBefore(band(i++,1),ps[0]);
+f.parentNode.insertBefore(band(i++,3),f.nextSibling)}
+var to;function sch(){clearTimeout(to);to=setTimeout(run,150)}
+addEventListener('hashchange',sch);
+new MutationObserver(function(ms){if(ms.some(function(x){return [].some.call(x.addedNodes,function(n){return !(n.classList&&n.classList.contains('cyr-band'))})}))sch()}).observe(document.getElementById('main'),{childList:true});
+sch()})()</script>
 </body>
 </html>
