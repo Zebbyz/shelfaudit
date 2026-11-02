@@ -298,3 +298,11 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .gh-pair>.gh-dist{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding-left:16px;border-left:2px dashed #ffe14a80}
 .gh-pair .gh-dist b{font:900 clamp(56px,16vw,120px)/1 Lato,Arial,sans-serif;color:#fff}
 .gh-pair .gh-dist em{display:block;font:900 clamp(22px,6vw,40px)/1 Lato,Arial;font-style:normal;color:#fff;text-transform:uppercase}
+
+/* 2 km block fills the whole right side of the dotted dark panel */
+.gh-pair{align-items:stretch;padding:0;overflow:hidden}
+.gh-pair>.gh-hero{padding:18px 16px;display:flex;flex-direction:column;justify-content:center}
+.gh-pair>.gh-dist{flex:0 0 36%;justify-content:center;padding:14px 10px;margin:0;background:#0000004d;border-left:2px dashed #ffe14a80;border-radius:0 14px 14px 0}
+.gh-pair .gh-dist b{font-size:clamp(72px,20vw,150px)}
+.gh-pair .gh-dist em{font-size:clamp(28px,7vw,52px)}
+.gh-pair .gh-dist span{font-size:clamp(13px,3vw,18px)}
