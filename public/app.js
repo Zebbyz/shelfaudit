@@ -3,7 +3,7 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelect
 const main=$('#main');
 const D={};
 const CH=['Woolworths',"Pak'nSave",'New World','FreshChoice'];
-const CHCOL={'Woolworths':'#2fbf7a',"Pak'nSave":'#ffe14a','New World':'#ff4a36','FreshChoice':'#4a9bff'};
+const CHCOL={'Woolworths':'#008446',"Pak'nSave":'#ffe14a','New World':'#ff4a36','FreshChoice':'#4a9bff'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=v=>v==null?'n/a':'$'+v.toFixed(2);
 const bigMoney=v=>v>=1e9?'$'+(v/1e9).toFixed(2).replace(/\.?0+$/,'')+' billion':v>=1e6?'$'+(v/1e6).toFixed(1).replace(/\.0$/,'')+' million':'$'+Math.round(v).toLocaleString('en-NZ');
