@@ -285,3 +285,4 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .rc-near i{display:block;font:700 13px/1.3 Lato,Arial;font-style:normal;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
 .rc-near p{grid-column:1/-1;margin:4px 0 0;font:700 16px/1.3 Lato,Arial}.rc-near a{color:#fff;text-decoration:underline}
 .rc-near>div:first-child{text-align:left}.rc-near>div:nth-child(2){text-align:right}.rc-near p{text-align:left}
+.rc-near{border:0;background:none;padding:0}
