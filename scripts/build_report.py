@@ -24,6 +24,7 @@ dist = {g: 0 for g, *_ in SCALE}
 for r in rows: dist[grade(float(r['within_chain_index']))] += 1
 cheap = min(rows, key=lambda r: float(r['within_chain_index']))
 json.dump({'stores': len(rows), 'scale': [[g, d] for g, _, d in SCALE], 'dist': dist, 'top': out,
+           'nx': {str(ids[key(r['store'])]): [float(r['national_index']), int(r['products'])] for r in rows if key(r['store']) in ids},
            'best': {'nm': cheap['store'].replace("PAK'nSAVE", "Pak'nSave"), 'ix': float(cheap['within_chain_index']), 'id': ids.get(key(cheap['store']))}},
           open('public/data/report.json', 'w'), separators=(',', ':'))
 print(json.dumps(out[0]), dist)
