@@ -431,7 +431,7 @@ R.insights=async()=>{setTitle('Insights');main.innerHTML='<div class="loading">L
   const dear=I.out.slice(-10).reverse(),chp=I.out.slice(0,10);
   const sn=id=>esc(store(id).nm);
   const h2h=Object.entries(I.h2h).map(([k,[a,t,b]])=>{const[x,y]=k.split('|'),n=a+t+b;return `<tr><td>${esc(x)} vs ${esc(y)}</td><td class="n">${num(n)}</td><td class="n dn">${pct(a,n)}%</td><td class="n">${pct(t,n)}%</td><td class="n up">${pct(b,n)}%</td></tr>`}).join('');
-  main.innerHTML=`<div class="ph"><p class="kicker">Insights</p><h1 style="font-size:clamp(36px,7vw,64px)">What the shelf data says</h1><p class="lede">Patterns across ${num(m.prices)} shelf prices from ${num(m.stores)} stores, captured ${nzDate(m.first)} to ${nzDate(m.last)}. Every number here comes straight from that capture.</p></div>
+  main.innerHTML=`<div class="ph"><p class="kicker">Insights</p><nav class="msub" aria-label="Insights" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px"><a class="btn" href="#/uptickers">Uptickers</a></nav><h1 style="font-size:clamp(36px,7vw,64px)">What the shelf data says</h1><p class="lede">Patterns across ${num(m.prices)} shelf prices from ${num(m.stores)} stores, captured ${nzDate(m.first)} to ${nzDate(m.last)}. Every number here comes straight from that capture.</p></div>
   <section class="blk" id="imap"></section>
   <section class="blk"><p class="kicker">Head to head</p><h2>Same product, chain against chain</h2><p class="say">For products both chains stock, how often the first chain's typical price is lower, the same, or higher.</p>
   <div class="tblwrap"><table class="table"><thead><tr><th>Match-up</th><th class="n">Products</th><th class="n">First cheaper</th><th class="n">Same</th><th class="n">First dearer</th></tr></thead><tbody>${h2h}</tbody></table></div>
@@ -499,7 +499,7 @@ function wireForm(f,fn){tsMount(f);f.addEventListener('submit',async e=>{e.preve
   try{await fn(new FormData(f));}catch(x){o.textContent=x.message;o.className='fmsg err';try{turnstile.reset()}catch(_){}}b.disabled=false})}
 
 (function tipbar(){const b=document.createElement('a');b.className='tipbar';b.href='#/tip';b.innerHTML='<span>Spotted a rip-off?</span> <b>Tip us</b>';document.body.prepend(b)})();
-document.querySelector('#nav')?.insertAdjacentHTML('beforeend','<a href="#/join">Members</a><a href="#/leaderboard">Leaderboard</a><a href="#/api">API</a>');
+document.querySelector('#nav')?.insertAdjacentHTML('beforeend','<a href="#/join">Members</a><a href="#/api">API</a>');
 
 R.tip=()=>{setTitle('Tip us');main.innerHTML=`<div class="ph"><p class="kicker">Tip line</p><h1 style="font-size:clamp(36px,7vw,64px)">Spotted a rip-off? Tip us</h1><p class="lede">Shoppers and staff welcome. Anonymous by default. Every tip is private and checked by a person before anything is used. Nothing is published automatically.</p></div>
 <form class="sform" id="tipf">${storeOpts()}
@@ -517,12 +517,12 @@ ${fld('Contact','<input name="contact" placeholder="Email or phone, if you are h
     f.innerHTML='<h2>Thanks. Tip received.</h2><p class="say">It goes to a private queue and a person checks it. We may never publish it, and we never publish names.</p><p><a class="btn ghost" href="#/">Back to Shelf Audit</a></p>'})};
 
 R.join=async()=>{setTitle('Members');const t=mtok();
-  if(!t){main.innerHTML=`<div class="ph"><p class="kicker">Members</p><h1 style="font-size:clamp(36px,7vw,64px)">Help audit the shelves</h1><p class="lede">Join with a nickname and email, then upload receipts. Checked receipts help us catch till prices that do not match the shelf. Your email is never shown.</p></div>
+  if(!t){main.innerHTML=`<div class="ph"><p class="kicker">Members</p><nav class="msub" aria-label="Members" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px"><a class="btn" href="#/leaderboard">Leaderboard</a><a class="btn" href="/app/">Shopper app</a></nav><h1 style="font-size:clamp(36px,7vw,64px)">Help audit the shelves</h1><p class="lede">Join with a nickname and email, then upload receipts. Checked receipts help us catch till prices that do not match the shelf. Your email is never shown.</p></div>
 <form class="sform" id="joinf">${fld('Nickname','<input name="nick" required maxlength="30" autocomplete="nickname">','shown on the leaderboard')}${fld('Email','<input name="email" type="email" required autocomplete="email">','private')}
 <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="ts"></div><button class="btn" type="submit">Join</button><p class="fmsg" role="status"></p></form>`;
     wireForm($('#joinf'),async fd=>{const j=await post('join',fd);localStorage.setItem('sa_member',j.token);R.join()});return}
   main.innerHTML='<div class="loading">Loading</div>';const r=await fetch(API+'me',{headers:{authorization:'Bearer '+t}});if(r.status===401){localStorage.removeItem('sa_member');return R.join()}const me=await r.json();
-  main.innerHTML=`<div class="ph"><p class="kicker">Members</p><h1 style="font-size:clamp(36px,7vw,64px)">Kia ora, ${esc(me.nick)}</h1><p class="lede">Upload a receipt. A person checks it against shelf prices before it counts.</p></div>
+  main.innerHTML=`<div class="ph"><p class="kicker">Members</p><nav class="msub" aria-label="Members" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px"><a class="btn" href="#/leaderboard">Leaderboard</a><a class="btn" href="/app/">Shopper app</a></nav><h1 style="font-size:clamp(36px,7vw,64px)">Kia ora, ${esc(me.nick)}</h1><p class="lede">Upload a receipt. A person checks it against shelf prices before it counts.</p></div>
 <form class="sform" id="rcf">${storeOpts()}${fld('Store','<input name="store" list="dl-st" required autocomplete="off" placeholder="Start typing a store or town">')}
 ${fld('Date','<input name="date" type="date" required>')}${fld('Total','<input name="total" inputmode="decimal" placeholder="$">')}${fld('Receipt','<input type="file" name="raw" accept="image/*,application/pdf" required>','photo or PDF')}
 <button class="btn" type="submit">Upload receipt</button><p class="fmsg" role="status"></p></form>
