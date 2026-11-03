@@ -49,7 +49,7 @@ for v in det.values():
     if v.get('name') in cos:
         t = v.get('text', ''); t = t[t.find('Shareholdings'):] if 'Shareholdings' in t else ''
         for m in set(ENT_RE.findall(t)): te[m.strip()].update(cos[v['name']])
-trustee_entities = [dict(name=k.title(), stores=sorted(v), n=len(v)) for k, v in sorted(te.items(), key=lambda x: (-len(x[1]), x[0]))]
+trustee_entities = [dict(name=k, stores=sorted(v), n=len(v)) for k, v in sorted(te.items(), key=lambda x: (-len(x[1]), x[0]))]
 stores = []
 for r in so:
     stores.append(dict(store=r['store'], chain=r['chain'], company=r['company'], nzbn=r['nzbn'], num=r['company_number'],
