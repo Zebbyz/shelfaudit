@@ -1,0 +1,16 @@
+Foodstuffs | freshchoice | products 1 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Foodstuffs | new world | products 24 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Foodstuffs | pak n save | products 1 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Foodstuffs | pak ‘n save | products 1 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Foodstuffs | pak'n save | products 2 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Foodstuffs | pams | products 276 | origin known 16 | NZ 8 (50% of known) | imported 8 | New Zealand 8, India 2, Thailand 2, United States 2, Spain 1, Indonesia 1
+Foodstuffs | pams finest | products 3 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Foodstuffs | pams value | products 4 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Foodstuffs | value | products 16 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Woolworths | essentials | products 136 | origin known 49 | NZ 22 (45% of known) | imported 27 | New Zealand 22, Australia 10, China 10, Thailand 5, Spain 1, Italy 1
+Woolworths | homebrand | products 2 | origin known 0 | NZ 0 (0% of known) | imported 0 | 
+Woolworths | macro | products 201 | origin known 125 | NZ 67 (54% of known) | imported 58 | New Zealand 67, Australia 25, Italy 20, Thailand 4, South Africa 3, Philippines 2, Spain 1, United States 1, Peru 1, China 1
+Woolworths | value | products 1 | origin known 1 | NZ 1 (100% of known) | imported 0 | New Zealand 1
+Woolworths | woolworths | products 1517 | origin known 1155 | NZ 710 (61% of known) | imported 445 | New Zealand 710, Australia 154, China 89, Thailand 31, Italy 27, South Africa 23, Malaysia 15, Spain 14, Vietnam 13, India 13, Germany 12, France 7, Belgium 7, Indonesia 6, Canada 5, United States 4, Czech Republic 3, Austria 3, Chile 2, Pakistan 2, Philippines 2, Poland 2, Netherlands 1, Norway 1, Lithuania 1, Turkey 1, Israel 1, Serbia 1, Morocco 1, United Kingdom 1, Hungary 1, Egypt 1, Brazil 1
+TOTAL Woolworths | products 1857 | known 1330 | NZ 800 (60%) | New Zealand 800, Australia 189, China 100, Italy 48, Thailand 40, South Africa 26, Spain 16, Malaysia 15, Vietnam 13, India 13, Germany 12, France 7, Belgium 7, Indonesia 6
+TOTAL Foodstuffs | products 328 | known 16 | NZ 8 (50%) | New Zealand 8, India 2, Thailand 2, United States 2, Spain 1, Indonesia 1
