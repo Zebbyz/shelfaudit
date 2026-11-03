@@ -381,4 +381,4 @@ header.top nav a.on,#nav a.on,.bnav a.on{background:#111;color:#ffe14a}
 header.top .tag{background:#111;color:#ffe14a}
 header.top .menu-btn{color:#111;border-color:#111}
 @media (max-width:980px){#nav{background:#ffe14a;border-bottom:1px solid #d9bd1f}}
-@media (max-width:700px){main table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}.tw table{display:table}}
+@media (max-width:700px){table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}.tw table{display:table}}
