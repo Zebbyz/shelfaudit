@@ -377,3 +377,4 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 header a[href="/ownership/"],nav a[href="/ownership/"]{background:#ffe14a!important;color:#111!important;border-radius:999px;padding:6px 12px}
 @media (max-width:700px){table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}.tw table{display:table}}
 html{overflow-x:clip}@supports not (overflow:clip){html{overflow-x:hidden}}
+.bnav a.on{background:var(--paper2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
