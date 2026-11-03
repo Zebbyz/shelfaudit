@@ -361,3 +361,11 @@ details.ovl>summary{cursor:pointer;list-style:none;display:flex;justify-content:
 .sbc{grid-template-columns:1fr auto auto}.sg{font-style:normal;font-weight:900;font-size:12px;width:20px;height:18px;line-height:18px;text-align:center;border-radius:4px;color:#000}.sg.ok{background:#2fbf71}.sg.no{background:var(--red)}
 .stamp.ok,.stamp.no{color:#fff;border-color:transparent}.stamp.ok{background:#1f9d57}.stamp.no{background:#e23a26}.stamp em{color:#fff;background:#0006;padding:2px 4px;border-radius:3px}
 .sg.ok,.sg.no{color:#fff}.sg.ok{background:#1f9d57}.sg.no{background:#e23a26}
+
+.natl{margin:0 0 28px;padding:18px;border:2px solid currentColor;border-radius:10px}
+.natl-h{font-size:20px;font-weight:700;letter-spacing:.01em;margin:0 0 10px}
+.natl-n{display:flex;gap:16px;flex-wrap:wrap}.natl-n>div{flex:1 1 140px}
+.natl-n b{display:block;font-size:clamp(44px,12vw,72px);line-height:1;letter-spacing:.01em}
+.natl-n b.r{color:#ff4a36}.natl-n b.g{color:#3ddc97}.natl-n span{font-size:15px}
+.natl-bar{display:flex;height:18px;border-radius:9px;overflow:hidden;margin:14px 0 8px}
+.natl-bar i:first-child{background:#ff4a36}.natl-bar i:last-child{background:#3ddc97}
