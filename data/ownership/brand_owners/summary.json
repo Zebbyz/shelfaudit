@@ -1,0 +1,223 @@
+{
+ "products": 145209,
+ "distinct_brands": 9411,
+ "dictionary_brands_from_woolworths": 4641,
+ "brands_by_group": {
+  "Foodstuffs": 8,
+  "unknown": 9389,
+  "Woolworths NZ": 14
+ },
+ "products_by_group": {
+  "manufacturer_or_unknown": 139062,
+  "Foodstuffs": 3537,
+  "Woolworths NZ": 2610
+ },
+ "products_brand_source": {
+  "first_word_guess": 49496,
+  "dictionary": 95713
+ },
+ "within_chain_compare": {
+  "freshchoice|Woolworths NZ": {
+   "n": 506,
+   "median_spread_pct": 7.7,
+   "mean": 12.6,
+   "share_over20": 17.4
+  },
+  "freshchoice|manufacturer_or_unknown": {
+   "n": 8075,
+   "median_spread_pct": 9.5,
+   "mean": 17.3,
+   "share_over20": 25.2
+  },
+  "newworld|Foodstuffs": {
+   "n": 1659,
+   "median_spread_pct": 10.5,
+   "mean": 16.3,
+   "share_over20": 27.2
+  },
+  "newworld|manufacturer_or_unknown": {
+   "n": 24402,
+   "median_spread_pct": 5.9,
+   "mean": 12.4,
+   "share_over20": 17.4
+  },
+  "paknsave|Foodstuffs": {
+   "n": 1559,
+   "median_spread_pct": 14.3,
+   "mean": 24.4,
+   "share_over20": 39.3
+  },
+  "paknsave|manufacturer_or_unknown": {
+   "n": 15506,
+   "median_spread_pct": 7.3,
+   "mean": 16.2,
+   "share_over20": 28.4
+  },
+  "woolworths|Foodstuffs": {
+   "n": 2,
+   "median_spread_pct": 0.0,
+   "mean": 0.0,
+   "share_over20": 0.0
+  },
+  "woolworths|Woolworths NZ": {
+   "n": 1081,
+   "median_spread_pct": 0.0,
+   "mean": 3.7,
+   "share_over20": 3.9
+  },
+  "woolworths|manufacturer_or_unknown": {
+   "n": 10912,
+   "median_spread_pct": 0.0,
+   "mean": 3.5,
+   "share_over20": 2.1
+  }
+ },
+ "cross_chain_compare": {
+  "manufacturer_or_unknown": {
+   "n": 26687,
+   "median_spread_pct": 16.7
+  },
+  "Foodstuffs": {
+   "n": 1596,
+   "median_spread_pct": 26.0
+  },
+  "Woolworths NZ": {
+   "n": 19,
+   "median_spread_pct": 14.4
+  }
+ },
+ "house_brands_found": [
+  [
+   "pams",
+   3025,
+   "Foodstuffs",
+   12.2
+  ],
+  [
+   "woolworths",
+   1383,
+   "Woolworths NZ",
+   0.0
+  ],
+  [
+   "select",
+   764,
+   "Woolworths NZ",
+   8.5
+  ],
+  [
+   "macro",
+   239,
+   "Woolworths NZ",
+   5.9
+  ],
+  [
+   "pams value",
+   189,
+   "Foodstuffs",
+   6.0
+  ],
+  [
+   "value",
+   162,
+   "Foodstuffs",
+   15.1
+  ],
+  [
+   "essentials",
+   151,
+   "Woolworths NZ",
+   0.0
+  ],
+  [
+   "pams finest",
+   101,
+   "Foodstuffs",
+   7.6
+  ],
+  [
+   "gilmours",
+   25,
+   "Foodstuffs",
+   0.0
+  ],
+  [
+   "the odd bunch",
+   18,
+   "Woolworths NZ",
+   8.9
+  ],
+  [
+   "homebrand",
+   17,
+   "Woolworths NZ",
+   16.3
+  ],
+  [
+   "pams pure",
+   16,
+   "Foodstuffs",
+   11.0
+  ],
+  [
+   "woolworths essentials",
+   11,
+   "Woolworths NZ",
+   0.0
+  ],
+  [
+   "new world",
+   10,
+   "Foodstuffs",
+   0.0
+  ],
+  [
+   "pak'nsave",
+   9,
+   "Foodstuffs",
+   0.0
+  ],
+  [
+   "free from",
+   8,
+   "Woolworths NZ",
+   ""
+  ],
+  [
+   "odd bunch",
+   7,
+   "Woolworths NZ",
+   ""
+  ],
+  [
+   "signature range",
+   4,
+   "Woolworths NZ",
+   1.8
+  ],
+  [
+   "freshchoice",
+   3,
+   "Woolworths NZ",
+   ""
+  ],
+  [
+   "woolworths gold",
+   2,
+   "Woolworths NZ",
+   0.0
+  ],
+  [
+   "fresh choice",
+   2,
+   "Woolworths NZ",
+   ""
+  ],
+  [
+   "woolworths macro",
+   1,
+   "Woolworths NZ",
+   0.0
+  ]
+ ]
+}

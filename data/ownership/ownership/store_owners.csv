@@ -1,0 +1,429 @@
+store_id,store,chain,company,nzbn,company_number,owner_id,registry_url,checked,confidence,classification
+0,FreshChoice Avondale,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+1,FreshChoice Barrington,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+2,FreshChoice Borman Road,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+3,FreshChoice Cambridge,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+4,FreshChoice Cannons Creek,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+5,FreshChoice Central Mall,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+6,FreshChoice Cromwell,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+7,FreshChoice Cuba Street,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+8,FreshChoice Edgeware,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+9,FreshChoice Epsom,FreshChoice,FC EPSOM LIMITED,9429049914764,8240672,SA-OWN-000001,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8240672/detail,2026-11-04,high,franchised_supplied_by_woolworths
+10,FreshChoice Featherston,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+11,FreshChoice Fendalton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+12,FreshChoice Fitzroy,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+13,FreshChoice Flagstaff,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+14,FreshChoice Flat Bush,FreshChoice,DH SUPERMARKET FLATBUSH LIMITED,9429049181258,8173591,SA-OWN-000002,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8173591/detail,2026-11-04,medium,franchised_supplied_by_woolworths
+15,FreshChoice Geraldine,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+16,FreshChoice Gleneden,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+17,FreshChoice Greenisland,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+18,FreshChoice Greerton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+19,FreshChoice Greytown,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+20,FreshChoice Halfmoonbay,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+21,FreshChoice Huntly,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+22,FreshChoice Kaikohe,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+23,FreshChoice Kaiti,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+24,FreshChoice Kellyroad,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+25,FreshChoice Kumeu,FreshChoice,ADARSHA ENTERPRISES LIMITED,9429032240016,2245496,SA-OWN-000003,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2245496/detail,2026-11-04,high,franchised_supplied_by_woolworths
+26,FreshChoice Lakehawea,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+27,FreshChoice Leamington,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+28,FreshChoice Leeston,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+29,FreshChoice Lyttelton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+30,FreshChoice Mandeville,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+31,FreshChoice Mangerebridge,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+32,FreshChoice Marton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+33,FreshChoice Merivale,FreshChoice,MERIVALE SUPERMARKET LIMITED,9429054018815,9465042,SA-OWN-000004,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9465042/detail,2026-11-04,medium,franchised_supplied_by_woolworths
+34,FreshChoice Methven,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+35,FreshChoice Nelsoncity,FreshChoice,NELSON CITY SUPERMARKET LIMITED,9429039586193,351104,SA-OWN-000005,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/351104/detail,2026-11-04,high,franchised_supplied_by_woolworths
+36,FreshChoice Ngaruawahia,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+37,FreshChoice Omokoroa,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+38,FreshChoice Otahuhu,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+39,FreshChoice Otaki,FreshChoice,OTAKI SUPERMARKET LIMITED,9429053315809,9391251,SA-OWN-000006,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9391251/detail,2026-11-04,medium,franchised_supplied_by_woolworths
+40,FreshChoice Otautau,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+41,FreshChoice Oxford,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+42,FreshChoice Paetiki,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+43,FreshChoice Palomino,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+44,FreshChoice Papakura,FreshChoice,DH SUPERMARKET PAPAKURA LIMITED OR FRESH FINDS PAPAKURA LIMITED,,8464042;9367857,,,2026-11-04,low (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
+45,FreshChoice Papamoa,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+46,FreshChoice Parklands,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+47,FreshChoice Parkwood,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+48,FreshChoice Pauanui,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+49,FreshChoice Picton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+50,FreshChoice Plaza,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+51,FreshChoice Prebbleton,FreshChoice,PREBBLETON SUPERMARKET LIMITED,9429051503963,8841768,SA-OWN-000008,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8841768/detail,2026-11-04,high,franchised_supplied_by_woolworths
+52,FreshChoice Pyespa,FreshChoice,PYES PA SUPERMARKET LIMITED,9429041533932,5528206,SA-OWN-000009,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5528206/detail,2026-11-04,medium,franchised_supplied_by_woolworths
+53,FreshChoice Queenstown,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+54,FreshChoice Raglan,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+55,FreshChoice Ranui,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+56,FreshChoice Reefton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+57,FreshChoice Renwick,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+58,FreshChoice Riverton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+59,FreshChoice Roslyn,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+60,FreshChoice Roxburgh,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+61,FreshChoice Ruakaka,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+62,FreshChoice Sumner,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+63,FreshChoice Takaka,FreshChoice,REYNISH'S SUPERMARKET LIMITED,9429036579723,1196590,SA-OWN-000010,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1196590/detail,2026-11-04,high,franchised_supplied_by_woolworths
+64,FreshChoice Teanau,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+65,FreshChoice Teawamutu,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+66,FreshChoice Tengae,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+67,FreshChoice Tinwald,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+68,FreshChoice Titirangi,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+69,FreshChoice Tuakau,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+70,FreshChoice Waihi,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+71,FreshChoice Waimauku,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+72,FreshChoice Waiuku,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+73,FreshChoice Westport,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+74,FreshChoice Whanganui,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+75,FreshChoice Woburn,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+76,New World Albany,New World,HIGHWAY SUPPLIES LIMITED,9429052658921,9322698,SA-OWN-000025,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9322698/detail,2026-11-04,high,foodstuffs_cooperative_member
+77,New World Aokautere,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+78,New World Balclutha,New World,LEE FAMILY GROCERS LIMITED,9429053347862,9394626,SA-OWN-000026,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9394626/detail,2026-11-04,high,foodstuffs_cooperative_member
+79,New World Birkenhead,New World,BIRKENHEAD SUPERMARKET LIMITED,9429048954945,8155732,SA-OWN-000027,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8155732/detail,2026-11-04,medium,foodstuffs_cooperative_member
+80,New World Blenheim,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+81,New World Botany,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+82,New World Broadway,New World,ANTARA GROUP LIMITED,9429032440669,2198502,SA-OWN-000028,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2198502/detail,2026-11-04,high,foodstuffs_cooperative_member
+83,New World Brookfield,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+84,New World Browns Bay,New World,CHRISTINI RETAIL LIMITED OR MILFORD ENTERPRISES LIMITED,,4756759;3286709,,,2026-11-04,high (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
+85,New World Cambridge,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+86,New World Carterton,New World,CARTERTON SUPERMARKET LIMITED,9429050615841,8383110,SA-OWN-000029,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8383110/detail,2026-11-04,high,foodstuffs_cooperative_member
+87,New World Centre City,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+88,New World Churton Park,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+89,New World Cromwell,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+90,New World Dannevirke,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+91,New World Devonport,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+92,New World Eastridge,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+93,New World Elles Road,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+94,New World Feilding,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+95,New World Foxton,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+96,New World Gate Pa,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+97,New World Glenview,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+98,New World Gore,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+99,New World Green Bay,New World,GREEN BAY SUPERMARKET LIMITED,9429051544485,8864850,SA-OWN-000030,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8864850/detail,2026-11-04,medium,foodstuffs_cooperative_member
+100,New World Greenmeadows,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+101,New World Greymouth,New World,MORRISON SUPERMARKETS LIMITED,9429051570262,8881851,SA-OWN-000031,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8881851/detail,2026-11-04,high,foodstuffs_cooperative_member
+102,New World Hastings,New World,KM & SB SUPERMARKET LIMITED,9429051405700,8785387,SA-OWN-000032,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8785387/detail,2026-11-04,high,foodstuffs_cooperative_member
+103,New World Hillcrest,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+104,New World Hobsonville,New World,MONMAC MERCHANTS(2020) LIMITED,9429048493222,8068416,SA-OWN-000033,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8068416/detail,2026-11-04,high,foodstuffs_cooperative_member
+105,New World Hokitika,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+106,New World Howick,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+107,New World Hutt City,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+108,New World Ilam,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+109,New World Inglewood,New World,MMA SUPERMARKET LIMITED,9429051435554,8788907,SA-OWN-000034,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8788907/detail,2026-11-04,high,foodstuffs_cooperative_member
+110,New World Island Bay,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+111,New World Kaiapoi,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+112,New World Kaikohe,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+113,New World Kaikoura,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+114,New World Kapiti,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+115,New World Karori,New World,YOUR LOCAL GROCER LIMITED,9429045976490,6243268,SA-OWN-000035,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6243268/detail,2026-11-04,medium,foodstuffs_cooperative_member
+116,New World Kawerau,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+117,New World Kerikeri,New World,DG & CM TUCKER LIMITED,9429031723121,2379018,SA-OWN-000036,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2379018/detail,2026-11-04,high,foodstuffs_cooperative_member
+118,New World Khandallah,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+119,New World Kumeu,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+120,New World Levin,New World,LEVIN SUPERMARKETS LIMITED,9429034404140,1738645,SA-OWN-000037,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1738645/detail,2026-11-04,high,foodstuffs_cooperative_member
+121,New World Lincoln,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+122,New World Long Bay,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+123,New World Marton,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+124,New World Masterton,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+125,New World Matamata,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+126,New World Merrilands,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+127,New World Metro Queen St,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+128,New World Metro Shore City,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+129,New World Metro Willis St,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+130,New World Milford,New World,ITHUBA INVESTMENTS LIMITED,9429049914412,8240713,SA-OWN-000039,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8240713/detail,2026-11-04,high,foodstuffs_cooperative_member
+131,New World Miramar,New World,MIRAMAR SUPERMARKET LIMITED,9429052602603,9317394,SA-OWN-000040,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9317394/detail,2026-11-04,medium,foodstuffs_cooperative_member
+132,New World Morrinsville,New World,PAUL & KYM SAMUELS LIMITED,9429034185926,1799605,SA-OWN-000041,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1799605/detail,2026-11-04,high,foodstuffs_cooperative_member
+133,New World Motueka,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+134,New World Mount Maunganui,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+135,New World Mt Albert,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+136,New World Mt Roskill,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+137,New World Nelson City,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+138,New World New Lynn,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+139,New World New Plymouth,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+140,New World Newlands,New World,ANDERHU SUPERMARKET LIMITED,9429051760441,9014699,SA-OWN-000043,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9014699/detail,2026-11-04,high,foodstuffs_cooperative_member
+141,New World Newtown,New World,DBBA LIMITED,9429051382421,8750817,SA-OWN-000044,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8750817/detail,2026-11-04,high,foodstuffs_cooperative_member
+142,New World Ngaruawahia,New World,SGC3 TRADING LIMITED,9429049219920,8177164,SA-OWN-000045,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8177164/detail,2026-11-04,high,foodstuffs_cooperative_member
+143,New World Northwood,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+144,New World Ohakune,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+145,New World Onekawa,New World,PEDERSEN GROCER LIMITED,9429043340569,6114688,SA-OWN-000046,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6114688/detail,2026-11-04,high,foodstuffs_cooperative_member
+146,New World Onerahi,New World,ONERAHI SUPERMARKET LIMITED,9429052770906,9335312,SA-OWN-000047,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9335312/detail,2026-11-04,medium,foodstuffs_cooperative_member
+147,New World Orewa,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+148,New World Ormiston,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+149,New World Otaki,New World,MULLINS SUPERMARKET LIMITED OR GREAT GROCERS LIMITED,,8201874;9350351,,,2026-11-04,high (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
+150,New World Pahiatua,New World,PAHIATUA SUPERMARKET LIMITED,9429047227569,7221514,SA-OWN-000048,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7221514/detail,2026-11-04,medium,foodstuffs_cooperative_member
+151,New World Papakura,New World,GROCERS INC. LIMITED,9429051355432,8754987,SA-OWN-000049,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8754987/detail,2026-11-04,high,foodstuffs_cooperative_member
+152,New World Papatoetoe,New World,MAXEL HOLDINGS LIMITED,9429035338345,1524265,SA-OWN-000050,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1524265/detail,2026-11-04,high,foodstuffs_cooperative_member
+153,New World Paremata,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+154,New World Pioneer,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+155,New World Point Chevalier,New World,POINT CHEVALIER SUPERMARKET LIMITED,9429052800986,9338345,SA-OWN-000052,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9338345/detail,2026-11-04,medium,foodstuffs_cooperative_member
+156,New World Porirua,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+157,New World Prestons,New World,PRESTONS SUPERMARKET LIMITED,9429046366504,6453492,SA-OWN-000053,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6453492/detail,2026-11-04,high,foodstuffs_cooperative_member
+158,New World Rangiora,New World,JK SUPERMARKETS 2007 LIMITED,9429041678381,5653871,SA-OWN-000054,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5653871/detail,2026-11-04,high,foodstuffs_cooperative_member
+159,New World Ravenswood,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+160,New World Regent,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+161,New World Remuera,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+162,New World Rototuna,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+163,New World Silverstream,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+164,New World Southmall,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+165,New World Stanmore (Christchurch),New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+166,New World Stoke,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+167,New World Stokes Valley,New World,AK GROCERS LIMITED,9429050992232,8540188,SA-OWN-000055,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8540188/detail,2026-11-04,high,foodstuffs_cooperative_member
+168,New World Stonefields,New World,STONEFIELDS SUPERMARKET LIMITED,9429031506571,2508096,SA-OWN-000056,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2508096/detail,2026-11-04,medium,foodstuffs_cooperative_member
+169,New World Stratford,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+170,New World Taihape,New World,TAIHAPE SUPERMARKET LIMITED,9429050070695,8260207,SA-OWN-000057,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8260207/detail,2026-11-04,medium,foodstuffs_cooperative_member
+171,New World Taumarunui,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+172,New World Tawa,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+173,New World Te Atatu,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+174,New World Te Kauwhata,New World,CB SUPERMARKET LIMITED,9429050184705,8282200,SA-OWN-000058,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8282200/detail,2026-11-04,high,foodstuffs_cooperative_member
+175,New World Te Puke,New World,DH SUPERMARKET TE PUKE LIMITED,9429050882168,8490286,SA-OWN-000059,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8490286/detail,2026-11-04,medium,foodstuffs_cooperative_member
+176,New World Te Rapa,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+177,New World Thorndon,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+178,New World Three Parks,New World,ASPIRING FOODMARKET LIMITED,9429047427174,7437316,SA-OWN-000060,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7437316/detail,2026-11-04,high,foodstuffs_cooperative_member
+179,New World Timaru,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+180,New World Tokoroa,New World,SGC3 TOKOROA LIMITED,9429052822018,9340464,SA-OWN-000061,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9340464/detail,2026-11-04,high,foodstuffs_cooperative_member
+181,New World Turangi,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+182,New World Waihi,New World,H S CHAHAL LIMITED,9429035334316,1525230,SA-OWN-000062,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1525230/detail,2026-11-04,high,foodstuffs_cooperative_member
+183,New World Waikanae,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+184,New World Waimate,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+185,New World Waipukurau,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+186,New World Wairoa,New World,THE GOOD GROCER LIMITED,9429042552697,6099811,SA-OWN-000063,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6099811/detail,2026-11-04,high,foodstuffs_cooperative_member
+187,New World Waitaki,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+188,New World Waitara,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+189,New World Waiuku,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+190,New World Wanaka,New World,WANAKA FOODMARKET LIMITED,9429041135280,5034800,SA-OWN-000064,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5034800/detail,2026-11-04,medium,foodstuffs_cooperative_member
+191,New World Warkworth,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+192,New World Wellington City,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+193,New World Westport,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+194,New World Whangamata,New World,URGS 26 21 LIMITED,9429049598322,8219804,SA-OWN-000065,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8219804/detail,2026-11-04,high,foodstuffs_cooperative_member
+195,New World Whanganui,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+196,New World Whangaparaoa,New World,PENNY'S PLACE LIMITED,9429033645254,1903239,SA-OWN-000066,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1903239/detail,2026-11-04,high,foodstuffs_cooperative_member
+197,New World Whitby,New World,KD MANDER HOLDINGS LIMITED,9429042116615,5865386,SA-OWN-000067,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5865386/detail,2026-11-04,high,foodstuffs_cooperative_member
+198,New World Whitianga,New World,WHITIANGA SUPERMARKET LIMITED,9429046954053,6970033,SA-OWN-000068,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6970033/detail,2026-11-04,medium,foodstuffs_cooperative_member
+199,New World Wigram,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+200,New World Winton,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+201,Pak'nSave Albany,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+202,Pak'nSave Alderman Dr Henderson,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+203,Pak'nSave Blenheim,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+204,Pak'nSave Botany,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+205,Pak'nSave Cameron Road,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+206,Pak'nSave Clarence Street,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+207,Pak'nSave Clendon,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+208,Pak'nSave Dunedin,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+209,Pak'nSave Glen Innes,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+210,Pak'nSave Hastings,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+211,Pak'nSave Hawera,Pak'nSave,ORANGE COUNTY INVESTMENTS GROUP LIMITED OR ELGIN TRADING LIMITED,,5924747;8349383,,,2026-11-04,high (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
+212,Pak'nSave Highland Park,Pak'nSave,HIGHLAND PARK MANAGEMENT LIMITED,9429052243127,9263915,SA-OWN-000011,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9263915/detail,2026-11-04,high,foodstuffs_cooperative_member
+213,Pak'nSave Hornby,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+214,Pak'nSave Invercargill,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+215,Pak'nSave Kaitaia,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+216,Pak'nSave Kapiti,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+217,Pak'nSave Kilbirnie,Pak'nSave,TRAFFORD SUPERMARKET LIMITED OR GALT'S SUPERMARKET LIMITED,,6275027;927780,,,2026-11-04,high (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
+218,Pak'nSave Lincoln Road,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+219,Pak'nSave Lower Hutt,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+220,Pak'nSave Mangere,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+221,Pak'nSave Manukau,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+222,Pak'nSave Masterton,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+223,Pak'nSave Mill Street,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+224,Pak'nSave Moorhouse,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+225,Pak'nSave Mt Albert,Pak'nSave,T & A CHAWLA LIMITED,9429030034631,4687359,SA-OWN-000012,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/4687359/detail,2026-11-04,high,foodstuffs_cooperative_member
+226,Pak'nSave Napier City,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+227,Pak'nSave New Plymouth,Pak'nSave,CHEAP AS FRESH AS SWEET AS LIMITED,9429051483517,8831311,SA-OWN-000013,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8831311/detail,2026-11-04,high,foodstuffs_cooperative_member
+228,Pak'nSave Ormiston,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+229,Pak'nSave Palmerston North,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+230,Pak'nSave Papakura,Pak'nSave,DH SUPERMARKET PAPAKURA LIMITED OR FRESH FINDS PAPAKURA LIMITED,,8464042;9367857,,,2026-11-04,low (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
+231,Pak'nSave Papamoa,Pak'nSave,PAPPNS TRADING COMPANY LIMITED,9429031525480,2495168,SA-OWN-000014,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2495168/detail,2026-11-04,high,foodstuffs_cooperative_member
+232,Pak'nSave Papanui,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+233,Pak'nSave Petone,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+234,Pak'nSave Porirua,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+235,Pak'nSave Pukekohe,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+236,Pak'nSave Queenstown,Pak'nSave,MAK SUPERMARKET LIMITED,9429042281337,5946248,SA-OWN-000015,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5946248/detail,2026-11-04,high,foodstuffs_cooperative_member
+237,Pak'nSave Rangiora,Pak'nSave,RPNS LIMITED,9429041568224,5558146,SA-OWN-000016,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5558146/detail,2026-11-04,high,foodstuffs_cooperative_member
+238,Pak'nSave Riccarton,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+239,Pak'nSave Richmond,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+240,Pak'nSave Rolleston,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+241,Pak'nSave Rotorua,Pak'nSave,FC ROTORUA CENTRAL LIMITED,9429052600234,9317118,SA-OWN-000017,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9317118/detail,2026-11-04,medium,foodstuffs_cooperative_member
+242,Pak'nSave Royal Oak,Pak'nSave,HUTCHINSON BROS LIMITED,9429040752365,41030,SA-OWN-000018,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/41030/detail,2026-11-04,high,foodstuffs_cooperative_member
+243,Pak'nSave Silverdale,Pak'nSave,SILVERDALE FOOD WAREHOUSE LIMITED,9429030869066,3671631,SA-OWN-000019,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/3671631/detail,2026-11-04,high,foodstuffs_cooperative_member
+244,Pak'nSave Sylvia Park,Pak'nSave,SP FOOD WAREHOUSE LIMITED,9429049431308,8198457,SA-OWN-000020,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8198457/detail,2026-11-04,high,foodstuffs_cooperative_member
+245,Pak'nSave Tamatea,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+246,Pak'nSave Taupō,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+247,Pak'nSave Tauriko,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+248,Pak'nSave Te Awamutu,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+249,Pak'nSave Thames,Pak'nSave,THAMES FOODBARN LIMITED,9429041657201,5636212,SA-OWN-000021,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5636212/detail,2026-11-04,high,foodstuffs_cooperative_member
+250,Pak'nSave Timaru,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+251,Pak'nSave Upper Hutt,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+252,Pak'nSave Wainoni,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+253,Pak'nSave Warkworth,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+254,Pak'nSave Westgate,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+255,Pak'nSave Whakatane,Pak'nSave,WHAKATANE SUPERMARKET LIMITED,9429040999395,4757959,SA-OWN-000022,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/4757959/detail,2026-11-04,medium,foodstuffs_cooperative_member
+256,Pak'nSave Whanganui,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+257,Pak'nSave Whangarei,Pak'nSave,T & L LEATHEM LIMITED,9429032034189,2301091,SA-OWN-000023,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2301091/detail,2026-11-04,high,foodstuffs_cooperative_member
+258,Pak'nSave Wairau Road,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+259,SuperValue Bell Block,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+260,Woolworths Whangarei,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+261,Woolworths Alexandra,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+262,Woolworths Amberley,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+263,Woolworths Andersons Bay,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+264,Woolworths Aotea,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+265,Woolworths Ashburton,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+266,Woolworths Ashburton South,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+267,Woolworths Auckland Airport,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+268,Woolworths Auckland Quay Street,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+269,Woolworths Avonhead,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+270,Woolworths Awapuni,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+271,Woolworths Balclutha,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+272,Woolworths Bayfair,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+273,Woolworths Beachlands,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+274,Woolworths Belfast,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+275,Woolworths Bethlehem,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+276,Woolworths Birkenhead,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+277,Woolworths Blenheim,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+278,Woolworths Botany,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+279,Woolworths Bridge St,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+280,Woolworths Broadway,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+281,Woolworths Browns Bay,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+282,Woolworths Bureta Park,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+283,Woolworths Cambridge,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+284,Woolworths Carlyle,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+285,Woolworths Christchurch Airport,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+286,Woolworths Church Corner,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+287,Woolworths Claudelands,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+288,Woolworths Colombo St,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+289,Woolworths Dargaville,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+290,Woolworths Dinsdale,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+291,Woolworths Dunedin Central,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+292,Woolworths Dunedin South,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+293,Woolworths Eastgate,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+294,Woolworths Fairy Springs,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+295,Woolworths Feilding,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+296,Woolworths Ferrymead,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+297,Woolworths Flaxmere,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+298,Woolworths Fraser Cove,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+299,Woolworths Gisborne,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+300,Woolworths Glenfield,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+301,Woolworths Gore,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+302,Woolworths Greenlane,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+303,Woolworths Greville Road,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+304,Woolworths Grey Lynn,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+305,Woolworths Greymouth,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+306,Woolworths Halswell,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+307,Woolworths Hamilton,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+308,Woolworths Hastings Central,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+309,Woolworths Hawera,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+310,Woolworths Helensville,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+311,Woolworths Henderson,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+312,Woolworths Highland Park,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+313,Woolworths Hobsonville,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+314,Woolworths Hornby,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+315,Woolworths Howick,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+316,Woolworths Huntly,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+317,Woolworths Invercargill,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+318,Woolworths Johnsonville,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+319,Woolworths Kaiapoi,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+320,Woolworths Karori,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+321,Woolworths Katikati,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+322,Woolworths Kelston,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+323,Woolworths Kelvin Grove,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+324,Woolworths Kerikeri,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+325,Woolworths Kilbirnie,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+326,Woolworths Levin,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+327,Woolworths Lower Hutt,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+328,Woolworths Lynfield,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+329,Woolworths Lynnmall,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+330,Woolworths Mailer Street,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+331,Woolworths Mairangi Bay,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+332,Woolworths Mangere East,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+333,Woolworths Manukau,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+334,Woolworths Manurewa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+335,Woolworths Masterton,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+336,Woolworths Meadowbank,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+337,Woolworths Meadowlands,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+338,Woolworths Milford,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+339,Woolworths Moorhouse Ave,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+340,Woolworths Morrinsville,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+341,Woolworths Mosgiel,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+342,Woolworths Mt Eden,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+343,Woolworths Mt Roskill,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+344,Woolworths Mt Wellington,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+345,Woolworths Napier,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+346,Woolworths Nelson,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+347,Woolworths Nelson Junction,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+348,Woolworths New Brighton,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+349,Woolworths New Plymouth Central,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+350,Woolworths Newmarket,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+351,Woolworths Newtown,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+352,Woolworths Northcote,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+353,Woolworths Northlands,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+354,Woolworths Northwest,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+355,Woolworths Oamaru,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+356,Woolworths Onehunga,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+357,Woolworths Orewa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+358,Woolworths Otorohanga,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+359,Woolworths Paeroa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+360,Woolworths Pakuranga,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+361,Woolworths Palmerston North,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+362,Woolworths Papakura,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+363,Woolworths Papamoa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+364,Woolworths Papatoetoe,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+365,Woolworths Paraparaumu,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+366,Woolworths Petone,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+367,Woolworths Pokeno,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+368,Woolworths Ponsonby,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+369,Woolworths Pt Chevalier,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+370,Woolworths Pukekohe,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+371,Woolworths Pukekohe South,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+372,Woolworths Putaruru,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+373,Woolworths Queensgate,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+374,Woolworths Queenstown,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+375,Woolworths Rangiora East,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+376,Woolworths Rangitikei Street,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+377,Woolworths Redwoodtown,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+378,Woolworths Regent,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+379,Woolworths Richmond,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+380,Woolworths Rolleston,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+381,Woolworths Roselands,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+382,Woolworths Rotorua,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+383,Woolworths Rototuna,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+384,Woolworths Silverdale,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+385,Woolworths Spotswood,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+386,Woolworths Springlands,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+387,Woolworths St James,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+388,Woolworths St Johns,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+389,Woolworths St Lukes,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+390,Woolworths Stoke,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+391,Woolworths Stratford,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+392,Woolworths Sunnynook,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+393,Woolworths Takanini,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+394,Woolworths Takapuna,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+395,Woolworths Taupo Central,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+396,Woolworths Taupo South,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+397,Woolworths Tauranga,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+398,Woolworths Tawa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+399,Woolworths Te Aroha,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+400,Woolworths Te Atatu South,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+401,Woolworths Te Awamutu,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+402,Woolworths Te Rapa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+403,Woolworths The Palms,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+404,Woolworths The Valley,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+405,Woolworths Three Kings,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+406,Woolworths Tikipunga,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+407,Woolworths Timaru,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+408,Woolworths Timaru North,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+409,Woolworths Tokoroa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+410,Woolworths Trafalgar Park,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+411,Woolworths Upper Hutt,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+412,Woolworths Victoria Ave,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+413,Woolworths Vogeltown,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+414,Woolworths Waiata Shores,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+415,Woolworths Waiheke,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+416,Woolworths Waikanae,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+417,Woolworths Waikiwi,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+418,Woolworths Waimakariri Junction,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+419,Woolworths Wainuiomata,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+420,Woolworths Waipukurau,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+421,Woolworths Waitangi,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+422,Woolworths Warkworth,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+423,Woolworths Westgate,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+424,Woolworths Whakatane,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+425,Woolworths Whanganui,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+426,Woolworths Whangaparaoa,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
+427,Woolworths Whitianga,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned

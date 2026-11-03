@@ -1,0 +1,51 @@
+<!doctype html><html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who owns NZ supermarkets and their brands | Shelf Audit</title><meta name="description" content="Every NZ supermarket's operating company and people, checked against the Companies Office, plus who owns 9,411 grocery brands."><link rel="canonical" href="https://intel.shelfaudit.pages.dev/ownership/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/blog/blog.css">
+<style>
+.ow{max-width:1100px;margin:0 auto;padding:24px 18px 60px}.ow h2{margin:40px 0 10px}.ow .lede{color:var(--ink2);max-width:760px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0}.card{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--paper2)}
+.card b{display:block;font-size:30px;font-weight:900}.card span{color:var(--ink2);font-size:14px}
+.note{border-left:6px solid #ffe14a;padding:12px 16px;background:var(--paper2);border-radius:8px;margin:16px 0}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{position:sticky;top:0;background:var(--paper2)}
+.id{font-family:'JetBrains Mono',monospace;font-size:12px;white-space:nowrap}.flag{background:#ff4a36;color:#fff;border-radius:6px;padding:1px 6px;font-size:12px;font-weight:700}
+input.q,select.q{width:100%;max-width:420px;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:16px;margin:8px 8px 8px 0}
+.bar{display:flex;height:14px;border-radius:7px;overflow:hidden;min-width:140px}.bar i{display:block}.muted{color:var(--ink2);font-size:13px}
+</style></head><body>
+<header class="top"><a href="/" class="brand" aria-label="Shelf Audit home"><span class="tag">SA</span><span>Shelf Audit</span></a>
+<nav class="bnav"><a href="/">Watchdog</a><a href="/app/">Shopper app</a><a href="/monopolies/">Who controls NZ</a><a href="/ownership/" class="on">Ownership</a><a href="/blog/">Blog</a><a href="/plans/">For supermarkets</a></nav></header>
+<main class="ow">
+<div class="bl-kicker">Ownership &middot; Shelf Audit</div><h1>Who owns the shops, and the brands on the shelf</h1>
+<p class="lede">Every NZ supermarket's operating company and the people behind it, checked against the NZ Companies Office register. Every company and person has a Shelf Audit ID so we can track them as the system grows.</p>
+<div class="cards" id="heads"></div>
+<div class="note" id="cov"></div>
+<h2>Headline findings</h2><ul id="find"></ul>
+<h2>How many stores each person owns</h2><p class="muted">People who are a director or shareholder of a store's operating company. Counts only cover stores with a confirmed owner.</p><div class="cards" id="buckets"></div><div id="cross"></div>
+<h2>Store owners</h2><input class="q" id="sq" type="search" placeholder="Search a store, company or person"><select class="q" id="sc"><option value="">All chains</option></select><p class="muted" id="sn"></p>
+<div class="tw"><table><thead><tr><th>Store</th><th>Banner</th><th>Operating company</th><th>People</th></tr></thead><tbody id="st"></tbody></table></div>
+<h2>Own-brand share by chain</h2><p class="muted">Share of each chain's products that carry a Foodstuffs or Woolworths house brand.</p><div class="tw"><table><thead><tr><th>Chain</th><th>Products</th><th>Foodstuffs brands</th><th>Woolworths brands</th><th>Other makers</th><th></th></tr></thead><tbody id="sh"></tbody></table></div>
+<h2>Brand owners (suppliers)</h2><div class="tw"><table><thead><tr><th>ID</th><th>Supplier</th><th>Type</th><th>Brands</th><th>Products</th></tr></thead><tbody id="su"></tbody></table></div>
+<h2>Brand search</h2><input class="q" id="bq" type="search" placeholder="Search a brand, eg pams, macro, anchor"><p class="muted" id="bn"></p>
+<div class="tw"><table><thead><tr><th>Brand</th><th>Owner</th><th>Products</th><th>Chains</th><th>Confidence</th></tr></thead><tbody id="br"></tbody></table></div>
+<p class="muted" id="src"></p>
+</main>
+<footer class="foot"><div class="foot-in"><div><strong>Shelf Audit</strong><p>An independent price watchdog for New Zealand shoppers. Not affiliated with any supermarket.</p></div>
+<div class="foot-links"><a href="/">Shopper watchdog</a><a href="/app/">Shopper app</a><a href="/searchlight/">Searchlight</a><a href="/monopolies/">Who controls NZ</a><a href="/ownership/">Ownership</a><a href="/blog/">Blog</a><a href="/plans/">Price Pilot plans</a></div>
+<p class="fine">Concept, design and execution by <a href="https://unlimitedpotential.co.nz" rel="noopener">Unlimited Potential</a></p></div></footer>
+<script>
+const E=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])),N=n=>Number(n).toLocaleString('en-NZ'),$=id=>document.getElementById(id);
+fetch('/ownership/data.json').then(r=>r.json()).then(D=>{const S=D.summary,c=S.by_chain,P={};D.people.forEach(p=>P[p.id]=p);const SU={};D.suppliers.forEach(s=>SU[s.id]=s.name);
+const fr=(c.FreshChoice||0),fs=(c['New World']||0)+(c["Pak'nSave"]||0);
+$('heads').innerHTML=[[S.stores,'stores checked'],[S.owners,'operating companies with an SA-OWN ID'],[S.people,'people with an SA-PER ID'],[N(S.brands),'brands mapped to an owner or flagged'],[N(S.products),'products traced']].map(x=>`<div class="card"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+$('cov').innerHTML=`<strong>Coverage, said plainly.</strong> Owners are confirmed for only ${S.confirmed} of the ${S.franchise} franchise stores so far. The other ${S.franchise-S.confirmed} are still being matched to the Companies Office register and this work is ongoing. The David Murray match is uncertain: he is listed as a shareholder only and may be a professional trustee, not an owner-operator. Last checked ${S.checked}.`;
+$('find').innerHTML=[`Woolworths NZ owns its ${c.Woolworths} Woolworths stores outright.`,`The ${fr} FreshChoice stores are franchises supplied by Woolworths. (SuperValue stores trade under the same Woolworths franchise model.)`,`The ${fs} New World and Pak'nSave stores are run by owner-operators who are members of the Foodstuffs co-operatives.`,`No supermarket we checked is genuinely independent. Every store is either owned by, franchised from or a co-operative member of one of the two big groups.`].map(x=>`<li>${E(x)}</li>`).join('');
+$('buckets').innerHTML=Object.entries(S.buckets).map(([k,v])=>`<div class="card"><b>${v}</b><span>${v==1?'person owns':'people own'} ${k} store${k=='1'?'':'s'}</span></div>`).join('');
+const cr=D.people.filter(p=>p.cross);$('cross').innerHTML=cr.length?`<p><span class="flag">Cross-chain</span> ${cr.length} person in more than one banner: `+cr.map(p=>`<span class="id">${p.id}</span> ${E(p.name)} (${E(p.stores.join(', '))}; ${E(p.dedupe)})`).join('; ')+'</p>':'';
+[...new Set(D.stores.map(s=>s.chain))].forEach(x=>$('sc').insertAdjacentHTML('beforeend',`<option>${E(x)}</option>`));
+const row=s=>`<tr><td>${E(s.store)}</td><td>${E(s.chain)}</td><td>${s.company?`${E(s.company)}<br><span class="id">${E(s.own)}</span> ${s.url?`<a href="${E(s.url)}" target="_blank" rel="noopener">Register</a>`:''}<br><span class="muted">Confidence: ${E(s.conf)}</span>`:'<span class="muted">Not yet confirmed</span>'}</td><td>${s.people.map(i=>P[i]).map(p=>`<span class="id">${p.id}</span> ${E(p.name)}${p.cross?' <span class="flag">Cross-chain</span>':''}${p.n>1?` <span class="muted">(${p.n} stores)</span>`:''}`).join('<br>')||(s.chain=='Woolworths'?'<span class="muted">Corporate store</span>':'')}</td></tr>`;
+const fs2=()=>{const q=$('sq').value.toLowerCase(),ch=$('sc').value;const r=D.stores.filter(s=>(!ch||s.chain==ch)&&(!q||(s.store+' '+s.company+' '+s.people.map(i=>P[i].name).join(' ')).toLowerCase().includes(q)));$('sn').textContent=r.length+' stores';$('st').innerHTML=r.map(row).join('')};$('sq').oninput=fs2;$('sc').onchange=fs2;fs2();
+const pc=(a,b)=>(100*a/b).toFixed(1)+'%';$('sh').innerHTML=D.share.map(s=>`<tr><td>${E(s.chain)}</td><td>${N(s.products)}</td><td>${pc(s.foodstuffs,s.products)}</td><td>${pc(s.woolworths,s.products)}</td><td>${pc(s.other,s.products)}</td><td><div class="bar"><i style="width:${pc(s.foodstuffs,s.products)};background:#ffe14a"></i><i style="width:${pc(s.woolworths,s.products)};background:#3ddc97"></i><i style="flex:1;background:var(--line)"></i></div></td></tr>`).join('');
+$('su').innerHTML=D.suppliers.map(s=>`<tr><td class="id">${s.id}</td><td>${E(s.name)}${s.legal&&s.legal!=s.name?`<br><span class="muted">${E(s.legal)}</span>`:''}</td><td>${E(s.type.replace(/_/g,' '))}</td><td>${N(s.brands)}</td><td>${N(s.products)}</td></tr>`).join('');
+const fb=()=>{const q=$('bq').value.toLowerCase().trim();const r=(q?D.brands.filter(b=>b[0].includes(q)):D.brands).slice(0,100);$('bn').textContent=q?`Showing ${r.length} matches (max 100)`:`Top 100 brands by product count of ${N(D.brands.length)}`;$('br').innerHTML=r.map(b=>`<tr><td>${E(b[0])}</td><td>${b[1]?`<span class="id">${b[1]}</span> ${E(SU[b[1]]||'')}`:`<span class="muted">${E(b[4].replace(/_/g,' '))}</span>`}</td><td>${N(b[2])}</td><td>${E(b[3].replace(/\+/g,', '))}</td><td>${E(b[5].replace(/_/g,' '))}</td></tr>`).join('')};$('bq').oninput=fb;fb();
+$('src').textContent='Sources: NZ Companies Office register (company, director and shareholder records), Shelf Audit store price capture. Generated by scripts/build_ownership.py.';
+});
+</script></body></html>

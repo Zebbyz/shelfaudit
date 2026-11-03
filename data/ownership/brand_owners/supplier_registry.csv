@@ -1,0 +1,39 @@
+supplier_id,name,legal_name,nzbn,supplier_type,brands,status
+SA-SUP-000001,Foodstuffs NZ,Foodstuffs North Island Ltd / Foodstuffs South Island Ltd,,supermarket_cooperative,gilmours|new world|pak'nsave|pams|pams finest|pams pure|pams value|value,active
+SA-SUP-000002,Woolworths NZ,Woolworths New Zealand Ltd,,supermarket_chain,essentials|free from|fresh choice|freshchoice|homebrand|macro|macro organic|odd bunch|select|signature range|the odd bunch|woolworths|woolworths essentials|woolworths gold|woolworths macro|ww,active
+SA-SUP-000003,Farrah's,Farrah's Breads Ltd (to verify),,manufacturer,farrah's|farrahs,active
+SA-SUP-000004,Kraft Heinz (Heinz Wattie's),HEINZ WATTIE'S LIMITED | parent: The Kraft Heinz Company (US),9429039009975,manufacturer_multinational,heinz|heinz seriously good|wattie's|watties,active
+SA-SUP-000005,Nestle NZ,NESTLE NEW ZEALAND LIMITED | parent: Nestle SA (Switzerland),9429000001786,manufacturer_multinational,kitkat|maggi|nescafe|nestle|purina,active
+SA-SUP-000006,Mondelez NZ,MONDELEZ NEW ZEALAND | parent: Mondelez International (US),9429000001748,manufacturer_multinational,cadbury|cadbury dairy milk|oreo,active
+SA-SUP-000007,Arnott's,ARNOTT'S NEW ZEALAND LIMITED | parent: The Arnott's Group (KKR owned),9429000002578,manufacturer_multinational,arnott's,active
+SA-SUP-000008,Sealord,SEALORD GROUP LIMITED | parent: Nissui (Japan) 50% / Moana NZ 50%,9429040180434,manufacturer_multinational,sealord,active
+SA-SUP-000009,Mars NZ,MARS NEW ZEALAND LIMITED | parent: Mars Inc (US),9429032032789,manufacturer_multinational,masterfoods|whiskas,active
+SA-SUP-000010,General Mills,GENERAL MILLS NEW ZEALAND LIMITED | parent: General Mills Inc (US),9429000005661,manufacturer_multinational,old el paso,active
+SA-SUP-000011,Goodman Fielder,GOODMAN FIELDER NEW ZEALAND LIMITED | parent: Wilmar International (Singapore),9429000007801,manufacturer_multinational,edmonds|meadow fresh|molenberg|vogel's,active
+SA-SUP-000012,Griffin's,GRIFFIN'S FOODS LIMITED | parent: Universal Robina Corporation (Philippines),9429040963365,manufacturer_multinational,eta|griffin's|griffins,active
+SA-SUP-000013,Tegel,TEGEL FOODS LIMITED | parent: Bounty Fresh Group (Philippines),9429040443737,manufacturer_multinational,tegel|tegel free range,active
+SA-SUP-000014,Sanitarium,Sanitarium Health Food Company (NZ entity not found on register) | parent: Seventh-day Adventist Church (charitable),,manufacturer_nz_au_church_owned,sanitarium|sanitarium up & go|weet-bix,active
+SA-SUP-000015,Kimberly-Clark,Kimberly-Clark NZ (NZ entity not found on register) | parent: Kimberly-Clark Corporation (US),,manufacturer_multinational,huggies|huggies ultra dry|u by kotex,active
+SA-SUP-000016,Unilever,UNILEVER NEW ZEALAND LIMITED | parent: Unilever plc (UK),9429040971278,manufacturer_multinational,dove,active
+SA-SUP-000017,Beiersdorf,Beiersdorf NZ (NZ entity not found on register) | parent: Beiersdorf AG (Germany),,manufacturer_multinational,nivea,active
+SA-SUP-000018,L'Oreal,L'OREAL NEW ZEALAND LIMITED | parent: L'Oreal SA (France),9429040690933,manufacturer_multinational,garnier|l'oreal paris|maybelline new york,active
+SA-SUP-000019,Procter & Gamble,Procter & Gamble NZ (NZ entity not found on register) | parent: Procter & Gamble Co (US),,manufacturer_multinational,head & shoulders,active
+SA-SUP-000020,Henkel,HENKEL NEW ZEALAND LIMITED | parent: Henkel AG (Germany),9429040689609,manufacturer_multinational,schwarzkopf|schwarzkopf extra care,active
+SA-SUP-000021,Reckitt,RECKITT BENCKISER (NEW ZEALAND) LIMITED | parent: Reckitt plc (UK),9429037449377,manufacturer_multinational,dettol,active
+SA-SUP-000022,Clorox (Glad),CLOROX NEW ZEALAND LIMITED | parent: The Clorox Company (US),9429000007610,manufacturer_multinational,glad,active
+SA-SUP-000023,Energizer,ENERGIZER NZ LIMITED | parent: Energizer Holdings (US),9429000003391,manufacturer_multinational,energizer,active
+SA-SUP-000024,McCain,MCCAIN FOODS (NZ) LIMITED | parent: McCain Foods Ltd (Canada),9429039562739,manufacturer_multinational,mccain,active
+SA-SUP-000025,PepsiCo (Bluebird),BLUEBIRD FOODS LIMITED | parent: PepsiCo Inc (US),9429040224541,manufacturer_multinational,bluebird|doritos,active
+SA-SUP-000026,Kellanova (Pringles),Kellanova NZ (NZ entity not found on register) | parent: Kellanova; Mars acquisition announced Aug 2024 (completion status unverified),,manufacturer_multinational,pringles,active
+SA-SUP-000027,Simplot,SIMPLOT NEW ZEALAND LIMITED (verify) | parent: J.R. Simplot Company (US),9429000071857,manufacturer_multinational,john west|leggo's,active
+SA-SUP-000028,Lee Kum Kee,Lee Kum Kee (NZ entity not found on register) | parent: Lee Kum Kee Co (Hong Kong),,manufacturer_multinational,lee kum kee,active
+SA-SUP-000029,Barilla,Barilla (NZ entity not found on register) | parent: Barilla G. e R. Fratelli (Italy),,manufacturer_multinational,barilla,active
+SA-SUP-000030,Dilmah,DILMAH NEW ZEALAND LIMITED | parent: MJF Group (Sri Lanka),9429038845864,manufacturer_multinational,dilmah,active
+SA-SUP-000031,JDE Peet's,JDE Peet's NZ (NZ entity not found on register) | parent: JDE Peet's NV (Netherlands),,manufacturer_multinational,moccona,active
+SA-SUP-000032,Chobani,CHOBANI NEW ZEALAND LIMITED | parent: Chobani Global Holdings (US),9429052534225,manufacturer_multinational,chobani,active
+SA-SUP-000033,Froneri (Tip Top ice cream),FRONERI NZ LIMITED | parent: Froneri (Nestle / PAI Partners JV),9429047470439,manufacturer_multinational,tip top,active
+SA-SUP-000034,Whittaker's,J H WHITTAKER & SONS LIMITED | parent: Whittaker family (NZ private),9429040968407,manufacturer_nz_private,whittaker's,active
+SA-SUP-000035,Bundaberg,BUNDABERG BREWED DRINKS NZ LIMITED | parent: Fleming family (AU private),9429040223421,manufacturer_au_private,bundaberg,active
+SA-SUP-000036,San Remo,San Remo Macaroni Co (NZ entity not found on register) | parent: San Remo (AU private),,manufacturer_au_private,san remo,active
+SA-SUP-000037,Barker's,BARKER FRUIT PROCESSORS LIMITED | parent: Barker family (NZ private),9429031856522,manufacturer_nz_private,barker's,active
+SA-SUP-000038,Cookie Time,COOKIE TIME LIMITED | parent: Cookie Time (NZ private),9429039340870,manufacturer_nz_private,cookie time,active
