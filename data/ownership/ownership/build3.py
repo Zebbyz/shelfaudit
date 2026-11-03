@@ -5,18 +5,16 @@ D=json.load(open('details.json'))
 L=json.load(open('fc_lic.json'))
 fx={'central-mall':'Central Mall','cubastreet':'Cuba Street','bellblock':'SuperValue Bell Block'}
 byn={norm(x['nm'].replace('FreshChoice ','')):str(x['id']) for x in stores if x['ch']=='FreshChoice'}
-FCN=0
 for k,v in L.items():
     if not v.get('cid'): continue
-    sid=byn.get(norm(fx.get(k,k))) or byn.get(norm(k))
+    sid=byn.get(norm(fx.get(k,k)))
     if not sid: print('NOMAP',k); continue
     D[v['cid']]=v['d']; old=match[sid][1]
     conf=('medium (OCR licence, exact registry name)' if v['ocr'] else 'high (alcohol licence, exact registry name)')
     if v.get('note'): conf='medium (OCR licence; '+v['note']+')'
-    if old==[v['cid']]: conf=conf.split(' (')[0].replace('medium','high')+' (licence and trading name agree)'
+    if old==[v['cid']]: conf='high (licence and trading name agree)'
     elif old: print('DISAGREE',k,old)
-    match[sid]=(match[sid][0],[v['cid']],conf); FCN+=1
-print('FC licence matches',FCN)
+    match[sid]=(match[sid][0],[v['cid']],conf)
 def parse(v):
     t=v['text']
     dirs=re.findall(r'Full legal name: (.*?) Residential Address: (.*?) Appointment',t.split('Former Directors')[0].split('Shareholdings (')[0])

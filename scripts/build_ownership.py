@@ -39,7 +39,7 @@ for r in so:
         people=per_store.get(r['store'], [])))
 bucket = C.Counter(min(p['n'], 6) for p in people if p['n'])
 fr = [s for s in stores if s['chain'] != 'Woolworths']
-confirmed = [s for s in fr if s['company'] and s['conf'] in ('high', 'medium')]
+confirmed = [s for s in fr if s['company'] and s['conf'].split(' ')[0] in ('high', 'medium')]
 summ = dict(stores=len(stores), by_chain=C.Counter(s['chain'] for s in stores), franchise=len(fr),
     confirmed=len(confirmed), with_company=sum(1 for s in fr if s['company']), owners=len({s['own'] for s in stores if s['own']}),
     people=len(people), buckets={('6+' if k == 6 else str(k)): bucket[k] for k in range(1, 7)},
