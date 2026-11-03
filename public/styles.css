@@ -409,3 +409,4 @@ body:not(:has(#mono-teaser)) .top{margin-bottom:40px}@media (max-width:980px){.t
 .bt span{display:block;margin-top:8px;font-weight:700;color:var(--ink)}.bt i{display:block;margin-top:6px;font-style:normal;color:var(--ink2);font-size:15px}
 .butter .note{max-width:62ch;margin:0 auto 10px;color:var(--ink2)}.butter .fine{max-width:62ch;margin:0 auto}
 @media(max-width:600px){.butter{margin:40px 12px 10px;border-radius:16px}}
+.bt b.up{color:var(--red)}.butter .say{max-width:52ch;margin:0 auto 24px;color:var(--ink)}

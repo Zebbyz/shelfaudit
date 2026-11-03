@@ -13,4 +13,9 @@ out={'checked':d['updated'],'ww':{'stores':int(ww[1]),'from':float(ww[2]),'to':s
  'pns':{'stores':int(ps[1]),'from':float(ps[2]),'to':float(ps[3])},
  'gdt':{'date':g['date'],'butter_usd_t':g['butter_usd_t'],'change_pct':float(pg[1])},
  'mainland':{'ww_stores':int(ml[1]),'to':float(ml[4])}}
+pc=lambda a,b:round((b/a-1)*100,1)
+out['ww']['pct']=[pc(out['ww']['from'],t) for t in out['ww']['to']]
+out['pns']['pct']=pc(out['pns']['from'],out['pns']['to'])
+allp=out['ww']['pct']+[out['pns']['pct']]
+out['pct_min'],out['pct_max']=min(allp),max(allp)
 json.dump(out,open('public/data/butter.json','w'),indent=1);print(out)

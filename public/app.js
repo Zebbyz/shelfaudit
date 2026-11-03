@@ -295,10 +295,11 @@ function butterBlock(){fetch('/data/butter.json?'+Date.now()).then(r=>r.ok?r.jso
 const m2=x=>'$'+x.toFixed(2),dt=x=>new Date(x+'T12:00:00').toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
 const total=b.ww.stores+b.pns.stores;
 el.innerHTML=`<p class="kicker">Butter check · ${dt(b.checked)}</p>
-<h2>World butter prices <span class="dn">fell ${Math.abs(b.gdt.change_pct)}%</span>.<br>Anchor butter <span class="up">went up</span> at all ${total} Woolworths and Pak'nSave stores we compared.</h2>
+<h2>Shelf <span class="up">up ${Math.round(b.pct_min)}% to ${Math.round(b.pct_max)}%</span>.<br>World butter <span class="dn">down ${Math.abs(b.gdt.change_pct)}%</span>.</h2>
+<p class="say">Anchor butter 500g went up at all ${total} Woolworths and Pak'nSave stores we compared, while the world auction price fell.</p>
 <div class="bt-grid">
-<div class="bt"><b>${b.ww.stores} of ${b.ww.stores}</b><span>Woolworths stores up</span><i>${m2(b.ww.from)} special to ${m2(b.ww.to[0])} or ${m2(b.ww.to[1])}</i></div>
-<div class="bt"><b>${b.pns.stores} of ${b.pns.stores}</b><span>Pak'nSave stores up</span><i>Mostly ${m2(b.pns.from)} to ${m2(b.pns.to)}</i></div>
+<div class="bt"><b class="up">+${b.ww.pct[0]}% / +${b.ww.pct[1]}%</b><span>Woolworths, ${b.ww.stores} of ${b.ww.stores} stores up</span><i>${m2(b.ww.from)} special to ${m2(b.ww.to[0])} or ${m2(b.ww.to[1])}</i></div>
+<div class="bt"><b class="up">+${b.pns.pct.toFixed(1)}%</b><span>Pak'nSave, ${b.pns.stores} of ${b.pns.stores} stores up</span><i>Mostly ${m2(b.pns.from)} to ${m2(b.pns.to)}</i></div>
 <div class="bt"><b class="dn">${b.gdt.change_pct}%</b><span>Global Dairy Trade butter, ${dt(b.gdt.date)}</span><i>Now US$${b.gdt.butter_usd_t.toLocaleString('en-NZ')} a tonne</i></div>
 </div>
 <p class="note">To be fair: Mainland butter came down at the same time (to ${m2(b.mainland.to)} at ${b.mainland.ww_stores} Woolworths stores), so part of the Anchor rise is specials ending rather than a new price.</p>
