@@ -1,7 +1,13 @@
 import json, re, os, html, datetime, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from blog_posts import POSTS
+from blog_posts import POSTS as ALL_POSTS
+from zoneinfo import ZoneInfo
+TODAY = os.environ.get("BLOG_TODAY") or datetime.datetime.now(ZoneInfo("Pacific/Auckland")).date().isoformat()
+POSTS = [p for p in ALL_POSTS if p["date"] <= TODAY]
 OUT = os.path.join(os.path.dirname(__file__), "..", "public", "blog")
+import shutil
+for _d in os.listdir(OUT) if os.path.isdir(OUT) else []:
+    if os.path.isdir(os.path.join(OUT, _d)): shutil.rmtree(os.path.join(OUT, _d))
 PAL = ["#ff4a36","#3ddc97","#ffe14a","#5aa9ff","#c58bff","#ff8a3d","#2ec4b6","#ff5fa2","#a3e635","#f59e0b","#60a5fa","#f472b6","#34d399","#fbbf24","#e879f9","#94a3b8","#fb7185","#22d3ee"]
 tags = []
 for p in POSTS:

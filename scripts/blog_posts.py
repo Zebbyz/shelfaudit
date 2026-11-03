@@ -1,6 +1,6 @@
 # Shelf Audit blog posts. Every fact carries a source. Opinion is marked.
 POSTS = [
-dict(slug="your-unpaid-second-job", title="Your unpaid second job at the checkout", date="2026-11-03", tags=["Self-checkout","Staff"],
+dict(slug="your-unpaid-second-job", title="Your unpaid second job at the checkout", date="2026-10-22", tags=["Self-checkout","Staff"],
 summary="You scan it, bag it and fix the unexpected item. Consumer NZ says the staff savings are not being passed on to shoppers.",
 body="""
 <p>You scan it. You bag it. You fix the "unexpected item in the bagging area". You wait in line to do it. None of that comes off your bill.</p>
@@ -24,7 +24,7 @@ sources=[("RNZ: Should customers pay less when they use a self-checkout?","https
 ("The Grocer: Booths has less shrinkage and faster service since ditching self-checkouts","https://www.thegrocer.co.uk/news/booths-has-less-shrinkage-and-faster-service-since-ditching-self-checkouts/703485.article","2024"),
 ("Drexel University: Does self-checkout impact grocery store loyalty?","https://drexel.edu/news/archive/2024/January/Does-Self-Checkout-Impact-Grocery-Store-Loyalty","January 2024")]),
 
-dict(slug="the-duopoly-in-black-and-white", title="The duopoly, in the regulator's own words", date="2026-11-03", tags=["Duopoly","Commerce Commission"],
+dict(slug="the-duopoly-in-black-and-white", title="The duopoly, in the regulator's own words", date="2026-10-20", tags=["Duopoly","Commerce Commission"],
 summary="In 2022 the Commerce Commission found competition between Woolworths and Foodstuffs was muted and their profits were well above normal.",
 body="""
 <p>This is not a conspiracy theory. It is the finding of a 609-page government market study.</p>
@@ -44,7 +44,7 @@ sources=[("Commerce Commission: Market study into the retail grocery sector, fin
 ("NZ Herald: Government responds to Commerce Commission report","https://www.nzherald.co.nz/business/government-responds-to-commerce-commission-report-into-supermarket-industry/KERRASTTEPMCZ3GONHQIUYHLZQ/","8 March 2022"),
 ("Commerce Commission: Annual Grocery Report 2025","https://www.comcom.govt.nz/assets/Uploads/Annual-Grocery-Report-2025-2-June-2026.pdf","2 June 2026")]),
 
-dict(slug="specials-that-were-not-special", title="Specials that were not special: the court cases", date="2026-11-03", tags=["Pricing","Commerce Commission","Court"],
+dict(slug="specials-that-were-not-special", title="Specials that were not special: the court cases", date="2026-10-30", tags=["Pricing","Commerce Commission","Court"],
 summary="Two Pak'nSaves have been convicted and fined $580,500. Woolworths faces criminal charges it has pleaded not guilty to.",
 body="""
 <p>On 30 October 2026, Pak'nSave Silverdale and Pak'nSave Mill Street were fined a combined $580,500 in the Auckland District Court after pleading guilty to inaccurate pricing under the Fair Trading Act.<sup>[1]</sup></p>
@@ -62,7 +62,7 @@ sources=[("Commerce Commission: Two Foodstuffs supermarkets fined for repeated p
 ("The Post: Woolworths seeking further details of ComCom's mis-pricing allegations","https://www.thepost.co.nz/business/360788270/woolworths-seeking-further-details-comcoms-mis-pricing-allegations","11 August 2025"),
 ("RNZ: Two Foodstuffs North Island supermarkets fined","https://www.rnz.co.nz/news/business/2234608/two-foodstuffs-north-island-supermarkets-fined-for-repeated-pricing-errors-that-misled-customers","30 October 2026")]),
 
-dict(slug="same-chain-different-price", title="Same chain, same product, different price", date="2026-11-03", tags=["Shelf Audit data","Pricing"],
+dict(slug="same-chain-different-price", title="Same chain, same product, different price", date="2026-11-01", tags=["Shelf Audit data","Pricing"],
 summary="Our 1 November 2026 capture: 50.5% of 426 NZ supermarkets price above the national median. All 125 New World stores do.",
 body="""
 <p>Shelf Audit compares the same products across every store we can price. Here is what the capture of 1 November 2026 shows.<sup>[1]</sup></p>
@@ -77,7 +77,7 @@ body="""
 """,
 sources=[("Shelf Audit: national store price index, capture of 1 November 2026","https://intel.shelfaudit.pages.dev/","1 November 2026")]),
 
-dict(slug="shrinkflation", title="Shrinkflation: same price, less in the pack", date="2026-11-03", tags=["Shrinkflation","Pricing"],
+dict(slug="shrinkflation", title="Shrinkflation: same price, less in the pack", date="2026-11-04", tags=["Shrinkflation","Pricing"],
 summary="Consumer NZ has tracked packs that shrank while the price stayed put, from rice crackers to chocolate boxes.",
 body="""
 <p>The price tag is the same. The pack is smaller. Consumer NZ has documented examples on NZ shelves.<sup>[1][2]</sup></p>
@@ -93,7 +93,7 @@ sources=[("Consumer NZ: Shrinkflation, companies giving you less product for the
 ("Rova: Kiwi snacks are now way smaller thanks to shrinkflation","https://www.rova.nz/articles/kiwi-snacks-are-smaller-thanks-to-shrinkflation","2024"),
 ("Commerce Commission: Unit pricing regulations, a guide for grocery retailers","https://www.comcom.govt.nz/assets/pdf_file/0024/347154/Unit-pricing-regulations-a-guide-for-grocery-retailers-Guideline-March-2024.pdf","March 2024")]),
 
-dict(slug="loyalty-cards-and-your-data", title="Loyalty cards: you pay with your data", date="2026-11-03", tags=["Loyalty","Data"],
+dict(slug="loyalty-cards-and-your-data", title="Loyalty cards: you pay with your data", date="2026-11-06", tags=["Loyalty","Data"],
 summary="Everyday Rewards and Clubcard collect detailed purchase data. Consumer NZ warns member pricing can leave non-members paying more.",
 body="""
 <p>Member prices look like a gift. Consumer NZ says the trade is your data.<sup>[1]</sup></p>
@@ -108,7 +108,7 @@ sources=[("Consumer NZ: The new Club+ vs Everyday Rewards","https://www.consumer
 ("Consumer NZ: Loyalty data could push supermarket prices even higher","https://www.consumer.org.nz/about-us/media-releases/consumer-nz-says-loyalty-data-for-grocery-discounts-could-push-supermarket-prices","2024"),
 ("The Spinoff: New Zealand's supermarket duopoly lives to profit another day","https://thespinoff.co.nz/business/09-03-2022/new-zealands-supermarket-duopoly-lives-to-profit-another-day","9 March 2022")]),
 
-dict(slug="home-brands", title="Home brands: the supermarket owns the shelf and the label", date="2026-11-03", tags=["Home brands","Suppliers"],
+dict(slug="home-brands", title="Home brands: the supermarket owns the shelf and the label", date="2026-11-07", tags=["Home brands","Suppliers"],
 summary="Private label is about 14.5% of packaged supermarket sales. The retailer sets the price of its own brand and its rivals'.",
 body="""
 <ul><li>Private label (Pams, Woolworths brand and others) was about 14.5% of pre-packaged supermarket sales, per Circana data cited by the Commerce Commission.<sup>[1]</sup></li>
@@ -119,7 +119,7 @@ body="""
 sources=[("Consumer NZ: Supermarket home brands, are they reducing product choice?","https://www.consumer.org.nz/shopping/supermarkets/supermarket-home-brands-are-they-reducing-product-choice","2025"),
 ("BusinessDesk: Supermarkets speak up at last about private-label products","https://www.businessdesk.co.nz/investigations/business-of-food/supermarkets-speak-up-at-last-about-private-label-products/IGQNG7TIQZPAXKOA6CYBOAB2MA/","2025")]),
 
-dict(slug="how-suppliers-are-treated", title="How suppliers are treated, and the code meant to fix it", date="2026-11-03", tags=["Suppliers","Grocery Supply Code","Commerce Commission"],
+dict(slug="how-suppliers-are-treated", title="How suppliers are treated, and the code meant to fix it", date="2026-10-26", tags=["Suppliers","Grocery Supply Code","Commerce Commission"],
 summary="Rebates and payments from suppliers hit about $6 billion in FY25. Both big groups have had Grocery Supply Code warnings.",
 body="""
 <ul><li>In 2022 the Commission found the major groups use buying power to shift costs and risks onto suppliers.<sup>[1]</sup></li>
@@ -135,7 +135,7 @@ sources=[("The Spinoff: market study summary","https://thespinoff.co.nz/business
 ("Commerce Commission: Foodstuffs North Island warned","https://www.comcom.govt.nz/news-and-media/news-and-events/2025/foodstuffs-north-island-warned-for-likely-breaking-grocery-competition-law/","July 2025"),
 ("Commerce Commission: Woolworths warning letter, delisting process","https://www.comcom.govt.nz/assets/Documents/timeline/Woolworths-New-Zealand-Ltd-Warning-letter-16-Decemeber-2025.pdf","16 December 2025")]),
 
-dict(slug="covenants-and-land", title="190 land deals that kept rivals out", date="2026-11-03", tags=["Duopoly","Land","Law"],
+dict(slug="covenants-and-land", title="190 land deals that kept rivals out", date="2026-10-24", tags=["Duopoly","Land","Law"],
 summary="The Commission found 190 covenants and exclusivity clauses blocking competitor sites. 150 lasted more than 20 years. Parliament banned them.",
 body="""
 <p>A supermarket needs a site. In 2022 the Commerce Commission found the two major groups had used covenants and lease clauses to stop sites going to competitors.<sup>[1][2]</sup></p>
@@ -161,7 +161,7 @@ body="""
 sources=[("Commerce Commission: ComCom takes Foodstuffs SI to court","https://www.comcom.govt.nz/news-and-media/news-and-events/2026/commerce-commission-to-take-foodstuffs-south-island-to-court-alleging-far-reaching-anti-competitive-conduct-that-deprived-customers-of-cheaper-prices/","August 2026"),
 ("Commerce Commission: Two Foodstuffs supermarkets fined (case update)","https://www.comcom.govt.nz/news-and-media/news-and-events/2026/two-foodstuffs-north-island-supermarkets-fined-for-repeated-pricing-errors-that-misled-customers/","30 October 2026")]),
 
-dict(slug="delivery-fees", title="The price of not going in: delivery fees", date="2026-11-03", tags=["Online","Fees"],
+dict(slug="delivery-fees", title="The price of not going in: delivery fees", date="2026-11-11", tags=["Online","Fees"],
 summary="Woolworths lifted its Delivery Saver fee and the free delivery threshold from $80 to $100 in October 2025.",
 body="""
 <ul><li>From 1 October 2025, Woolworths' Delivery Saver went from $23 to $25.99 a month, and from $118 to $132.99 for six months.<sup>[1]</sup></li>
@@ -172,7 +172,7 @@ body="""
 sources=[("RNZ: Woolworths increases subscription fee, minimum spend for free delivery","https://www.rnz.co.nz/news/business/571681/woolworths-increases-subscription-fee-minimum-spend-for-free-delivery","2025"),
 ("Commerce Commission: Annual Grocery Report 2025","https://www.comcom.govt.nz/assets/Uploads/Annual-Grocery-Report-2025-2-June-2026.pdf","2 June 2026")]),
 
-dict(slug="bags-at-the-till", title="Bags: from free to for sale", date="2026-11-03", tags=["Fees","Packaging"],
+dict(slug="bags-at-the-till", title="Bags: from free to for sale", date="2026-11-13", tags=["Fees","Packaging"],
 summary="Since the 2019 plastic bag ban, supermarkets sell paper and reusable bags. Nobody has published what they make on them.",
 body="""
 <ul><li>Single-use plastic shopping bags were banned from 1 July 2019.<sup>[1]</sup></li>
@@ -183,7 +183,7 @@ body="""
 sources=[("Ministry for the Environment: Single-use plastic shopping bag ban, facts for businesses","https://environment.govt.nz/what-you-can-do/campaigns/single-use-plastic-bags-banned/facts-for-businesses/","2019"),
 ("Supermarket News: Countdown introduces paper bags","https://supermarketnews.co.nz/news/countdown-introduces-paper-bags/","2019")]),
 
-dict(slug="the-checkout-lolly-wall", title="The checkout lolly wall", date="2026-11-03", tags=["Store layout","Health"],
+dict(slug="the-checkout-lolly-wall", title="The checkout lolly wall", date="2026-11-15", tags=["Store layout","Health"],
 summary="A University of Auckland study of 204 NZ supermarkets found only 15% of checkouts were free of junk food.",
 body="""
 <p>The queue is where you are tired, waiting, and often with kids.</p>
@@ -194,7 +194,7 @@ body="""
 sources=[("European Journal of Clinical Nutrition: Towards healthier supermarkets, a national study in New Zealand","https://doi.org/10.1038/s41430-017-0078-6","2018"),
 ("University of Auckland: Great opportunity for supermarkets to encourage healthy food choices","https://www.auckland.ac.nz/en/news/2018/01/19/great-opportunity-for-supermarkets-encourage-healthy-food-choices.html","19 January 2018")]),
 
-dict(slug="liquor-and-pharmacy", title="It's not just groceries: liquor and pharmacy", date="2026-11-03", tags=["Duopoly","Liquor","Pharmacy"],
+dict(slug="liquor-and-pharmacy", title="It's not just groceries: liquor and pharmacy", date="2026-10-28", tags=["Duopoly","Liquor","Pharmacy"],
 summary="Foodstuffs supermarkets sell 20% of all NZ liquor and it owns Liquorland. Two chains lead pharmacy.",
 body="""
 <ul><li>20% of all NZ liquor is sold through Foodstuffs supermarkets, and Foodstuffs also owns Liquorland and the wholesalers Gilmours and Trents.<sup>[1]</sup></li>
@@ -207,7 +207,7 @@ sources=[("The Post: Foodstuffs to dominate liquor wholesaling after Metcash wit
 ("NZX: Green Cross Health full year result","https://www.nzx.com/announcements/452440","29 May 2025"),
 ("Inside Retail NZ: Chemist Warehouse plan","https://insideretail.co.nz/2026/04/13/chemist-warehouses-plan-to-undermine-independent-pharmacies-revealed/","13 April 2026")]),
 
-dict(slug="the-law-that-was-meant-to-fix-it", title="The law that was meant to fix it", date="2026-11-03", tags=["Law","Commerce Commission","Duopoly"],
+dict(slug="the-law-that-was-meant-to-fix-it", title="The law that was meant to fix it", date="2026-11-09", tags=["Law","Commerce Commission","Duopoly"],
 summary="The Grocery Industry Competition Act 2023 created a Grocery Commissioner. Three annual reports later, the 82% has not moved.",
 body="""
 <ul><li>The Grocery Industry Competition Act 2023 came into force on 10 July 2023. It created a Grocery Commissioner inside the Commerce Commission and a wholesale regime requiring the majors to consider supply requests from rivals.<sup>[1][2]</sup></li>
