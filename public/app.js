@@ -499,7 +499,7 @@ function wireForm(f,fn){tsMount(f);f.addEventListener('submit',async e=>{e.preve
   try{await fn(new FormData(f));}catch(x){o.textContent=x.message;o.className='fmsg err';try{turnstile.reset()}catch(_){}}b.disabled=false})}
 
 (function tipbar(){const b=document.createElement('a');b.className='tipbar';b.href='#/tip';b.innerHTML='<span>Spotted a rip-off?</span> <b>Tip us</b>';document.body.prepend(b)})();
-document.querySelector('#nav')?.insertAdjacentHTML('beforeend','<a href="#/join">Members</a><a href="#/api">API</a>');
+(()=>{const n=document.querySelector('#nav');if(!n)return;const g=n.querySelector('a.nav-green');if(g)g.insertAdjacentHTML('afterend','<a href="#/join" class="nav-green">Members</a>');else n.insertAdjacentHTML('afterbegin','<a href="#/join" class="nav-green">Members</a>');n.insertAdjacentHTML('beforeend','<a href="#/api">API</a>');})();
 
 R.tip=()=>{setTitle('Tip us');main.innerHTML=`<div class="ph"><p class="kicker">Tip line</p><h1 style="font-size:clamp(36px,7vw,64px)">Spotted a rip-off? Tip us</h1><p class="lede">Shoppers and staff welcome. Anonymous by default. Every tip is private and checked by a person before anything is used. Nothing is published automatically.</p></div>
 <form class="sform" id="tipf">${storeOpts()}
