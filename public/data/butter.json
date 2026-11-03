@@ -1,0 +1,25 @@
+{
+ "checked": "2026-11-04",
+ "ww": {
+  "stores": 168,
+  "from": 8.5,
+  "to": [
+   9.39,
+   9.7
+  ]
+ },
+ "pns": {
+  "stores": 54,
+  "from": 8.29,
+  "to": 8.79
+ },
+ "gdt": {
+  "date": "2026-11-03",
+  "butter_usd_t": 4503.0,
+  "change_pct": -4.7
+ },
+ "mainland": {
+  "ww_stores": 166,
+  "to": 9.45
+ }
+}

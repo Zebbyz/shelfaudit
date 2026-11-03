@@ -120,7 +120,7 @@ function wireSlider(){const cm=$('#cmp');if(!cm)return;let dn=0;const mv=x=>{con
   cm.addEventListener('pointerdown',e=>{dn=1;cm.setPointerCapture(e.pointerId);mv(e.clientX)});cm.addEventListener('pointermove',e=>{if(dn)mv(e.clientX)});cm.addEventListener('pointerup',()=>dn=0)}
 const R={};
 R['']=()=>{
-  setTimeout(reportCard,0);
+  setTimeout(reportCard,0);setTimeout(butterBlock,0);
   setTitle();const m=D.meta,c=m.chains;
   const best=Object.entries(c).filter(x=>x[1].ix).sort((a,b)=>a[1].ix-b[1].ix);
   const wide=D.products.filter(p=>p[6]>=30).map(p=>p[5]/p[4]).sort((a,b)=>b-a);const medGap=wide[Math.floor(wide.length/2)];
@@ -143,6 +143,7 @@ R['']=()=>{
     <div class="stat"><b data-to="${m.matched}">${num(m.matched)}</b><span>products matched across stores</span></div>
     <div class="stat"><b style="font-size:clamp(26px,4vw,40px)">${nzDate(m.last)}</b><span>latest capture</span></div>
   </div>
+  <section class="butter" id="butter" hidden></section>
   <section class="blk pull"><p class="kicker">What if</p><blockquote><p>If just a quarter of supermarkets nudged prices up 3%, shoppers would pay about <span class="o">$211 million</span> a year more.</p></blockquote>
   <p class="fine">Hypothetical, not a claim about any store. Supermarket and grocery store sales were $28.13 billion in the year to March 2026 (GST exclusive), per the <a href="https://www.stats.govt.nz/information-releases/retail-trade-survey-march-2026-quarter/" rel="noopener">Stats NZ Retail Trade Survey</a>. $28.13 billion × 25% × 3% = $211 million. Assumes sales are shared evenly across stores.</p></section>
   <section class="blk"><div id="stbars"></div></section>
@@ -289,6 +290,19 @@ R.uptickers=()=>{setTitle('Uptickers watch');const sh=D.dairy.shelf,dates=[...ne
   <ul class="plist">${gaps.map(([p,i])=>`<li><span class="pn"><a href="#/p/${i}">${esc(p[0])}</a><small>${p[6]} stores · dearest is ${Math.round((p[5]/p[4]-1)*100)}% above cheapest</small></span><span class="range"><span class="dn">${money(p[4])}</span><br><small class="up">to ${money(p[5])}</small></span><button class="add ${basket[i]?'in':''}" data-add="${i}" aria-label="Add ${esc(p[0])}">${basket[i]?'✓':'+'}</button></li>`).join('')}</ul></section>
   <section class="blk prose"><h3>How we flag</h3><p>A store is flagged when the same item rises at that store but not across its chain, or when its index climbs over several captures. A flag is a prompt to look closer. It is not a finding of wrongdoing, and a single capture can include a special ending or a data error.</p></section>`;wireAdd();overList(s.id,$('#sov'))};
 
+
+function butterBlock(){fetch('/data/butter.json?'+Date.now()).then(r=>r.ok?r.json():null).then(b=>{const el=document.getElementById('butter');if(!b||!el)return;
+const m2=x=>'$'+x.toFixed(2),dt=x=>new Date(x+'T12:00:00').toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'});
+const total=b.ww.stores+b.pns.stores;
+el.innerHTML=`<p class="kicker">Butter check · ${dt(b.checked)}</p>
+<h2>World butter prices <span class="dn">fell ${Math.abs(b.gdt.change_pct)}%</span>.<br>Anchor butter <span class="up">went up</span> at all ${total} Woolworths and Pak'nSave stores we compared.</h2>
+<div class="bt-grid">
+<div class="bt"><b>${b.ww.stores} of ${b.ww.stores}</b><span>Woolworths stores up</span><i>${m2(b.ww.from)} special to ${m2(b.ww.to[0])} or ${m2(b.ww.to[1])}</i></div>
+<div class="bt"><b>${b.pns.stores} of ${b.pns.stores}</b><span>Pak'nSave stores up</span><i>Mostly ${m2(b.pns.from)} to ${m2(b.pns.to)}</i></div>
+<div class="bt"><b class="dn">${b.gdt.change_pct}%</b><span>Global Dairy Trade butter, ${dt(b.gdt.date)}</span><i>Now US$${b.gdt.butter_usd_t.toLocaleString('en-NZ')} a tonne</i></div>
+</div>
+<p class="note">To be fair: Mainland butter came down at the same time (to ${m2(b.mainland.to)} at ${b.mainland.ww_stores} Woolworths stores), so part of the Anchor rise is specials ending rather than a new price.</p>
+<p class="fine">Anchor butter 500g, same stores compared before and after. Checked ${dt(b.checked)}. Sources: Global Dairy Trade auction results and the Shelf Audit store scrape.</p>`;el.hidden=false})}
 // dairy
 R.dairy=()=>{setTitle('Dairy chain');const d=D.dairy,f=d.fonterra,g=d.gdt;const lf=f[f.length-1];
   const gi=g.map(x=>[x.date,x.index_level]).filter(x=>x[1]),gb=g.filter(x=>x.butter_usd_t).map(x=>[x.date,x.butter_usd_t]);
