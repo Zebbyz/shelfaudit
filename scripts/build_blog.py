@@ -36,7 +36,7 @@ def write(path, s):
 posts = sorted(POSTS, key=lambda p: p["date"], reverse=True)
 intro = '<div class="bl-hero"><div class="bl-kicker">Blog &middot; Shelf Audit</div><h1>How the squeeze reaches your pocket</h1><p class="bl-lede">Sourced, dated facts on how New Zealand supermarkets push costs further into your life. Every claim links to its source. Opinion is labelled.</p></div>'
 write(f"{OUT}/index.html", HEAD.format(title="Blog: how the supermarket squeeze reaches your pocket | Shelf Audit", desc="Sourced facts on NZ supermarket pricing, the duopoly, specials, shrinkflation, loyalty data, self-checkout and more.", path="/blog/")
-      + '<main class="bl">' + intro + chips() + SEARCH + '<div class="bl-grid" id="bl-all">' + "".join(card(p) for p in posts) + "</div></main>" + FOOT.replace("</body>", JS + "</body>"))
+      + '<main class="bl">' + SEARCH + intro + chips() + '<div class="bl-grid" id="bl-all">' + "".join(card(p) for p in posts) + "</div></main>" + FOOT.replace("</body>", JS + "</body>"))
 for t in tags:
     ps = [p for p in posts if t in p["tags"]]
     write(f"{OUT}/tag/{slug(t)}/index.html", HEAD.format(title=f"{e(t)} | Shelf Audit blog", desc=f"Shelf Audit posts tagged {e(t)}.", path=f"/blog/tag/{slug(t)}/")
