@@ -384,3 +384,4 @@ header a[href="#/near"],nav a[href="#/near"],header a[href="#/basket"],nav a[hre
 header a[href="#/join"],nav a[href="#/join"],header a[href="/#/join"],nav a[href="/#/join"]{color:#3ddc84!important;background:transparent!important;box-shadow:none!important}
 header a[href="#/api"],nav a[href="#/api"],header a[href="/#/api"],nav a[href="/#/api"],a.nav-ice{color:#9fe3ff!important;background:transparent!important;box-shadow:none!important}
 .brand .bw{display:flex;flex-direction:column;line-height:1.1}.brand .tagline{display:block;font:inherit;font-family:inherit;font-size:13px;font-weight:400;letter-spacing:0;text-transform:none;color:#9a9385;white-space:nowrap;margin-top:2px}@media (max-width:340px){.brand .tagline{display:none}}
+.brand .tagline{color:#3ddc84!important;text-transform:uppercase;font-size:13px;font-weight:800;letter-spacing:.06em}
