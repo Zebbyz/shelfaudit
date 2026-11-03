@@ -1,79 +1,79 @@
 store_id,store,chain,company,nzbn,company_number,owner_id,registry_url,checked,confidence,classification
-0,FreshChoice Avondale,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-1,FreshChoice Barrington,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+0,FreshChoice Avondale,FreshChoice,AVONDALE FRESH LIMITED,9429046331588,6418603,SA-OWN-000069,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6418603/detail,2026-11-04,medium,franchised_supplied_by_woolworths
+1,FreshChoice Barrington,FreshChoice,BROWNS OF BARRINGTON LIMITED,9429038760167,613184,SA-OWN-000070,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/613184/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 2,FreshChoice Borman Road,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-3,FreshChoice Cambridge,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+3,FreshChoice Cambridge,FreshChoice,MANDER COMPANIES LIMITED,9429050219568,8290147,SA-OWN-000071,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8290147/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 4,FreshChoice Cannons Creek,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-5,FreshChoice Central Mall,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+5,FreshChoice Central Mall,FreshChoice,FC ROTORUA CENTRAL LIMITED,9429052600234,9317118,SA-OWN-000017,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9317118/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 6,FreshChoice Cromwell,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-7,FreshChoice Cuba Street,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-8,FreshChoice Edgeware,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-9,FreshChoice Epsom,FreshChoice,FC EPSOM LIMITED,9429049914764,8240672,SA-OWN-000001,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8240672/detail,2026-11-04,high,franchised_supplied_by_woolworths
+7,FreshChoice Cuba Street,FreshChoice,AMAN CUBA STREET LIMITED,9429051237271,8695086,SA-OWN-000072,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8695086/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
+8,FreshChoice Edgeware,FreshChoice,EDGEWARE SERVICES LIMITED,9429031939423,2318468,SA-OWN-000073,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2318468/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
+9,FreshChoice Epsom,FreshChoice,FC EPSOM LIMITED,9429049914764,8240672,SA-OWN-000001,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8240672/detail,2026-11-04,high (licence and trading name agree),franchised_supplied_by_woolworths
 10,FreshChoice Featherston,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-11,FreshChoice Fendalton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-12,FreshChoice Fitzroy,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-13,FreshChoice Flagstaff,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+11,FreshChoice Fendalton,FreshChoice,IRVINE HOLDINGS LIMITED,9429031734523,2374373,SA-OWN-000074,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2374373/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
+12,FreshChoice Fitzroy,FreshChoice,M & N PRIVATE LIMITED,9429051537104,8863809,SA-OWN-000075,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8863809/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+13,FreshChoice Flagstaff,FreshChoice,MAVRA LIMITED,9429033292793,1958883,SA-OWN-000076,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1958883/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 14,FreshChoice Flat Bush,FreshChoice,DH SUPERMARKET FLATBUSH LIMITED,9429049181258,8173591,SA-OWN-000002,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8173591/detail,2026-11-04,medium,franchised_supplied_by_woolworths
-15,FreshChoice Geraldine,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+15,FreshChoice Geraldine,FreshChoice,SHEEDS SUPERMARKET 2019 LIMITED,9429047452510,7467697,SA-OWN-000077,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7467697/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 16,FreshChoice Gleneden,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-17,FreshChoice Greenisland,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-18,FreshChoice Greerton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-19,FreshChoice Greytown,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+17,FreshChoice Greenisland,FreshChoice,MOYLES SUPERMARKET LIMITED,9429040313009,145969,SA-OWN-000078,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/145969/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+18,FreshChoice Greerton,FreshChoice,GT GROCERS LIMITED,9429052396724,9282387,SA-OWN-000079,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9282387/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+19,FreshChoice Greytown,FreshChoice,NIRMAL GROCERS 13 LIMITED,9429052938344,9351579,SA-OWN-000080,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9351579/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 20,FreshChoice Halfmoonbay,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-21,FreshChoice Huntly,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+21,FreshChoice Huntly,FreshChoice,HUNTLY GROCER LIMITED,9429051258658,8710346,SA-OWN-000081,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8710346/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 22,FreshChoice Kaikohe,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 23,FreshChoice Kaiti,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 24,FreshChoice Kellyroad,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-25,FreshChoice Kumeu,FreshChoice,ADARSHA ENTERPRISES LIMITED,9429032240016,2245496,SA-OWN-000003,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2245496/detail,2026-11-04,high,franchised_supplied_by_woolworths
+25,FreshChoice Kumeu,FreshChoice,ADARSHA ENTERPRISES LIMITED,9429032240016,2245496,SA-OWN-000003,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2245496/detail,2026-11-04,high (licence and trading name agree),franchised_supplied_by_woolworths
 26,FreshChoice Lakehawea,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-27,FreshChoice Leamington,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+27,FreshChoice Leamington,FreshChoice,MARKET MANAGEMENT LIMITED,9429049482850,8205911,SA-OWN-000082,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8205911/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 28,FreshChoice Leeston,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-29,FreshChoice Lyttelton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-30,FreshChoice Mandeville,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+29,FreshChoice Lyttelton,FreshChoice,THE CANTERBURY TRADING CO LIMITED,9429052443022,9290134,SA-OWN-000083,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9290134/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
+30,FreshChoice Mandeville,FreshChoice,HOMEGROWN GROCERS GENERAL PARTNER LIMITED,9429049541830,8217780,SA-OWN-000084,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8217780/detail,2026-11-04,medium (OCR licence; licensee is Homegrown Grocers Limited Partnership; general partner used),franchised_supplied_by_woolworths
 31,FreshChoice Mangerebridge,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-32,FreshChoice Marton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+32,FreshChoice Marton,FreshChoice,PZH MARTON LIMITED,9429053827548,9445884,SA-OWN-000085,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9445884/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 33,FreshChoice Merivale,FreshChoice,MERIVALE SUPERMARKET LIMITED,9429054018815,9465042,SA-OWN-000004,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9465042/detail,2026-11-04,medium,franchised_supplied_by_woolworths
-34,FreshChoice Methven,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+34,FreshChoice Methven,FreshChoice,STELLAR CINCO LIMITED,9429041660393,5638667,SA-OWN-000086,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5638667/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 35,FreshChoice Nelsoncity,FreshChoice,NELSON CITY SUPERMARKET LIMITED,9429039586193,351104,SA-OWN-000005,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/351104/detail,2026-11-04,high,franchised_supplied_by_woolworths
 36,FreshChoice Ngaruawahia,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-37,FreshChoice Omokoroa,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-38,FreshChoice Otahuhu,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+37,FreshChoice Omokoroa,FreshChoice,FRESH ONE LIMITED,9429033436531,1935844,SA-OWN-000087,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1935844/detail,2026-11-04,high (licence and trading name agree),franchised_supplied_by_woolworths
+38,FreshChoice Otahuhu,FreshChoice,PRC TRADING LIMITED,9429051571382,8882593,SA-OWN-000088,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8882593/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 39,FreshChoice Otaki,FreshChoice,OTAKI SUPERMARKET LIMITED,9429053315809,9391251,SA-OWN-000006,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9391251/detail,2026-11-04,medium,franchised_supplied_by_woolworths
-40,FreshChoice Otautau,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+40,FreshChoice Otautau,FreshChoice,TWENTY THREE MERCHANTS LIMITED,9429052561269,9305080,SA-OWN-000089,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9305080/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 41,FreshChoice Oxford,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-42,FreshChoice Paetiki,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+42,FreshChoice Paetiki,FreshChoice,JAI LAXMI ENTERPRISES LIMITED,9429048000468,7919503,SA-OWN-000090,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7919503/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 43,FreshChoice Palomino,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-44,FreshChoice Papakura,FreshChoice,DH SUPERMARKET PAPAKURA LIMITED OR FRESH FINDS PAPAKURA LIMITED,,8464042;9367857,,,2026-11-04,low (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
-45,FreshChoice Papamoa,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+44,FreshChoice Papakura,FreshChoice,ISHAAN HOLDINGS LIMITED,9429046577764,6684493,SA-OWN-000091,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6684493/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+45,FreshChoice Papamoa,FreshChoice,BLUE BOX TRADING LIMITED,9429045921100,6215929,SA-OWN-000092,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6215929/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 46,FreshChoice Parklands,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-47,FreshChoice Parkwood,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-48,FreshChoice Pauanui,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+47,FreshChoice Parkwood,FreshChoice,3JP ENTERPRISE LIMITED,9429053071255,9365907,SA-OWN-000093,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9365907/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+48,FreshChoice Pauanui,FreshChoice,BIRL ENTERPRISES LIMITED,9429052904127,9348686,SA-OWN-000094,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9348686/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 49,FreshChoice Picton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 50,FreshChoice Plaza,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-51,FreshChoice Prebbleton,FreshChoice,PREBBLETON SUPERMARKET LIMITED,9429051503963,8841768,SA-OWN-000008,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8841768/detail,2026-11-04,high,franchised_supplied_by_woolworths
+51,FreshChoice Prebbleton,FreshChoice,PREBBLETON SUPERMARKET LIMITED,9429051503963,8841768,SA-OWN-000008,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8841768/detail,2026-11-04,high (licence and trading name agree),franchised_supplied_by_woolworths
 52,FreshChoice Pyespa,FreshChoice,PYES PA SUPERMARKET LIMITED,9429041533932,5528206,SA-OWN-000009,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5528206/detail,2026-11-04,medium,franchised_supplied_by_woolworths
-53,FreshChoice Queenstown,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+53,FreshChoice Queenstown,FreshChoice,WRIGHTWILD LIMITED,9429032446340,2197577,SA-OWN-000095,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2197577/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 54,FreshChoice Raglan,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 55,FreshChoice Ranui,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-56,FreshChoice Reefton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+56,FreshChoice Reefton,FreshChoice,GILSENAN FAMILY SUPER VALUE LIMITED,9429042152484,5877416,SA-OWN-000096,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5877416/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 57,FreshChoice Renwick,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 58,FreshChoice Riverton,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-59,FreshChoice Roslyn,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+59,FreshChoice Roslyn,FreshChoice,F C TRADING LIMITED,9429036319244,1241502,SA-OWN-000097,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1241502/detail,2026-11-04,"medium (OCR licence, exact registry name)",franchised_supplied_by_woolworths
 60,FreshChoice Roxburgh,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 61,FreshChoice Ruakaka,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 62,FreshChoice Sumner,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 63,FreshChoice Takaka,FreshChoice,REYNISH'S SUPERMARKET LIMITED,9429036579723,1196590,SA-OWN-000010,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1196590/detail,2026-11-04,high,franchised_supplied_by_woolworths
-64,FreshChoice Teanau,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-65,FreshChoice Teawamutu,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+64,FreshChoice Teanau,FreshChoice,W.K. & M.I. CULLEN LIMITED,9429039335074,430744,SA-OWN-000098,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/430744/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+65,FreshChoice Teawamutu,FreshChoice,TE AWAMUTU FRESH LIMITED,9429046502674,6595894,SA-OWN-000099,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6595894/detail,2026-11-04,medium,franchised_supplied_by_woolworths
 66,FreshChoice Tengae,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 67,FreshChoice Tinwald,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 68,FreshChoice Titirangi,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-69,FreshChoice Tuakau,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-70,FreshChoice Waihi,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+69,FreshChoice Tuakau,FreshChoice,RIDH & SIDH PATEL CO. LIMITED,9429051699338,8981372,SA-OWN-000100,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8981372/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+70,FreshChoice Waihi,FreshChoice,JAY RAM ENTERPRISES LIMITED,9429047682504,7725056,SA-OWN-000101,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7725056/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 71,FreshChoice Waimauku,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 72,FreshChoice Waiuku,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-73,FreshChoice Westport,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-74,FreshChoice Whanganui,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+73,FreshChoice Westport,FreshChoice,CJ & RC ENTERPRISES LIMITED,9429052479021,9295786,SA-OWN-000102,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9295786/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
+74,FreshChoice Whanganui,FreshChoice,ASHAPURA MAA ENTERPRISE LIMITED,9429052392771,9281156,SA-OWN-000103,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9281156/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 75,FreshChoice Woburn,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 76,New World Albany,New World,HIGHWAY SUPPLIES LIMITED,9429052658921,9322698,SA-OWN-000025,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9322698/detail,2026-11-04,high,foodstuffs_cooperative_member
 77,New World Aokautere,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
@@ -147,7 +147,7 @@ store_id,store,chain,company,nzbn,company_number,owner_id,registry_url,checked,c
 145,New World Onekawa,New World,PEDERSEN GROCER LIMITED,9429043340569,6114688,SA-OWN-000046,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6114688/detail,2026-11-04,high,foodstuffs_cooperative_member
 146,New World Onerahi,New World,ONERAHI SUPERMARKET LIMITED,9429052770906,9335312,SA-OWN-000047,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9335312/detail,2026-11-04,medium,foodstuffs_cooperative_member
 147,New World Orewa,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-148,New World Ormiston,New World,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+148,New World Ormiston,New World,ORMISTON FRESH TRADING LIMITED,9429051774318,9021300,SA-OWN-000104,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9021300/detail,2026-11-04,medium,foodstuffs_cooperative_member
 149,New World Otaki,New World,MULLINS SUPERMARKET LIMITED OR GREAT GROCERS LIMITED,,8201874;9350351,,,2026-11-04,high (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
 150,New World Pahiatua,New World,PAHIATUA SUPERMARKET LIMITED,9429047227569,7221514,SA-OWN-000048,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7221514/detail,2026-11-04,medium,foodstuffs_cooperative_member
 151,New World Papakura,New World,GROCERS INC. LIMITED,9429051355432,8754987,SA-OWN-000049,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8754987/detail,2026-11-04,high,foodstuffs_cooperative_member
@@ -227,14 +227,14 @@ store_id,store,chain,company,nzbn,company_number,owner_id,registry_url,checked,c
 225,Pak'nSave Mt Albert,Pak'nSave,T & A CHAWLA LIMITED,9429030034631,4687359,SA-OWN-000012,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/4687359/detail,2026-11-04,high,foodstuffs_cooperative_member
 226,Pak'nSave Napier City,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 227,Pak'nSave New Plymouth,Pak'nSave,CHEAP AS FRESH AS SWEET AS LIMITED,9429051483517,8831311,SA-OWN-000013,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8831311/detail,2026-11-04,high,foodstuffs_cooperative_member
-228,Pak'nSave Ormiston,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+228,Pak'nSave Ormiston,Pak'nSave,ORMISTON FRESH TRADING LIMITED,9429051774318,9021300,SA-OWN-000104,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9021300/detail,2026-11-04,medium,foodstuffs_cooperative_member
 229,Pak'nSave Palmerston North,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 230,Pak'nSave Papakura,Pak'nSave,DH SUPERMARKET PAPAKURA LIMITED OR FRESH FINDS PAPAKURA LIMITED,,8464042;9367857,,,2026-11-04,low (multiple candidates),franchised_or_cooperative_member_owner_unconfirmed
 231,Pak'nSave Papamoa,Pak'nSave,PAPPNS TRADING COMPANY LIMITED,9429031525480,2495168,SA-OWN-000014,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2495168/detail,2026-11-04,high,foodstuffs_cooperative_member
 232,Pak'nSave Papanui,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 233,Pak'nSave Petone,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 234,Pak'nSave Porirua,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-235,Pak'nSave Pukekohe,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+235,Pak'nSave Pukekohe,Pak'nSave,FRESHO PUKEKOHE LIMITED,9429046493309,6583734,SA-OWN-000105,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6583734/detail,2026-11-04,medium,foodstuffs_cooperative_member
 236,Pak'nSave Queenstown,Pak'nSave,MAK SUPERMARKET LIMITED,9429042281337,5946248,SA-OWN-000015,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5946248/detail,2026-11-04,high,foodstuffs_cooperative_member
 237,Pak'nSave Rangiora,Pak'nSave,RPNS LIMITED,9429041568224,5558146,SA-OWN-000016,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5558146/detail,2026-11-04,high,foodstuffs_cooperative_member
 238,Pak'nSave Riccarton,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
@@ -247,7 +247,7 @@ store_id,store,chain,company,nzbn,company_number,owner_id,registry_url,checked,c
 245,Pak'nSave Tamatea,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 246,Pak'nSave Taupō,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 247,Pak'nSave Tauriko,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-248,Pak'nSave Te Awamutu,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+248,Pak'nSave Te Awamutu,Pak'nSave,TE AWAMUTU FRESH LIMITED,9429046502674,6595894,SA-OWN-000099,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6595894/detail,2026-11-04,medium,foodstuffs_cooperative_member
 249,Pak'nSave Thames,Pak'nSave,THAMES FOODBARN LIMITED,9429041657201,5636212,SA-OWN-000021,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5636212/detail,2026-11-04,high,foodstuffs_cooperative_member
 250,Pak'nSave Timaru,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 251,Pak'nSave Upper Hutt,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
@@ -258,7 +258,7 @@ store_id,store,chain,company,nzbn,company_number,owner_id,registry_url,checked,c
 256,Pak'nSave Whanganui,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
 257,Pak'nSave Whangarei,Pak'nSave,T & L LEATHEM LIMITED,9429032034189,2301091,SA-OWN-000023,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/2301091/detail,2026-11-04,high,foodstuffs_cooperative_member
 258,Pak'nSave Wairau Road,Pak'nSave,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
-259,SuperValue Bell Block,FreshChoice,,,,,,2026-11-04,none,franchised_or_cooperative_member_owner_unconfirmed
+259,SuperValue Bell Block,FreshChoice,HARMONEY INTERNATIONAL LIMITED,9429053197689,9377203,SA-OWN-000106,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/9377203/detail,2026-11-04,"high (alcohol licence, exact registry name)",franchised_supplied_by_woolworths
 260,Woolworths Whangarei,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
 261,Woolworths Alexandra,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned
 262,Woolworths Amberley,Woolworths,WOOLWORTHS NEW ZEALAND LIMITED,9429040683379,61262,SA-OWN-000024,https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/61262/detail,2026-11-03,high (corporate store),big_two_owned

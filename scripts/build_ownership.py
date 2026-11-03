@@ -50,7 +50,7 @@ d = f'{ROOT}/public/ownership'; os.makedirs(d, exist_ok=True)
 json.dump(out, open(f'{d}/data.json', 'w'), separators=(',', ':'), ensure_ascii=False)
 bk = f'{ROOT}/data/ownership'
 for sub, files in (('brand_owners', ['supplier_registry.csv', 'brand_map.csv', 'brand_ownership.csv', 'summary.json', 'SUPPLIER_ID.md', 'WEEKLY_CHECK.md', 'brand_research_2026-11-03.csv', 'suppliers.py', 'weekly_attach.py', 'build.py']),
-                   ('ownership', ['store_owners.csv', 'owner_people.csv', 'ids.json', 'build.py', 'build2.py', 'details.py', 'details.json', 'match_result.json'])):
+                   ('ownership', ['store_owners.csv', 'owner_people.csv', 'ids.json', 'build.py', 'build2.py', 'build3.py', 'fc_lic.json', 'details.py', 'details.json', 'match_result.json'])):
     os.makedirs(f'{bk}/{sub}', exist_ok=True)
     for f in files:
         if os.path.exists(f'{SRC}/{sub}/{f}'): shutil.copy2(f'{SRC}/{sub}/{f}', f'{bk}/{sub}/{f}')
