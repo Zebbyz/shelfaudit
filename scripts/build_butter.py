@@ -9,7 +9,8 @@ ps=re.search(r"every Pak'nSave \((\d+), mostly \$([\d.]+) advertised to \$([\d.]
 ml=re.search(r'Mainland butter down at every Woolworths \((\d+), \$([\d.]+) or \$([\d.]+) to \$([\d.]+)',note)
 g=[e for e in d['gdt_events'] if e.get('butter_usd_t')][-1]
 pg=re.search(r'butter (-?[\d.]+)%',g.get('index_change_note',''))
-out={'checked':d['updated'],'ww':{'stores':int(ww[1]),'from':float(ww[2]),'to':sorted([float(ww[3]),float(ww[4])])},
+# 'checked' is the latest shelf capture day, so a day with no new capture does not move the date
+out={'checked':max(r['date'] for r in d['shelf']),'ww':{'stores':int(ww[1]),'from':float(ww[2]),'to':sorted([float(ww[3]),float(ww[4])])},
  'pns':{'stores':int(ps[1]),'from':float(ps[2]),'to':float(ps[3])},
  'gdt':{'date':g['date'],'butter_usd_t':g['butter_usd_t'],'change_pct':float(pg[1])},
  'mainland':{'ww_stores':int(ml[1]),'to':float(ml[4])}}
